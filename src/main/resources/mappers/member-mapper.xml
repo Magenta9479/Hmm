@@ -2,11 +2,33 @@
 <!DOCTYPE mapper PUBLIC
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Member">
+<mapper namespace="memberMapper">
+
+	<resultMap id="memberResultMap" type="Member">
+		<id property="membercode" column="MEMBERCODE" />
+		<result property="id" column="ID" />
+		<result property="password" column="PASSWORD" />
+		<result property="nickname" column="NICKNAME" />
+		<result property="email" column="EMAIL" />
+		<result property="photo" column="PHOTO" />
+		<result property="medal" column="MEDAL" />
+		<result property="exp" column="EXP" />
+		<result property="chash" column="CHASH" />
+		<result property="ddaru" column="DDARU" />
+		<result property="job" column="JOB" />
+		<result property="enrolldate" column="ENROLLDATE" />
+		<result property="quitedate" column="QUITDATE" />
+		<result property="id" column="ID" />
+	</resultMap>
 	<!-- <select id="selectMember" parameterType="Member" resultType="Member"> 
 		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWD =#{passwd} </select> -->
 
-	<select id="selectMember" resultType="Member">
-		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWD =#{passwd}
+	<!-- <select id="selectMember" resultType="Member">
+		SELECT * FROM MEMBER WHERE
+		ID = #{id} AND PASSWD =#{passwd}
+	</select> -->
+	<select id="login" resultMap="memberResultMap">
+		SELECT * FROM MEMBER WHERE
+		ID = #{id} AND PASSWD =#{passwd}
 	</select>
 </mapper>

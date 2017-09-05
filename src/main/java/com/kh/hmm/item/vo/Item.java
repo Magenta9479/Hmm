@@ -1,4 +1,4 @@
-package com.kh.hmm.item.model.vo;
+package com.kh.hmm.item.vo;
 
 public class Item
 {

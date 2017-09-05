@@ -1,4 +1,4 @@
-package com.kh.hmm.board.model.vo;
+package com.kh.hmm.board.vo;
 
 public class Attachfile
 {

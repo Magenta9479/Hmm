@@ -1,4 +1,4 @@
-package com.kh.hmm.member.model.vo;
+package com.kh.hmm.member.vo;
 
 import java.sql.Date;
 
@@ -14,26 +14,16 @@ public class Member
 	private int exp;
 	private int chash;
 	private int ddaru;
+	private String job;
 	private Date enrolldate;
 	private Date quitedate;
 
 	public Member()
 	{
-	}
-
-	public Member(String id, String password, String nickname, String email, String photo, int ddaru)
-	{
-		super();
-		this.id = id;
-		this.password = password;
-		this.nickname = nickname;
-		this.email = email;
-		this.photo = photo;
-		this.ddaru = ddaru;
-	}
+	}	
 
 	public Member(int membercode, String id, String password, String nickname, String email, String photo, int medal,
-			int exp, int chash, int ddaru, Date enrolldate, Date quitedate)
+			int exp, int chash, int ddaru, String job, Date enrolldate, Date quitedate)
 	{
 		super();
 		this.membercode = membercode;
@@ -46,9 +36,12 @@ public class Member
 		this.exp = exp;
 		this.chash = chash;
 		this.ddaru = ddaru;
+		this.job = job;
 		this.enrolldate = enrolldate;
 		this.quitedate = quitedate;
 	}
+
+
 
 	public int getMembercode()
 	{
