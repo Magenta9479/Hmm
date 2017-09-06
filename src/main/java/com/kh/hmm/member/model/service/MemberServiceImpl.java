@@ -1,10 +1,10 @@
-package com.kh.hmm.member.service;
+package com.kh.hmm.member.model.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kh.hmm.member.dao.MemberDao;
-import com.kh.hmm.member.vo.Member;
+import com.kh.hmm.member.model.dao.MemberDao;
+import com.kh.hmm.member.model.vo.Member;
 
 @Service("memberService")
 public class MemberServiceImpl implements MemberService
@@ -14,9 +14,9 @@ public class MemberServiceImpl implements MemberService
 	private MemberDao mDao;
 
 	@Override
-	public Member loginMember()
+	public Member loginMember(Member m)
 	{
-		return mDao.login();
+		return mDao.loginMember(m);
 	}
 	
 	/*@Override

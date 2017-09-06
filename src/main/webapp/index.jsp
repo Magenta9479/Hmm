@@ -24,9 +24,9 @@
 	<div class="thumbnail">
 		<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg"
 			alt="Cover Photo" />
-		<h1>국내 1위 개발자 커뮤니티에 오신것을 환영합니다.</h1>
+		<h1>국내 1위 개발자 커뮤니티에 오신것을 환영합니다.</h1>		
 	</div>
-
+	<a href="login.do">hello</a>
 	<div class="board">
 		<div class="panel panel-default">
 			<div class="panel-body">

@@ -1,10 +1,10 @@
-package com.kh.hmm.member.dao;
+package com.kh.hmm.member.model.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.kh.hmm.member.vo.Member;
+import com.kh.hmm.member.model.vo.Member;
 
 @Repository("memberDao")
 public class MemberDao
@@ -17,8 +17,8 @@ public class MemberDao
 		return (Member)sqlSession.selectOne("selectMember");
 	}
 
-	public Member login()
+	public Member loginMember(Member m)
 	{
-		return (Member)sqlSession.selectOne("login");
+		return (Member)sqlSession.selectOne("login",m);
 	}
 }
