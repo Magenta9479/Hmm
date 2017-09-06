@@ -50,10 +50,11 @@
 
 	<div id="mySidenav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#">About</a>
-	  <a href="#">Services</a>
-	  <a href="#">Clients</a>
-	  <a href="#">Contact</a>
+	  <a href="#">아무말대잔치</a>
+	  <a href="#">프로젝트게시판</a>
+	  <a href="#">기업게시판</a>
+	  <a href="#">신기술게시판</a>
+		<a href="#">Q&A</a>
 	</div>
 
 
