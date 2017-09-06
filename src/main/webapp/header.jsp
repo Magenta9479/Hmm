@@ -6,7 +6,6 @@
 <head>
 <title>Hmm | 전 세계의 개발자들을 널리 이롭게 하리라.</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico"
@@ -78,12 +77,21 @@
 
 
 	<div id="mySidenav" class="sidenav">
+<<<<<<< HEAD
 		<<<<<<< HEAD <a href="javascript:void(0)" class="closebtn"
 			onclick="closeNav()">&times;</a> <a href="#">아무말대잔치</a> <a href="#">프로젝트게시판</a>
 		<a href="#">기업게시판</a> <a href="#">신기술게시판</a> <a href="#">Q&A</a>
 		======= <a href="javascript:void(0)" class="closebtn"
 			onclick="closeNav()">&times;</a> <a href="#">About</a> <a href="#">Services</a>
 		<a href="#">Clients</a> <a href="#">Contact</a> >>>>>>> Magenta9479
+=======
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="#">아무말대잔치</a>
+	  <a href="#">프로젝트게시판</a>
+	  <a href="#">기업게시판</a>
+	  <a href="#">신기술게시판</a>
+		<a href="#">Q&A</a>
+>>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm
 	</div>
 
 
