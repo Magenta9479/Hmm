@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: rltmd
-=======
-Built-By: SBS
->>>>>>> bbc181226f62f1c12914d621646cef8900ec0dad
 Build-Jdk: 1.8.0_131
 Created-By: Maven Integration for Eclipse
 
