@@ -20,7 +20,7 @@ public class MemberController
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping(value = "login.do", method = RequestMethod.GET)
+	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String loginMember(Member m, HttpSession session) {
 		logger.info("login() call...");
 		

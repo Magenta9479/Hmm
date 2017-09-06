@@ -31,7 +31,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="input-group col-md-6 pull-left">
-					<input type="text" class="  search-query form-control"
+					<input type="text" class="search-query form-control"
 						placeholder="Search" /> <span class="input-group-btn">
 						<button class="btn btn-danger" type="button">
 							<span class=" glyphicon glyphicon-search"></span>
