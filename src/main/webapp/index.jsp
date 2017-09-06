@@ -27,13 +27,13 @@
 		<h1>국내 1위 개발자 커뮤니티에 오신것을 환영합니다.</h1>
 	</div>
 	<a href="cashshop.jsp">캐쉬샵</a>
-	
-	<a href="login.do">hello</a>
+
+
 	<div class="board">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="input-group col-md-6 pull-left">
-					<input type="text" class="  search-query form-control"
+					<input type="text" class="search-query form-control"
 						placeholder="Search" /> <span class="input-group-btn">
 						<button class="btn btn-danger" type="button">
 							<span class=" glyphicon glyphicon-search"></span>

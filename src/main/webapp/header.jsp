@@ -18,6 +18,39 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<!-- 로그인 모달 -->
+	<div class="container">
+		<!-- Trigger the modal with a button -->
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+			data-target="#myModal">로그인</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Hmm</h4>
+					</div>
+					<div class="modal-body">
+						<form action="login.do" method="POST">
+							<input type="text" name="id" placeholder="아이디를 입력해 주세요"><br>
+							<input type="password" name="password" placeholder="비밀번호를 입력해 주세요">
+							<br> <input type="submit" value="로그인">
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!-- 로그인 모달 -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -30,13 +63,13 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li>
-						 <a href="#"><span class="glyphicon glyphicon-menu-hamburger" style="cursor:pointer" onclick="openNav()"></span></a>
-					</li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-menu-hamburger"
+							style="cursor: pointer" onclick="openNav()"></span></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"> <span class="glyphicon glyphicon-log-in"></span>
-							로그인
+					<li data-toggle="modal" data-target="#myModal"><a> <span
+							class="glyphicon glyphicon-log-in"></span> 로그인
 					</a></li>
 					<li><a href="#"> <span class="glyphicon glyphicon-user"></span>
 							회원가입
@@ -49,23 +82,29 @@
 
 
 	<div id="mySidenav" class="sidenav">
+<<<<<<< HEAD
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <a href="#">아무말대잔치</a>
 	  <a href="#">프로젝트게시판</a>
 	  <a href="#">기업게시판</a>
 	  <a href="#">신기술게시판</a>
 		<a href="#">Q&A</a>
+=======
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">About</a> <a href="#">Services</a> <a href="#">Clients</a>
+		<a href="#">Contact</a>
+>>>>>>> Magenta9479
 	</div>
 
 
 	<script>
-	function openNav() {
-	    document.getElementById("mySidenav").style.width = "250px";
-	}
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+		}
 
-	function closeNav() {
-	    document.getElementById("mySidenav").style.width = "0";
-	}
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+		}
 	</script>
 
 
