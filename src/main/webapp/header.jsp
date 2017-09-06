@@ -30,24 +30,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><div class="dropdown">
-							<button id="nav_menu" class="btn btn-primary dropdown-toggle"
-								type="button" data-toggle="dropdown">
-								<span class="glyphicon glyphicon-menu-hamburger"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li class="dropdown-header">카테고리</li>
-								<li><a href="#">아무말 대잔치</a></li>
-								<li><a href="#">프로젝트 게시판</a></li>
-								<li><a href="#">기업 게시판</a></li>
-								<li><a href="#">신기술 게시판</a></li>
-								<li><a href="#">Q&A</a></li>
-								<li class="divider"></li>
-								<li class="dropdown-header"></li>
-								<li><a href="#">FAQ</a></li>
-								<li><a href="#">About Us</a></li>
-							</ul>
-						</div></li>
+					<li>
+						 <a href="#"><span class="glyphicon glyphicon-menu-hamburger" style="cursor:pointer" onclick="openNav()"></span></a>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"> <span class="glyphicon glyphicon-log-in"></span>
@@ -60,6 +45,29 @@
 			</div>
 		</div>
 	</nav>
+
+
+
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="#">아무말대잔치</a>
+	  <a href="#">프로젝트게시판</a>
+	  <a href="#">기업게시판</a>
+	  <a href="#">신기술게시판</a>
+		<a href="#">Q&A</a>
+	</div>
+
+
+	<script>
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "250px";
+	}
+
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";
+	}
+	</script>
+
 
 </body>
 </html>
