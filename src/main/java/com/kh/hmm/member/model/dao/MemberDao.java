@@ -19,6 +19,6 @@ public class MemberDao
 
 	public Member loginMember(Member m)
 	{
-		return (Member)sqlSession.selectOne("login",m);
+		return sqlSession.selectOne("login",m);
 	}
 }

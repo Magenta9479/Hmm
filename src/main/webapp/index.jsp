@@ -28,7 +28,6 @@
 	</div>
 	<a href="cashshop.jsp">캐쉬샵</a>
 
-
 	<div class="board">
 		<div class="panel panel-default">
 			<div class="panel-body">

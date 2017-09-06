@@ -2,6 +2,7 @@ package com.kh.hmm.member.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,10 @@ public class MemberController
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String loginMember(Member m, HttpSession session) {
 		logger.info("login() call...");
-		System.out.println(m);
+		System.out.println(m.getId()+"  "+m.getPassword());
 		
 		Member member = memberService.loginMember(m);
+		System.out.println(member);
 		if(member != null){
 			session.setAttribute("member", member); 			
 		}
@@ -41,6 +43,7 @@ public class MemberController
 		}
 		
 		return "home";
+		
 	}
 	
 	@RequestMapping("enroll.do")

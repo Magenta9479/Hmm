@@ -13,44 +13,17 @@
 	rel="stylesheet">
 <link href="resources/css/header.css" rel="stylesheet" type="text/css">
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/aj
+	ax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!-- 로그인 모달 -->
-	<div class="container">
-		<!-- Trigger the modal with a button -->
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-			data-target="#myModal">로그인</button>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Hmm</h4>
-					</div>
-					<div class="modal-body">
-						<form action="login.do" method="POST">
-							<input type="text" name="id" placeholder="아이디를 입력해 주세요"><br>
-							<input type="password" name="password" placeholder="비밀번호를 입력해 주세요">
-							<br> <input type="submit" value="로그인">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-	<!-- 로그인 모달 -->
+	<c:set var="member" value="${member}" scope="session" />
+	
+	<%@ include file="WEB-INF/views/member/login.jsp"%>
+	<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -67,14 +40,37 @@
 							class="glyphicon glyphicon-menu-hamburger"
 							style="cursor: pointer" onclick="openNav()"></span></a></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li data-toggle="modal" data-target="#myModal"><a> <span
-							class="glyphicon glyphicon-log-in"></span> 로그인
-					</a></li>
-					<li><a href="#"> <span class="glyphicon glyphicon-user"></span>
-							회원가입
-					</a></li>
-				</ul>
+
+				<c:choose>
+					<c:when test="${null eq member }">
+						<ul class="nav navbar-nav navbar-right">
+							<li data-toggle="modal" data-target="#loginModal">
+							<a style="cursor: pointer"> 
+							<span class="glyphicon glyphicon-log-in"></span> 로그인
+							</a>
+							</li>
+							<li data-toggle="modal" data-target="#insertModal">
+							<a style="cursor:pointer"> 
+							<span class="glyphicon glyphicon-user"></span>
+									회원가입
+							</a>
+							</li>
+						</ul>
+					</c:when>
+
+					<c:when test="${null ne member }">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#"> <span class="glyphicon glyphicon-user">
+										<c:out value="${member.nickname }" />
+								</span>
+							</a></li>
+							<li data-toggle="modal" data-target="#myModal"><a
+								href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>
+									로그아웃
+							</a></li>
+						</ul>
+					</c:when>
+				</c:choose>
 			</div>
 		</div>
 	</nav>
@@ -82,18 +78,12 @@
 
 
 	<div id="mySidenav" class="sidenav">
-<<<<<<< HEAD
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#">아무말대잔치</a>
-	  <a href="#">프로젝트게시판</a>
-	  <a href="#">기업게시판</a>
-	  <a href="#">신기술게시판</a>
-		<a href="#">Q&A</a>
-=======
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="#">About</a> <a href="#">Services</a> <a href="#">Clients</a>
-		<a href="#">Contact</a>
->>>>>>> Magenta9479
+		<<<<<<< HEAD <a href="javascript:void(0)" class="closebtn"
+			onclick="closeNav()">&times;</a> <a href="#">아무말대잔치</a> <a href="#">프로젝트게시판</a>
+		<a href="#">기업게시판</a> <a href="#">신기술게시판</a> <a href="#">Q&A</a>
+		======= <a href="javascript:void(0)" class="closebtn"
+			onclick="closeNav()">&times;</a> <a href="#">About</a> <a href="#">Services</a>
+		<a href="#">Clients</a> <a href="#">Contact</a> >>>>>>> Magenta9479
 	</div>
 
 
