@@ -23,21 +23,6 @@
 						</div>
 						<a href="cashshop.jsp">캐쉬샵</a>
 
-<<<<<<< HEAD
-	<div class="board">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div class="input-group col-md-6 pull-left">
-					<input type="text" class="search-query form-control"
-						placeholder="Search" /> <span class="input-group-btn">
-						<button class="btn btn-danger" type="button">
-							<span class=" glyphicon glyphicon-search"></span>
-						</button>
-					</span>
-				</div>
-				<div class="pull-right">
-					<select class="selectpicker">
-=======
 						<!-- 게시판 영역 -->
 						<div class="board">
 							<!-- 검색창, 검색 정렬들의 패널 -->

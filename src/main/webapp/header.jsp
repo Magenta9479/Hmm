@@ -19,10 +19,10 @@
 </head>
 <body>
 	<c:set var="member" value="${member}" scope="session" />
-	
+
 	<%@ include file="WEB-INF/views/member/login.jsp"%>
 	<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
-	
+
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -44,12 +44,12 @@
 					<c:when test="${null eq member }">
 						<ul class="nav navbar-nav navbar-right">
 							<li data-toggle="modal" data-target="#loginModal">
-							<a style="cursor: pointer"> 
+							<a style="cursor: pointer">
 							<span class="glyphicon glyphicon-log-in"></span> 로그인
 							</a>
 							</li>
 							<li data-toggle="modal" data-target="#insertModal">
-							<a style="cursor:pointer"> 
+							<a style="cursor:pointer">
 							<span class="glyphicon glyphicon-user"></span>
 									회원가입
 							</a>
@@ -77,21 +77,12 @@
 
 
 	<div id="mySidenav" class="sidenav">
-<<<<<<< HEAD
-		<<<<<<< HEAD <a href="javascript:void(0)" class="closebtn"
-			onclick="closeNav()">&times;</a> <a href="#">아무말대잔치</a> <a href="#">프로젝트게시판</a>
-		<a href="#">기업게시판</a> <a href="#">신기술게시판</a> <a href="#">Q&A</a>
-		======= <a href="javascript:void(0)" class="closebtn"
-			onclick="closeNav()">&times;</a> <a href="#">About</a> <a href="#">Services</a>
-		<a href="#">Clients</a> <a href="#">Contact</a> >>>>>>> Magenta9479
-=======
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <a href="#">아무말대잔치</a>
 	  <a href="#">프로젝트게시판</a>
 	  <a href="#">기업게시판</a>
 	  <a href="#">신기술게시판</a>
 		<a href="#">Q&A</a>
->>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm
 	</div>
 
 
