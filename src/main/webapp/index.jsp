@@ -23,15 +23,21 @@
 	<div class="thumbnail">
 		<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg"
 			alt="Cover Photo" />
-		<h1>국내 1위 개발자 커뮤니티에 오신것을 환영합니다.</h1>		
+		<h1>국내 1위 개발자 커뮤니티에 오신것을 환영합니다.</h1>
 	</div>
+<<<<<<< HEAD
 
 	<a href="cashshop.jsp">캐쉬샵</a>
+=======
+	<a href="cashshop.jsp">캐쉬샵</a>
+
+
+>>>>>>> 184e1ce6265e0ea1d754e14067cb38740955fd76
 	<div class="board">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="input-group col-md-6 pull-left">
-					<input type="text" class="  search-query form-control"
+					<input type="text" class="search-query form-control"
 						placeholder="Search" /> <span class="input-group-btn">
 						<button class="btn btn-danger" type="button">
 							<span class=" glyphicon glyphicon-search"></span>

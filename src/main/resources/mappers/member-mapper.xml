@@ -14,6 +14,6 @@
 	</select> -->
 	<select id="login" resultMap="memberResultMap" parameterType="Member" resultType="Member">
 		SELECT * FROM MEMBER WHERE
-		ID = #{id} AND PASSWD =#{password}
+		ID = #{id} AND PASSWORD =#{password}
 	</select>
 </mapper>
