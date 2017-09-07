@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 /*
 #E6E2AF
@@ -8,6 +9,10 @@
 #002F2F
 */
 
+* {
+	//border: 1px dotted gold;
+}
+
 .navbar {
 	background-color: #002F2F;
 	padding: 10px;
@@ -16,22 +21,31 @@
   font-size: 16px;
 }
 
-/*.navbar .container-fluid .navbar-header a {
+#home_logo {
 	font-family: 'Pacifico', cursive;
-	font-size: 30px;
-}*/
+	color: white;
+	font-size: 44px;
+	margin-left: 600px;
+}
 
-/*.navbar .container-fluid .navbar-header a:hover {
+
+#home_logo:hover {
   color: gold;
 	-webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
-}*/
+}
 
 #menu {
 	font-size: 30px;
+}
+
+.navbar .container-fluid .navbar-nav a {
+	font-family: 'Hanna', serif;
+	font-size: 20px;
+	color: white;
 }
 
 .navbar .container-fluid .navbar-nav a:hover {
@@ -59,10 +73,11 @@
 }
 
 .sidenav a {
+		font-family: 'Hanna', serif;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: white;
     display: block;
     transition: 0.3s;
 }
@@ -70,7 +85,7 @@
 .sidenav a:hover {
     color: #f1f1f1;
 		background-color: gold;
-		color: green;
+		color: #002F2F;
 }
 
 .sidenav .closebtn {
