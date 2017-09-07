@@ -25,21 +25,14 @@
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.jsp">Hmm</a>
-			</div>
+
 			<div class="collapse navbar-collapse" id="myNavbar">
+
 				<ul class="nav navbar-nav">
-					<li><a href="#"><span
+					<li><a id="menu" href="#"><span
 							class="glyphicon glyphicon-menu-hamburger"
 							style="cursor: pointer" onclick="openNav()"></span></a></li>
 				</ul>
-
 				<c:choose>
 					<c:when test="${null eq member }">
 						<ul class="nav navbar-nav navbar-right">
@@ -74,10 +67,8 @@
 		</div>
 	</nav>
 
-
-
 	<div id="mySidenav" class="sidenav">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a id="close_button" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <a href="#">아무말대잔치</a>
 	  <a href="#">프로젝트게시판</a>
 	  <a href="#">기업게시판</a>
