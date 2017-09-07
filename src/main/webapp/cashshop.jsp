@@ -12,17 +12,18 @@
 <title>CashShop</title>
 <style type="text/css">
 #residualcash{
-margin-top: 120px;
+margin-top: 100px;
+
 }
 #container-fluid{
- margin-top : 80px;
- margin-left : 80px ;
+ margin-top : 100px;
+ margin-left : 9% ;
  width : 100%;
 
 }
 #container-fluid1{
  margin-top : 100px;
- margin-left : 80px ;
+ margin-left : 9% ;
  width : 100%;
 }
 #box{
@@ -33,48 +34,85 @@ left : 16%;
 }
 #button{
 position : absolute;
-left :  16% ;
-top :  120px;
-width : 40px;
+top :  210px;
+width : 300px;
+height : 200px;
+right: 20px;
+left: 2px;
 
 }
 #buy{
- margin-right: 40px;
+width : 45%;
+ margin-right: 20px;
+}
+#charge{
+width : 45%;
+}
+#cash{
+size : 200px;
+}
+#menu{
+top : 200px;
+width : 50%;
+left : 25%;
 }
 
 </style>
 <%@ include file="/header.jsp" %>
 </head>
 <body>
+<div id= "menu" class="btn-group btn-group-justified">
+    <a href="#" class="btn btn-primary">테 두 리</a>
+    <a href="#" class="btn btn-primary">배 경</a>
+    <a href="#" class="btn btn-primary">메 달</a>
+  </div>
+
 <div id="residualcash">
-<p style= "text-align : center"><b>남은 캐시 : </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="cash" type ="text"  readonly></p>
+<p style= "text-align : center"><b>잔여 캐시 : </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="cash"  name="cash" type ="text"  readonly></p>
 </div>
 <div id = "container-fluid">
 <div class="row">
-    <div id = "box" class="col-sm-4" style="background-color:lavender;">.col-sm-4<div id = "button"><button  type="button" class="btn btn-primary">Default button</button>
-  <button type="button" class="btn btn-primary">Default button</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
     
-    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-    <div id = "box" class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
     </div>
 </div>
 
 <div id = "container-fluid1">
 <div class="row">
-    <div id = "box" class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-    <div id = "box" class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
   </div>
 </div>
 
 <div id = "container-fluid1">
 <div class="row">
-    <div id = "box" class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-    <div id = "box" class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
   </div>
 </div>
-
+<div id = "container-fluid1">
+<div class="row">
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavenderblush;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+    <div id = "box" class="col-sm-4" style="background-color:lavender;"><div id = "button"><button id="buy" type="button" class="btn btn-primary">구매하기</button>
+  <button id="charge" type="button" class="btn btn-primary">충전하기</button></div></div>
+  </div>
+</div>
 
 
 
