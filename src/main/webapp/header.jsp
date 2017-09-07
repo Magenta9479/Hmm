@@ -32,6 +32,10 @@
 					<li><a id="menu" href="#"><span
 							class="glyphicon glyphicon-menu-hamburger"
 							style="cursor: pointer" onclick="openNav()"></span></a></li>
+					<li>
+						<a id="home_logo" href="index.jsp">Hmm</a>
+					</li>
+
 				</ul>
 				<c:choose>
 					<c:when test="${null eq member }">
@@ -64,6 +68,10 @@
 					</c:when>
 				</c:choose>
 			</div>
+
+
+
+
 		</div>
 	</nav>
 
