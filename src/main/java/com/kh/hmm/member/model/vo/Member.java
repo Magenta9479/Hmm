@@ -14,6 +14,15 @@ public class Member {
 	private int chash;
 	private int ddaru;
 	private String job;
+
+	public String getJob() {
+		return job;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
 	private Date enrolldate;
 	private Date quitedate;
 

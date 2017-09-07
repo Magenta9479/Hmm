@@ -6,4 +6,5 @@ public interface MemberService
 {
 	//Member selectMember();
 	Member loginMember(Member m);
+	Member enrollMember(Member m);
 }
