@@ -56,10 +56,10 @@
 
 /*사이드바*/
 #sidebar-wrapper {
-  margin-left: -280px;
+  margin-left: -250px;
   top: 70px;
-  left: 280px;
-  width: 280px;
+  left: 250px;
+  width: 230px;
   background: #002F2F;
   position: fixed;
   height: 100%;
@@ -85,7 +85,7 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 280px;
+  width: 230px;
   list-style: none;
   margin: 0;
   padding: 0;
