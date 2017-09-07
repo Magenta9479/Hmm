@@ -12,6 +12,7 @@
 * {
   //border: 1px dotted gold;
   font-family: 'Hanna', serif;
+	font-weight: lighter;
 }
 
 .navbar {
@@ -19,7 +20,6 @@
   padding: 10px;
   height: 70px;
   width: 100%;
-  font-size: 16px;
 }
 
 #home_logo {
@@ -27,6 +27,7 @@
   color: white;
   font-size: 44px;
   margin-left: 600px;
+	margin-right: 400px;
 }
 
 #home_logo:hover {
@@ -36,10 +37,6 @@
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
-}
-
-#menu {
-  font-size: 30px;
 }
 
 .navbar .container-fluid .navbar-nav a {
@@ -59,10 +56,10 @@
 
 /*사이드바*/
 #sidebar-wrapper {
-  margin-left: -250px;
+  margin-left: -280px;
   top: 70px;
-  left: 250px;
-  width: 270px;
+  left: 280px;
+  width: 280px;
   background: #002F2F;
   position: fixed;
   height: 100%;
@@ -88,7 +85,7 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 280px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -103,9 +100,8 @@
 	font-size: 24px;
   display: block;
   text-decoration: none;
-  padding-left: 60px;
+  paddi: ;ng-left: 60px;
 }
-
 
 .sidebar-nav li a:hover, .sidebar-nav li.active {
   color: gold;
@@ -131,25 +127,4 @@
 	-ms-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
-}
-
-@media (max-width:767px) {
-  #wrapper {
-    padding-left: 0;
-  }
-  #sidebar-wrapper {
-    left: 0;
-  }
-  #wrapper.active {
-    position: relative;
-    left: 250px;
-  }
-  #wrapper.active #sidebar-wrapper {
-    left: 250px;
-    width: 250px;
-    transition: all 0.4s ease 0s;
-  }
-  #menu-toggle {
-    display: inline-block;
-  }
 }
