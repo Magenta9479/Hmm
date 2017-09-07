@@ -39,28 +39,11 @@
 									</div>
 									<!-- 패널의 오른쪽, 정렬창 -->
 									<div class="pull-right">
-										<!-- <select class="selectpicker">
->>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm
-						<optgroup label="검색 정렬">
-							<option>최신</option>
-							<option>조회수</option>
-							<option>추천수</option>
-						</optgroup>
-					</select> <select class="selectpicker">
-						<optgroup label="카테고리 정렬">
-							<option>모든 카테고리</option>
-							<option>아무말대잔치</option>
-							<option>프로젝트게시판</option>
-							<option>기업게시판</option>
-							<option>신기술게시판</option>
-						</optgroup>
-					</select> -->
-										<div class="sort_options">
 
+										<div class="sort_options">
 												<h3>최신순
 												<span class="glyphicon glyphicon-chevron-down"></span></h3>
 												&nbsp; &nbsp; &nbsp;
-
 												<h3>모든 카테고리
 												<span class="glyphicon glyphicon-chevron-down"></span></h3>
 												&nbsp; &nbsp;

@@ -19,14 +19,6 @@
 						<%@ include file="WEB-INF/views/member/login.jsp"%>
 						<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
 
-						<nav class="navbar navbar-inverse navbar-fixed-top">
-							<div class="container-fluid">
-
-								<div class="collapse navbar-collapse" id="myNavbar"></div>
-
-							</div>
-						</nav>
-
 						<!-- 최상단 네비게이션바와 사이드바 -->
 						<div id="wrapper">
 							<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -91,27 +83,27 @@
 								<nav id="spy">
 									<ul class="sidebar-nav nav">
 										<li>
-											<a href="#anch0">
+											<a href="#board1">
 												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;&nbsp;아무말대잔치
 											</a>
 										</li>
 										<li>
-											<a href="#anch1">
+											<a href="#board2">
 												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp;프로젝트 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#anch2">
+											<a href="#board3">
 												<span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;기업 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#anch3">
+											<a href="#board4">
 												<span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;&nbsp;신기술 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#anch4">
+											<a href="#board5">
 												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp;Q & A
 											</a>
 										</li>
@@ -126,8 +118,8 @@
 							$("#menu-toggle").click(function (e) {
 								e.preventDefault();
 								$("#wrapper").toggleClass("active");
-
 							});
+
 						</script>
 
 					</body>
