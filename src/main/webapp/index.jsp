@@ -21,7 +21,7 @@
 						<div class="thumbnail">
 							<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg" alt="Cover Photo"/>
 						</div>
-						
+
 
 						<!-- 게시판 영역 -->
 						<div class="board">
@@ -32,7 +32,7 @@
 									<div class="input-group col-md-6 pull-left">
 										<input type="text" class="search-query form-control" placeholder="검색하기..."/>
 										<span class="input-group-btn">
-											<button id="search_icon" class="btn btn-success" type="button">
+											<button id="search_icon" class="btn btn-warning" type="button">
 												<span class=" glyphicon glyphicon-search"></span>
 											</button>
 										</span>
