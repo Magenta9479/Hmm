@@ -30,9 +30,11 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	
 <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>
@@ -48,12 +50,5 @@
         <url-pattern>/*</url-pattern>
 </filter-mapping>
 
-<filter>
-  <filter-name>MultipartFilter</filter-name>
-  <filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
-</filter>
-<filter-mapping>
-  <filter-name>MultipartFilter</filter-name>
-  <url-pattern>/*</url-pattern>
-</filter-mapping>
+
 </web-app>
