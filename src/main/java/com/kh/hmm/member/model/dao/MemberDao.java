@@ -32,4 +32,14 @@ public class MemberDao
 		return member;
 		
 	}
+
+	public Member updateMember(Member m) {
+		int result;
+		Member member = null;
+		result = sqlSession.update("update", m);
+		
+		if(result >= 1)
+			member = sqlSession.selectOne("login", m);
+		return member;
+	}
 }
