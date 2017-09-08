@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- 회원수정 모달 -->
-<c:set var="job" value="${sessionScope.member.job }" />
+<c:set var="job" value="${member.job }" scope="session" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
@@ -44,9 +44,10 @@
 				</div>
 				<div class="modal-body">
 					<form action="update.do" method="POST"
-						enctype="multipart/form-data" runat="server">
-						<img id="profileImg" src="#" alt="profileImg" style="border:1px solid black; widgh:150px; height:150px;"/><br> <input
-							type='file' id="imgUpload" name="photo" />
+						enctype="multipart/form-data">
+						<img id="profileImg" src="#" alt="profileImg"
+							style="border: 1px solid black; widgh: 150px; height: 150px;" /><br>
+						<input type='file' id="imgUpload" name="photo" />
 						<hr />
 						<input type="text" name="id" placeholder="아이디"
 							value="${member.id}" readonly><br> <input

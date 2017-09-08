@@ -3,18 +3,27 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Hmm | 전 세계의 개발자들을 널리 이롭게 하리라.</title>
-		<meta charset="utf-8">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-				<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-					<link href="resources/css/header.css" rel="stylesheet" type="text/css">
-						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-					</head>
-					<body>
-						<c:set var="member" value="${sessionScope.member}"/>
-						<%
+<head>
+<title>Hmm | 전 세계의 개발자들을 널리 이롭게 하리라.</title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico"
+	rel="stylesheet">
+<link href="resources/css/header.css" rel="stylesheet" type="text/css">
+<script
+	src="https://ajax.googleapis.com/aj
+	ax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<%
+		if (session.getAttribute("member") != null)
+	%>
+	<c:set var="member" value="${sessionScope.member}" />
+
+	<%
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>
 

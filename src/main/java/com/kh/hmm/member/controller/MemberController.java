@@ -57,26 +57,34 @@ public class MemberController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "update.do", method = RequestMethod.POST)
-	public String memberUpdate(Member m, HttpSession session, @RequestParam("photo") MultipartFile file) {
+	@RequestMapping(value = "update.do", method = RequestMethod.POST,headers = ("content-type=multipart/*"))
+	public String memberUpdate(Member m, HttpSession session, @RequestParam("photo")MultipartFile uploadfile) {
 		logger.info("memberUpdate() call...");
 		int i = 1;
-		System.out.println(m);
-		String fileName = file.getOriginalFilename();
-		File f = new File("C:\\Hmm\\uploadProfile\\" + m.getId() + fileName);
 
-		if (f.exists()) {
-			f = new File("C:\\Hmm\\uploadProfile\\" + m.getId() + fileName + (i++));
-		}
 		Member member = memberService.enrollMember(m);
 		if (member != null) {
 			session.setAttribute("member", member);
-			try {
-				file.transferTo(f);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			uploadfile = m.getUploadFile();
+			if (uploadfile != null) {
+				String fileName = uploadfile.getOriginalFilename();
+				m.setPhoto(fileName);
+				try {
+					// 1. FileOutputStream 사용
+					// byte[] fileData = file.getBytes();
+					// FileOutputStream output = new FileOutputStream("C:/images/" + fileName);
+					// output.write(fileData);
 
+					// 2. File 사용
+					File file = new File("C:\\Hmm\\uploadProfile\\" + m.getId() + fileName);
+					if (file.exists()) {
+						file = new File("C:\\Hmm\\uploadProfile\\" + m.getId() + fileName + (i++));
+					}
+					uploadfile.transferTo(file);
+				} catch (Exception e) {
+					e.printStackTrace();
+				} // try - catch
+			} // if
 		}
 		return "redirect:/";
 	}
