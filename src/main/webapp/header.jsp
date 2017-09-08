@@ -9,8 +9,7 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 				<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 					<link href="resources/css/header.css" rel="stylesheet" type="text/css">
-						<script src="https://ajax.googleapis.com/aj
-	ax/libs/jquery/3.2.1/jquery.min.js"></script>
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 					</head>
 					<body>
@@ -50,7 +49,7 @@
 											<!-- 로그인 관련 메뉴 및 모달 -->
 											<c:choose>
 												<c:when test="${null eq member }">
-													<ul class="nav navbar-nav navbar-right">
+													<ul class="nav navbar-nav">
 														<li data-toggle="modal" data-target="#loginModal">
 															<a style="cursor: pointer">
 																<span class="glyphicon glyphicon-log-in"></span>
@@ -67,7 +66,7 @@
 												</c:when>
 
 												<c:when test="${null ne member }">
-													<ul class="nav navbar-nav navbar-right">
+													<ul class="nav navbar-nav">
 														<li data-toggle="modal" data-target="#updateModal">
 															<a href="#">
 																<span class="glyphicon glyphicon-user">
@@ -94,32 +93,32 @@
 									<ul class="sidebar-nav nav">
 										<li>
 											<a href="#anch0">
-												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;&nbsp;아무말대잔치
+												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말대잔치
 											</a>
 										</li>
 										<li>
 											<a href="#anch1">
-												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp;프로젝트 게시판
+												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;프로젝트 게시판
 											</a>
 										</li>
 										<li>
 											<a href="#anch2">
-												<span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;기업 게시판
+												<span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;기업 게시판
 											</a>
 										</li>
 										<li>
 											<a href="#anch3">
-												<span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;&nbsp;신기술 게시판
+												<span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;신기술 게시판
 											</a>
 										</li>
 										<li>
 											<a href="#anch4">
-												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp;Q & A
+												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;Q & A
 											</a>
 										</li>
 										<li>
 											<a href="cashshop.jsp">
-												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp; 캐쉬샵
+												<span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp; 캐쉬샵
 											</a>
 										</li>
 									</ul>
