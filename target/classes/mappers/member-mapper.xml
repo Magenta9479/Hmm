@@ -5,15 +5,14 @@
 <mapper namespace="memberMapper">
 
 	<resultMap id="memberResultMap" type="Member"></resultMap>
-	<!-- <select id="selectMember" parameterType="Member" resultType="Member"> 
-		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWD =#{passwd} </select> -->
-
-	<!-- <select id="selectMember" resultType="Member">
+	<select id="login" resultMap="memberResultMap" parameterType="Member"
+		resultType="Member">
 		SELECT * FROM MEMBER WHERE
-		ID = #{id} AND PASSWD =#{passwd}
-	</select> -->
-	<select id="login" resultMap="memberResultMap" parameterType="Member" resultType="Member">
-		SELECT * FROM MEMBER WHERE
-		ID = #{id} AND PASSWORD =#{password}
+		ID = #{id} AND PASSWORD = #{password}
 	</select>
+
+	<insert id="enroll">
+		insert into member
+		values (MEM_SEQ.NEXTVAL,#{id},#{password},#{nickname},#{email},null,0,0,0,0,#{job},SYSDATE,null)
+	</insert>
 </mapper>

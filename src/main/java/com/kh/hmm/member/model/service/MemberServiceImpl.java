@@ -18,12 +18,10 @@ public class MemberServiceImpl implements MemberService
 	{
 		return mDao.loginMember(m);
 	}
-	
-	/*@Override
-	public Member selectMember()
-	{
-		return mDao.selectMember();
-	}*/
-	
-	
+
+	@Override
+	public Member enrollMember(Member m) {
+		// TODO Auto-generated method stub
+		return mDao.enrollMember(m);
+	}
 }

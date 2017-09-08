@@ -19,6 +19,17 @@ public class MemberDao
 
 	public Member loginMember(Member m)
 	{
-		return (Member)sqlSession.selectOne("login",m);
+		return sqlSession.selectOne("login",m);
+	}
+
+	public Member enrollMember(Member m) {
+		int result;
+		Member member = null;
+		result = sqlSession.insert("enroll", m);
+		
+		if(result >= 1)
+			member = sqlSession.selectOne("login",m);
+		return member;
+		
 	}
 }
