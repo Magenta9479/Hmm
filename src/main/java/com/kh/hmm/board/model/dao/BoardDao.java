@@ -28,9 +28,30 @@ public class BoardDao
 		3	신기술
 		4	아무말대잔치
 		5	프로젝트/소스*/
-		
-		if(dis==0)result="All";		
-		else result="";		
+		switch(dis) 
+		{
+			case 0:	
+				result="All";
+				break;
+			case 1:	
+				result="Com";
+				break;
+			case 2:
+				result="QnA";
+				break;
+			case 3:			
+				result="Tech";
+				break;
+			case 4:			
+				result="Amu";
+				break;
+			case 5:			
+				result="PS";
+				break;
+			default:
+				System.out.println("Can't!!");
+				break;
+		}
 		
 		return pre+result+post;
 	}
@@ -44,8 +65,8 @@ public class BoardDao
 	{
 		pre="select";
 		post="BoardList";
-				
-		List<Board> list=sqlSession.selectList(distributor(dis,pre,post),dis);		
+		
+		List<Board> list=sqlSession.selectList(distributor(dis,pre,post));		
 		
 		return (ArrayList<Board>)list;		
 	}
