@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+/*
+#E6E2AF
+#A7A37E
+#EFECCA
+#046380
+#002F2F
+*/
+
+* {
+  //border: 1px dotted gold;
+  font-family: 'Hanna', serif;
+	font-weight: lighter;
+}
+
+.navbar {
+  background-color: #002F2F;
+  padding: 10px;
+  height: 70px;
+  width: 100%;
+}
+
+#home_logo {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 44px;
+  margin-left: 600px;
+	margin-right: 400px;
+}
+
+#home_logo:hover {
+  color: gold;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.navbar .container-fluid .navbar-nav a {
+  font-family: 'Hanna', serif;
+  font-size: 20px;
+  color: white;
+}
+
+.navbar .container-fluid .navbar-nav a:hover {
+  color: gold;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+/*사이드바*/
+#sidebar-wrapper {
+  margin-left: -280px;
+  top: 70px;
+  left: 280px;
+  width: 280px;
+  background: #002F2F;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  padding-top: 70px;
+  transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 280px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  color: white;
+	font-size: 24px;
+  display: block;
+  text-decoration: none;
+  paddi: ;ng-left: 60px;
+}
+
+.sidebar-nav li a:hover, .sidebar-nav li.active {
+  color: gold;
+	background-color: green;
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+	background-color: red;
+}
+
+#menu-toggle {
+  text-decoration: none;
+	font-size: 30px;
+  float: left;
+  color: #fff;
+}
+
+#menu-toggle:hover {
+	color: gold;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
