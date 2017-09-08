@@ -39,6 +39,10 @@
 									</div>
 									<!-- 패널의 오른쪽, 정렬창 -->
 									<div class="pull-right">
+<<<<<<< HEAD
+										<div class="sort_options">
+=======
+>>>>>>> branch 'jhxxx' of https://github.com/Magenta9479/Hmm.git
 
 										<div class="sort_options">
 												<h3>최신순
