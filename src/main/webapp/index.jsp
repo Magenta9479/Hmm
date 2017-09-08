@@ -21,7 +21,7 @@
 						<div class="thumbnail">
 							<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg" alt="Cover Photo"/>
 						</div>
-						<a href="cashshop.jsp">캐쉬샵</a>
+						
 
 						<!-- 게시판 영역 -->
 						<div class="board">
