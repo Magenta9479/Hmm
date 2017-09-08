@@ -24,7 +24,7 @@ public class BoardServiceImpl implements BoardService
 	}
 
 	@Override
-	public ArrayList<Board> SelectBoardList(int dis)
+	public ArrayList<Board> selectBoardList(int dis)
 	{
 		return bDao.selectBoardList(dis);
 	}
@@ -46,7 +46,5 @@ public class BoardServiceImpl implements BoardService
 	{
 		return bDao.deleteBoard(b);
 	}
-
-
 	
 }

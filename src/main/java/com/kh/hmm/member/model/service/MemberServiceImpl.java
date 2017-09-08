@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.kh.hmm.member.model.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,36 +25,3 @@ public class MemberServiceImpl implements MemberService
 		return mDao.enrollMember(m);
 	}
 }
-=======
-package com.kh.hmm.member.model.service;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.kh.hmm.member.model.dao.MemberDao;
-import com.kh.hmm.member.model.vo.Member;
-
-@Service("memberService")
-public class MemberServiceImpl implements MemberService
-{
-
-	@Autowired
-	private MemberDao mDao;
-
-	@Override
-	public Member loginMember(Member m)
-	{
-		return mDao.loginMember(m);
-	}
-
-	@Override
-	public Member enrollMember(Member m) {
-		return mDao.enrollMember(m);
-	}
-
-	@Override
-	public Member updateMember(Member m) {
-		return mDao.updateMember(m);
-	}
-}
->>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm.git
