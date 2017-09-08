@@ -22,7 +22,7 @@
 							<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg" alt="Cover Photo"/>
 						</div>
 						<a href="cashshop.jsp">캐쉬샵</a>
-
+						<a href="boardAllList.do">시발</a>
 						<!-- 게시판 영역 -->
 						<div class="board">
 							<!-- 검색창, 검색 정렬들의 패널 -->
