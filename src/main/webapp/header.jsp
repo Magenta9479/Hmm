@@ -18,7 +18,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<%
+		if (session.getAttribute("member") != null)
+	%>
 	<c:set var="member" value="${sessionScope.member}" />
+
 	<%
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>

@@ -2,6 +2,8 @@ package com.kh.hmm.member.model.vo;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Member {
 	private int membercode;
 	private String id;
@@ -16,6 +18,15 @@ public class Member {
 	private String job;
 	private Date enrolldate;
 	private Date quitedate;
+	private MultipartFile uploadFile;
+
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
 
 	public Member() {
 	}
