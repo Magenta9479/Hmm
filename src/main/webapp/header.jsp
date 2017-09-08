@@ -107,7 +107,7 @@
 										</li>
 										<li>
 											<a href="board.jsp?dis=5">
-												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;프로젝트 게시판
+												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;프로젝트 및 소스 게시판
 											</a>
 										</li>
 										<li>
