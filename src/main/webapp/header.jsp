@@ -9,23 +9,31 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 				<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 					<link href="resources/css/header.css" rel="stylesheet" type="text/css">
-						<script src="https://ajax.googleapis.com/aj
-	ax/libs/jquery/3.2.1/jquery.min.js"></script>
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 					</head>
 					<body>
-						<c:set var="member" value="${member}" scope="session"/>
+						<c:set var="member" value="${sessionScope.member}"/>
+						<%
+		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
+	%>
 
 						<%@ include file="WEB-INF/views/member/login.jsp"%>
 						<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
+						<%@ include file="WEB-INF/views/member/updateMember.jsp"%>
+
+						<nav class="navbar navbar-inverse navbar-fixed-top">
+							<div class="container-fluid">
+								<div class="collapse navbar-collapse" id="myNavbar"></div>
+							</div>
+						</nav>
 
 						<!-- 최상단 네비게이션바와 사이드바 -->
 						<div id="wrapper">
 							<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 								<div class="container-fluid">
 									<div class="navbar-header">
-										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-										</button>
+										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"></button>
 										<div class="navbar-brand">
 											<a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
 												<i class="fa fa-bars"></i>
@@ -34,12 +42,14 @@
 									</div>
 									<div id="navbar" class="collapse navbar-collapse">
 										<ul class="nav navbar-nav">
-												<!-- 홈페이지 로고 -->
-												<li><a id="home_logo" href="index.jsp">Hmm</a></li>
+											<!-- 홈페이지 로고 -->
+											<li>
+												<a id="home_logo" href="index.jsp">Hmm</a>
+											</li>
 											<!-- 로그인 관련 메뉴 및 모달 -->
 											<c:choose>
 												<c:when test="${null eq member }">
-													<ul class="nav navbar-nav navbar-right">
+													<ul class="nav navbar-nav">
 														<li data-toggle="modal" data-target="#loginModal">
 															<a style="cursor: pointer">
 																<span class="glyphicon glyphicon-log-in"></span>
@@ -47,7 +57,7 @@
 															</a>
 														</li>
 														<li data-toggle="modal" data-target="#insertModal">
-															<a style="cursor:pointer">
+															<a style="cursor: pointer">
 																<span class="glyphicon glyphicon-user"></span>
 																회원가입
 															</a>
@@ -56,8 +66,8 @@
 												</c:when>
 
 												<c:when test="${null ne member }">
-													<ul class="nav navbar-nav navbar-right">
-														<li>
+													<ul class="nav navbar-nav">
+														<li data-toggle="modal" data-target="#updateModal">
 															<a href="#">
 																<span class="glyphicon glyphicon-user">
 																	<c:out value="${member.nickname }"/>
@@ -75,7 +85,6 @@
 											</c:choose>
 										</ul>
 									</div>
-									<!--/.nav-collapse -->
 								</div>
 							</nav>
 							<!-- 사이드바 -->
@@ -83,6 +92,7 @@
 								<nav id="spy">
 									<ul class="sidebar-nav nav">
 										<li>
+
 											<a href="board.jsp?dis=4">
 												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;&nbsp;아무말대잔치
 											</a>
@@ -106,6 +116,12 @@
 											<a href="board.jsp?dis=2">
 
 												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp;Q & A
+                      </a>
+										</li>
+										<li>
+											<a href="cashshop.jsp">
+												<span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp; 캐쉬샵
+
 											</a>
 										</li>
 									</ul>
@@ -115,13 +131,10 @@
 						</div>
 
 						<script>
-
 							$("#menu-toggle").click(function (e) {
 								e.preventDefault();
 								$("#wrapper").toggleClass("active");
 							});
-
 						</script>
-
 					</body>
 				</html>
