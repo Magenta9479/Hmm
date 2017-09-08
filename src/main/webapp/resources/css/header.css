@@ -42,7 +42,6 @@
   font-family: 'Pacifico', cursive;
   color: white;
   font-size: 44px;
-  margin-left: 600px;
 }
 
 #home_logo:hover {
@@ -52,6 +51,10 @@
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+}
+
+.navbar .container-fluid .navbar-nav {
+  float: right;
 }
 
 .navbar .container-fluid .navbar-nav a {
@@ -71,10 +74,10 @@
 
 /*사이드바*/
 #sidebar-wrapper {
-  margin-left: -280px;
+  margin-left: -240px;
   top: 70px;
   left: 0;
-  width: 280px;
+  width: 240px;
   background: #002F2F;
   position: fixed;
   height: 100%;
@@ -84,11 +87,11 @@
 }
 
 #wrapper.active {
-  padding-left: 280px;;
+  padding-left: 240px;;
 }
 
 #wrapper.active #sidebar-wrapper {
-  left: 280px;
+  left: 240px;
 }
 
 #page-content-wrapper {
