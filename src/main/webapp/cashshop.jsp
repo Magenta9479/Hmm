@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="resources/css/cashshop.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,6 +16,75 @@
 <title>CashShop</title>
 <style type="text/css">
 
+=======
+<!-- <link rel="stylesheet" type="text/css" href="cashshop.css"> -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>CashShop</title>
+<style type="text/css">
+#residualcash {
+	margin-top: 180px;
+}
+#salesitem{
+	margin-top : 100px;
+}
+
+#container-fluid {
+	margin-top: 100px;
+	margin-left: 9%;
+	width: 100%;
+}
+
+#container-fluid1 {
+	margin-top: 100px;
+	margin-left: 9%;
+	width: 100%;
+}
+
+#box {
+	margin-right: 30px;
+	width: 300px;
+	height: 200px;
+	left: 16%;
+}
+
+#button {
+	position: absolute;
+	top: 210px;
+	width: 300px;
+	height: 200px;
+	right: 20px;
+	left: 2px;
+}
+
+#buy {
+	width: 45%;
+	margin-right: 20px;
+}
+
+#charge {
+	width: 45%;
+}
+
+#cash {
+	size: 200px;
+}
+
+#menu {
+	position : fixed;
+	top: 200px;
+	width: 100%;
+	left: 83%;
+	height :30% ;
+}
+#submenu{
+	width : 8%;
+}
+>>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm.git
 </style>
 <%@ include file="/header.jsp"%>
 </head>
