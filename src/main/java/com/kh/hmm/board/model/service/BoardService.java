@@ -9,9 +9,9 @@ public interface BoardService
 {
 	Board selectBoard(int boardCode);
 	
-	ArrayList<Board> SelectBoardList(int dis);
+	ArrayList<Board> selectBoardList(int dis);
 	//0:All,1:Com,2:QnA,3:Tech,4:Amu,5:PS
-	
+		
 	int insertBoard(Board b);
 	
 	int updateBoard(Board b);

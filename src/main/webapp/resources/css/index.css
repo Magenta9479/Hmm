@@ -34,12 +34,11 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-.board_area {
+.board {
 	border: none;
 	background-color: white;
 	height: 100%;
 	width: auto;
-<<<<<<< HEAD
 	margin-left: 250px;
 	margin-right: 250px;
 }
@@ -58,28 +57,6 @@ body {
 .selectpicker:hover {
 	cursor: pointer;
 }*/
-=======
-	margin-left: 300px;
-	margin-right: 300px;
-}
-
-.panel {
-	border: none;
-}
-
-/*.selectpicker {
-	padding: 7px;
-	width: 200px;
-	border: 1px solid silver;
-	border-radius: 5px;
-}
-
-.selectpicker:hover {
-	cursor: pointer;
-}*/
-
-
->>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm.git
 .sort_options h3{
 	display: inline;
 	font-size: 16px;

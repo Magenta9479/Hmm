@@ -1,24 +1,40 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mapper PUBLIC
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="boardMapper">
 
-<!-- 	<resultMap type="boardResultMap" id="Board"></resultMap> -->
+ 	<resultMap id="boardResultMap" type="Board"></resultMap>
 	
+	<select id="selectAllBoardList" resultMap="boardResultMap" resultType="Board">
+		SELECT A.BCODE,TITLE,CONTENT,DISTINGUISH,WRITERNICK,WRITERID,POSTDATE,ISDELETE,HASFILE,NAME,VIEWNUM,BEST,GOOD,BAD,WORST,(SELECT COUNT(*) FROM COMMENTS D WHERE D.BCODE=A.BCODE) COMMENTNUM
+		FROM BOARD A
+		JOIN BOARDCODE B 
+		ON A.DISTINGUISH=B.DISCODE
+		JOIN BOARDPOINT C
+		ON A.BCODE=C.BCODE
+	</select>
+	
+ 	<select id="selectBoardList" resultMap="boardResultMap" resultType="Board" parameterType="_int">
+		SELECT *
+		FROM BOARD
+		WHERE DISTINGUISH=${dis}
+	</select>
+	
+	<!--
 	<select id="selectAllBoardList" resultType="Board">
 		SELECT *
 		FROM BOARD
 	</select>
 	
+	<select id="selectAllBoardList" resultType="Board">
+		SELECT *
+		FROM BOARD
+	</select> 
+	
+	<select id="selectAllBoardList" resultType="Board">
+		SELECT *
+		FROM BOARD
+	</select> -->
+	
 </mapper>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE mapper PUBLIC
-"-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Board">
-
-</mapper>
->>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm.git
