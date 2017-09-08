@@ -12,7 +12,7 @@
 * {
   //border: 1px dotted gold;
   font-family: 'Hanna', serif;
-	font-weight: lighter;
+  font-weight: lighter;
 }
 
 .navbar {
@@ -20,22 +20,24 @@
   padding: 10px;
   height: 70px;
   width: 100%;
+  border: none;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #menu-toggle {
   text-decoration: none;
-	font-size: 26px;
+  font-size: 26px;
   float: left;
   color: #fff;
 }
 
 #menu-toggle:hover {
-	color: gold;
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-ms-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
-	transition: all 500ms ease;
+  color: gold;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
 #home_logo {
@@ -72,7 +74,9 @@
   transition: all 500ms ease;
 }
 
+
 /*사이드바*/
+
 #sidebar-wrapper {
   margin-left: -240px;
   top: 70px;
@@ -84,10 +88,12 @@
   overflow-y: auto;
   z-index: 1000;
   transition: all 0.4s ease 0s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #wrapper.active {
-  padding-left: 240px;;
+  padding-left: 240px;
+  ;
 }
 
 #wrapper.active #sidebar-wrapper {
@@ -115,20 +121,15 @@
 
 .sidebar-nav li a {
   color: white;
-	font-size: 18px;
+  font-size: 18px;
   display: block;
   text-decoration: none;
   padding-left: 25px;
 }
 
-.sidebar-nav li a:hover, .sidebar-nav li.active {
+.sidebar-nav li a:hover, .sidebar-nav li.active, .sidebar-nav li a:focus {
   background-color: gold;
   color: black;
   font-size: 22px;
-}
-
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
-	background-color: gold;
-  color: black;
-  font-size: 22px;
+  transition: 0.4s;
 }

@@ -93,7 +93,7 @@
 									<ul class="sidebar-nav nav">
 										<li>
 											<a href="#anch0">
-												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말대잔치
+												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말 대잔치
 											</a>
 										</li>
 										<li>
