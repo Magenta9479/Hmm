@@ -132,6 +132,12 @@
 								e.preventDefault();
 								$("#wrapper").toggleClass("active");
 							});
+
+							$("#home_logo").click(function (e) {
+							e.preventDefault();
+							$("#wrapper").removeClass("active");
+						});
+
 						</script>
 					</body>
 				</html>
