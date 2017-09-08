@@ -111,7 +111,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="#anch4">
+											<a href="QnA.jsp">
 												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp;Q & A
 											</a>
 										</li>
