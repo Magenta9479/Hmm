@@ -1,8 +1,7 @@
 package com.kh.hmm.member.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.apache.catalina.connector.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +40,17 @@ public class MemberController
 		if(session.getAttribute("member") != null){			
 			session.invalidate();
 		}
-		
 		return "home";
 		
 	}
 	
-	@RequestMapping("enroll.do")
-	public String memberInsert(Member m){
-		logger.info("memberInsert() call..."); 
-		return "member/enroll";
+	@RequestMapping(value="enroll.do", method = RequestMethod.POST)
+	public String memberInsert(Member m, HttpSession session){
+		logger.info("memberInsert() call...");
+		System.out.println(m);
+		Member member = memberService.enrollMember(m);
+		if(member != null)
+			session.setAttribute("member", member);
+		return "home";
 	}
 }
