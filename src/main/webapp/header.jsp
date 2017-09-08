@@ -103,7 +103,11 @@
 											</a>
 										</li>
 										<li>
+<<<<<<< HEAD
+											<a href="QnA.jsp">
+=======
 											<a href="#board5">
+>>>>>>> 8d47a417f22cf4da455857c211144a2df50f52d2
 												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp;Q & A
 											</a>
 										</li>

@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+#residualcash {
+	margin-top: 180px;
+}
+#salesitem{
+	margin-top : 100px;
+}
+
+#container-fluid {
+	margin-top: 100px;
+	margin-left: 9%;
+	width: 100%;
+}
+
+#container-fluid1 {
+	margin-top: 100px;
+	margin-left: 9%;
+	width: 100%;
+}
+
+#box {
+	margin-right: 30px;
+	width: 300px;
+	height: 200px;
+	left: 16%;
+}
+
+#button {
+	position: absolute;
+	top: 210px;
+	width: 300px;
+	height: 200px;
+	right: 20px;
+	left: 2px;
+}
+
+#buy {
+	width: 45%;
+	margin-right: 20px;
+}
+
+#charge {
+	width: 45%;
+}
+
+#cash {
+	size: 200px;
+}
+
+#menu {
+	position : fixed;
+	top: 200px;
+	width: 100%;
+	left: 83%;
+	height :30% ;
+}
+#submenu{
+	width : 8%;
+}
