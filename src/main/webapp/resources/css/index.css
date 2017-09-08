@@ -34,7 +34,7 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-.board {
+.board_area {
 	border: none;
 	background-color: white;
 	height: 100%;

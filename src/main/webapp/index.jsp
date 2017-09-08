@@ -24,7 +24,7 @@
 
 
 						<!-- 게시판 영역 -->
-						<div class="board">
+						<div class="board_area">
 							<!-- 검색창, 검색 정렬들의 패널 -->
 							<div class="panel panel-default">
 								<div class="panel-body">
@@ -53,7 +53,7 @@
 								</div>
 
 								<!-- 게시판 테이블 -->
-								<div class="table-responsive">
+								<div id="board" class="table-responsive">
 									<table class="table table-hover table-striped">
 										<thead>
 											<tr>
@@ -468,6 +468,22 @@
 							</div>
 
 						</div>
+
+						<script>
+						
+		var offset = $('#board tr').length;
+
+		$('#board').endlessScroll({
+			fireOnce: false,
+			fireDelay: false,
+			loader: '',
+			insertAfter: '#board tr:last',
+			content: function(i) {
+				return '<tr>' + (i + offset) + '</tr>';
+			}
+		});
+
+						</script>
 
 					</body>
 				</html>
