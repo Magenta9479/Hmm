@@ -27,7 +27,7 @@
   color: white;
   font-size: 44px;
   margin-left: 600px;
-	margin-right: 480px;
+	margin-right: 400px;
 }
 
 #home_logo:hover {
@@ -56,10 +56,10 @@
 
 /*사이드바*/
 #sidebar-wrapper {
-  margin-left: -250px;
+  margin-left: -280px;
   top: 70px;
-  left: 0;
-  width: 250px;
+  left: 280px;
+  width: 280px;
   background: #002F2F;
   position: fixed;
   height: 100%;
@@ -73,7 +73,7 @@
 }
 
 #wrapper.active #sidebar-wrapper {
-  left: 250px;
+  left: 0;
 }
 
 #page-content-wrapper {
@@ -85,7 +85,7 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 280px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -100,8 +100,7 @@
 	font-size: 24px;
   display: block;
   text-decoration: none;
-	padding-left: 30px;
-
+  paddi: ;ng-left: 60px;
 }
 
 .sidebar-nav li a:hover, .sidebar-nav li.active {

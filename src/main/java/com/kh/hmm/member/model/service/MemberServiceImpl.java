@@ -21,7 +21,11 @@ public class MemberServiceImpl implements MemberService
 
 	@Override
 	public Member enrollMember(Member m) {
-		// TODO Auto-generated method stub
 		return mDao.enrollMember(m);
+	}
+
+	@Override
+	public Member updateMember(Member m) {
+		return mDao.updateMember(m);
 	}
 }
