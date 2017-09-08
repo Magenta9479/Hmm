@@ -2,6 +2,42 @@
 <!DOCTYPE mapper PUBLIC
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Board">
+<mapper namespace="boardMapper">
 
+ 	<resultMap id="boardResultMap" type="Board"></resultMap>
+ 	
+	<sql id="boardTemplate">
+		SELECT A.BCODE,TITLE,CONTENT,DISTINGUISH,WRITERNICK,WRITERID,POSTDATE,ISDELETE,HASFILE,NAME,VIEWNUM,BEST,GOOD,BAD,WORST,(SELECT COUNT(*) FROM COMMENTS D WHERE D.BCODE=A.BCODE) COMMENTNUM
+		FROM BOARD A
+		JOIN BOARDCODE B 
+		ON A.DISTINGUISH=B.DISCODE
+		JOIN BOARDPOINT C
+		ON A.BCODE=C.BCODE
+	</sql>
+	
+	<select id="selectAllBoardList" resultMap="boardResultMap" resultType="Board">
+		<include refid="boardTemplate"/>
+	</select>
+	
+ 	<select id="selectBoardList" resultMap="boardResultMap" resultType="Board" parameterType="int">
+		<include refid="boardTemplate"/>
+		WHERE A.DISTINGUISH=#{dis}
+	</select>
+	
+	<!--
+	<select id="selectAllBoardList" resultType="Board">
+		SELECT *
+		FROM BOARD
+	</select>
+	
+	<select id="selectAllBoardList" resultType="Board">
+		SELECT *
+		FROM BOARD
+	</select> 
+	
+	<select id="selectAllBoardList" resultType="Board">
+		SELECT *
+		FROM BOARD
+	</select> -->
+	
 </mapper>

@@ -25,12 +25,12 @@ public class BoardController
 	@Autowired
 	private BoardService boardService;
 	
-	@RequestMapping(value = "boardAllList.do", method = RequestMethod.GET)
-	public String selectBoardList(Board b, Model model) 
+	@RequestMapping(value = "boardLists.do", method = RequestMethod.GET)
+	public String selectBoardList(Model model,int dis) 
 	{
 		logger.info("selectBoardList() call...");
 		
-		ArrayList<Board> list=boardService.selectBoardList(0);		
+		ArrayList<Board> list=boardService.selectBoardList(dis);		
 		
 		if(list != null)
 		{
@@ -40,4 +40,6 @@ public class BoardController
 		return "../../index";
 	}
 
+	
+	
 }
