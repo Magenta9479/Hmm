@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC
+"-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.kh.hmm.member.model.vo.Member" alias="Member" />
+		<typeAlias type="com.kh.hmm.board.model.vo.Board" alias="Board" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mappers/member-mapper.xml" />
+		<mapper resource="mappers/board-mapper.xml" />
+	</mappers>
+</configuration>
+=======
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE configuration PUBLIC
 "-//mybatis.org//DTD Config 3.0//EN"
@@ -11,3 +28,4 @@
 		<mapper resource="mappers/member-mapper.xml" />
 	</mappers>
 </configuration>
+>>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm.git

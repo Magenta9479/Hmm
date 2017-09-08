@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+
+<!-- 	<resultMap type="boardResultMap" id="Board"></resultMap> -->
+	
+	<select id="selectAllBoardList" resultType="Board">
+		SELECT *
+		FROM BOARD
+	</select>
+	
+</mapper>
+=======
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mapper PUBLIC
 "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -5,3 +21,4 @@
 <mapper namespace="Board">
 
 </mapper>
+>>>>>>> branch 'master' of https://github.com/Magenta9479/Hmm.git
