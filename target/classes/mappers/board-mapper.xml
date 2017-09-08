@@ -5,20 +5,23 @@
 <mapper namespace="boardMapper">
 
  	<resultMap id="boardResultMap" type="Board"></resultMap>
-	
-	<select id="selectAllBoardList" resultMap="boardResultMap" resultType="Board">
+ 	
+	<sql id="boardTemplate">
 		SELECT A.BCODE,TITLE,CONTENT,DISTINGUISH,WRITERNICK,WRITERID,POSTDATE,ISDELETE,HASFILE,NAME,VIEWNUM,BEST,GOOD,BAD,WORST,(SELECT COUNT(*) FROM COMMENTS D WHERE D.BCODE=A.BCODE) COMMENTNUM
 		FROM BOARD A
 		JOIN BOARDCODE B 
 		ON A.DISTINGUISH=B.DISCODE
 		JOIN BOARDPOINT C
 		ON A.BCODE=C.BCODE
+	</sql>
+	
+	<select id="selectAllBoardList" resultMap="boardResultMap" resultType="Board">
+		<include refid="boardTemplate"/>
 	</select>
 	
- 	<select id="selectBoardList" resultMap="boardResultMap" resultType="Board" parameterType="_int">
-		SELECT *
-		FROM BOARD
-		WHERE DISTINGUISH=${dis}
+ 	<select id="selectBoardList" resultMap="boardResultMap" resultType="Board" parameterType="int">
+		<include refid="boardTemplate"/>
+		WHERE A.DISTINGUISH=#{dis}
 	</select>
 	
 	<!--

@@ -5,7 +5,7 @@
 
 <c:if test="${list eq null}">
 	<script>
-		window.location.href="boardAllList.do";
+		window.location.href="boardLists.do?dis=0";
 	</script>
 </c:if>
 

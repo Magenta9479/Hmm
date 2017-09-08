@@ -83,27 +83,27 @@
 								<nav id="spy">
 									<ul class="sidebar-nav nav">
 										<li>
-											<a href="#board1">
+											<a href="board.jsp?dis=4">
 												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;&nbsp;아무말대잔치
 											</a>
 										</li>
 										<li>
-											<a href="#board2">
+											<a href="board.jsp?dis=5">
 												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;&nbsp;프로젝트 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#board3">
+											<a href="board.jsp?dis=1">
 												<span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;&nbsp;기업 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#board4">
+											<a href="board.jsp?dis=3">
 												<span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;&nbsp;신기술 게시판
 											</a>
 										</li>
 										<li>
-											<a href="QnA.jsp">
+											<a href="board.jsp?dis=2">
 
 												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;&nbsp;Q & A
 											</a>
