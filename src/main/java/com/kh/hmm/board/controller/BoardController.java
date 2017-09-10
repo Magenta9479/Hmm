@@ -28,7 +28,7 @@ public class BoardController
 	@RequestMapping(value = "boardLists.do", method = RequestMethod.GET)
 	public String selectBoardList(Model model,int dis) 
 	{
-		logger.info("selectBoardList() call...");
+		logger.info("selectBoardList("+dis+") call...");
 		
 		ArrayList<Board> list=boardService.selectBoardList(dis);		
 		
