@@ -15,11 +15,11 @@
 						<nav id="bottom_navbar" class="navbar bottomnav">
 							<div class="container-fluid">
 								<ul>
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Careers</a></li>
-									<li><a href="#">Terms</a></li>
-									<li><a href="#">Privacy</a></li>
-									<li><a href="#">Contact</a></li>
+									<li><a href="#">About Hmm</a></li>
+									<li><a href="#">구인란</a></li>
+									<li><a href="#">이용약관</a></li>
+									<li><a href="#">개인정보 약관</a></li>
+									<li><a href="#">연락처 및 찾아오시는 길</a></li>
 								</ul>
 							</div>
 						</nav>

@@ -100,12 +100,6 @@
   left: 240px;
 }
 
-#page-content-wrapper {
-  width: 100%;
-  padding-top: 70px;
-  transition: all 0.4s ease 0s;
-}
-
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -124,7 +118,7 @@
   font-size: 18px;
   display: block;
   text-decoration: none;
-  padding-left: 25px;
+  padding-left: 50px;
 }
 
 .sidebar-nav li a:hover, .sidebar-nav li:active, .sidebar-nav li a:focus {
