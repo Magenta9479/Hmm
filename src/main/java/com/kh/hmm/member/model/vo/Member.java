@@ -1,10 +1,11 @@
 package com.kh.hmm.member.model.vo;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class Member {
+public class Member implements Serializable {
 	private int membercode;
 	private String id;
 	private String password;
