@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Hmm | 전 세계의 개발자들을 널리 이롭게 하리라.1</title>
+		<title>Hmm | 전 세계의 개발자들을 널리 이롭게 하리라.</title>
 		<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
