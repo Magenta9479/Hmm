@@ -8,6 +8,7 @@
 		<typeAlias type="com.kh.hmm.board.model.vo.Board" alias="Board" />
 		<typeAlias type="com.kh.hmm.board.model.vo.Comments" alias="Comments" />
 		<typeAlias type="com.kh.hmm.board.model.vo.Attachfile" alias="Attachfile" />
+		<typeAlias type="com.kh.hmm.item.model.vo.Item" alias="Item" />
 	</typeAliases>
 
 	<mappers>
@@ -15,5 +16,6 @@
 		<mapper resource="mappers/board-mapper.xml" />
 		<mapper resource="mappers/comments-mapper.xml" />
 		<mapper resource="mappers/attachfile-mapper.xml" />
+		<mapper resource="mappers/item-mapper.xml" />
 	</mappers>
 </configuration>
