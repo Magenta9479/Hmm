@@ -35,9 +35,9 @@ public class BoardDao
 		return pre+result+post;
 	}
 	
-	public Board selectBoardOne(int bCode) 
+	public Board selectBoardOne(int bcode) 
 	{
-		return (Board)sqlSession.selectOne("selectBoardOne");
+		return (Board)sqlSession.selectOne("selectBoardOne",bcode);
 	}
 	
 	public ArrayList<Board> selectBoardList(int dis)

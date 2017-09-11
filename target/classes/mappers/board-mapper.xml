@@ -19,9 +19,14 @@
 		<include refid="boardTemplate"/>
 	</select>
 	
- 	<select id="selectBoardList" resultMap="boardResultMap" resultType="Board" parameterType="int">
+ 	<select id="selectBoardList" resultMap="boardResultMap" resultType="Board" parameterType="_int">
 		<include refid="boardTemplate"/>
 		WHERE A.DISTINGUISH=#{dis}
+	</select>
+	
+	<select id="selectBoardOne" resultType="Board" parameterType="_int">
+		<include refid="boardTemplate"/>
+		WHERE A.BCODE=#{bcode}
 	</select>
 	
 	<!--
