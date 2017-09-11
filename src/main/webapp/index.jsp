@@ -1,10 +1,10 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="org.springframework.ui.Model" %>
 <c:if test="${list eq null}">
 	<script>
-		window.location.href="boardLists.do?dis=0";
+		window.location.href = "boardLists.do?dis=0";
 	</script>
 </c:if>
 
@@ -30,7 +30,6 @@
 							<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg" alt="Cover Photo"/>
 						</div>
 
-
 						<!-- 게시판 영역 -->
 						<div class="board">
 							<!-- 검색창, 검색 정렬들의 패널 -->
@@ -49,13 +48,15 @@
 									<div class="pull-right">
 										<div class="sort_options">
 
-												<h3>최신순
-												<span class="glyphicon glyphicon-chevron-down"></span></h3>
-												&nbsp; &nbsp; &nbsp;
+											<h3>최신순
+												<span class="glyphicon glyphicon-chevron-down"></span>
+											</h3>
+											&nbsp; &nbsp; &nbsp;
 
-												<h3>모든 카테고리
-												<span class="glyphicon glyphicon-chevron-down"></span></h3>
-												&nbsp; &nbsp;
+											<h3>모든 카테고리
+												<span class="glyphicon glyphicon-chevron-down"></span>
+											</h3>
+											&nbsp; &nbsp;
 										</div>
 									</div>
 								</div>
@@ -77,36 +78,35 @@
 										</thead>
 										<tbody>
 											<c:set var="num" value="1"/>
-						<c:forEach var="l" items="${list }" >
+											<c:forEach var="l" items="${list }">
 
-											
-							<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'" style="cursor:pointer;">
-							 <tr>
-								<td>${num }</td><c:set var="num" value="${num+1 }"/>
-								<td>${l.title }</td>
-								<td>${l.name}</td>
-								<td>
-									<div class="profile">
-										<a href="profile.jsp">
-											<img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" />
-										</a>
-										${l.writernick }
+												<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'" style="cursor:pointer;">
+													<tr>
+														<td>${num }</td><c:set var="num" value="${num+1 }"/>
+														<td>${l.title }</td>
+														<td>${l.name}</td>
+														<td>
+															<div class="profile">
+																<a href="profile.jsp">
+																	<img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120"/>
+																</a>
+																${l.writernick }
+															</div>
+														</td>
+														<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
+														<td>${l.commentnum}</td>
+														<td>${l.viewnum }</td>
+														<td>${l.postdate }</td>
+													</tr>
+
+												</c:forEach>
+											</tbody>
+										</table>
 									</div>
-								</td>
-								<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
-								<td>${l.commentnum}</td>
-								<td>${l.viewnum }</td>
-								<td>${l.postdate }</td>
-							</tr>
-
-						</c:forEach>
-										</tbody>
-									</table>
 								</div>
+
 							</div>
 
-						</div>						
-
-					</body>
-					<%@ include file="/footer.jsp"%>
-				</html>
+						</body>
+						<%@ include file="/footer.jsp"%>
+					</html>
