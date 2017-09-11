@@ -18,9 +18,9 @@ public class BoardServiceImpl implements BoardService
 	private BoardDao bDao;
 
 	@Override
-	public Board selectBoard(int boardCode)
+	public Board selectBoardOne(int boardCode)
 	{
-		return bDao.selectBoard(boardCode);
+		return bDao.selectBoardOne(boardCode);
 	}
 
 	@Override
@@ -46,5 +46,6 @@ public class BoardServiceImpl implements BoardService
 	{
 		return bDao.deleteBoard(b);
 	}
+
 	
 }

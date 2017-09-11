@@ -6,7 +6,7 @@
 <c:set var="job" value="${member.job }" scope="session" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
+<script>
 	$(function() {
 		var job = "${job}";
 		$('#updateJob option').each(function() {
@@ -30,10 +30,6 @@
 			}
 		}
 	});
-
-	function alertTest() {
-		alert("!!");
-	}
 </script>
 <div class="container">
 	<!-- Modal -->
@@ -47,7 +43,8 @@
 					<h4 class="modal-title">프로필 수정</h4>
 				</div>
 				<div class="modal-body">
-					<form action="update.do" method="POST" enctype="multipart/form-data">
+					<form action="update.do" method="POST"
+						enctype="multipart/form-data">
 						<img id="profileImg" src="#" alt="profileImg"
 							style="border: 1px solid black; widgh: 150px; height: 150px;" /><br>
 						<input type='file' id="imgUpload" name="photo" />
@@ -70,8 +67,8 @@
 							: ${member.exp}</label> <br> <label>남은 캐시 : ${member.chash}</label>
 						<br> <label>남은 따루 : ${member.ddaru}</label> <br> <label>가입일
 							: ${member.enrolldate}</label> <br> <input type="submit"
-							value="수정하기" onclick="alertTest();"> &nbsp;&nbsp; <input
-							type="reset" value="취소하기">
+							value="수정하기"> &nbsp;&nbsp; <input type="reset"
+							value="취소하기">
 					</form>
 				</div>
 				<div class="modal-footer">
