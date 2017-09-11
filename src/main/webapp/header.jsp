@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -10,7 +10,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico"
 	rel="stylesheet">
-<link href="resources/css/header.css" rel="stylesheet" type="text/css">
 <script
 	src="https://ajax.googleapis.com/aj
 	ax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -41,9 +40,8 @@
 	</nav>
 
 	<!-- 최상단 네비게이션바와 사이드바 -->
-	
 	<div id="wrapper">
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-fixed-top topnav" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -78,9 +76,9 @@
 							<c:when test="${null ne member }">
 								<ul class="nav navbar-nav">
 									<li data-toggle="modal" data-target="#updateModal"><a
-										href="#"> <span class="glyphicon glyphicon-user"
-											onclick="profileUpdate()"><c:out
-													value="${member.nickname }" /> </span>
+										href="#"> <span class="glyphicon glyphicon-user"> <c:out
+													value="${member.nickname }" />
+										</span>
 									</a></li>
 									<li data-toggle="modal" data-target="#myModal"><a
 										href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>
@@ -121,7 +119,6 @@
 		</div>
 
 	</div>
-
 	<script>
 		$("#menu-toggle").click(function(e) {
 			e.preventDefault();

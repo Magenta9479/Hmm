@@ -15,8 +15,8 @@
   font-weight: lighter;
 }
 
-.navbar {
-  background-color: #002F2F;
+.topnav.navbar {
+  background-color: red;
   padding: 10px;
   height: 70px;
   width: 100%;
@@ -42,8 +42,9 @@
 
 #home_logo {
   font-family: 'Pacifico', cursive;
-  color: white;
   font-size: 44px;
+  color: white;
+  margin-right: 500px;
 }
 
 #home_logo:hover {
@@ -55,17 +56,17 @@
   transition: all 500ms ease;
 }
 
-.navbar .container-fluid .navbar-nav {
+#wrapper .navbar .container-fluid .navbar-nav {
   float: right;
 }
 
-.navbar .container-fluid .navbar-nav a {
+#wrapper .navbar .container-fluid .navbar-nav a {
   font-family: 'Hanna', serif;
   font-size: 18px;
   color: white;
 }
 
-.navbar .container-fluid .navbar-nav a:hover {
+#wrapper .navbar .container-fluid .navbar-nav a:hover {
   color: gold;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
@@ -93,7 +94,6 @@
 
 #wrapper.active {
   padding-left: 240px;
-  ;
 }
 
 #wrapper.active #sidebar-wrapper {
@@ -127,7 +127,7 @@
   padding-left: 25px;
 }
 
-.sidebar-nav li a:hover, .sidebar-nav li.active, .sidebar-nav li a:focus {
+.sidebar-nav li a:hover, .sidebar-nav li:active, .sidebar-nav li a:focus {
   background-color: gold;
   color: black;
   font-size: 22px;

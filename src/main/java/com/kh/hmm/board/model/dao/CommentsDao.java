@@ -20,6 +20,7 @@ public class CommentsDao
 	public ArrayList<Comments> selectComments(int bcode) 
 	{
 		List<Comments> list=sqlSession.selectList("selectComments",bcode);
+		System.out.println(list.size());
 		return (ArrayList<Comments>)list;
 	}
 
