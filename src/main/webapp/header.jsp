@@ -39,7 +39,7 @@
 
 	<!-- 최상단 네비게이션바와 사이드바 -->
 	<div id="wrapper">
-		<nav class="navbar navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-fixed-top topnav" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
