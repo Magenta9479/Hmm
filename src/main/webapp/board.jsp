@@ -19,29 +19,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="resources/css/QnA.css" rel="stylesheet" type="text/css">
+	<link href="resources/css/board.css" rel="stylesheet" type="text/css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>QnA 게시판</title>
+<title>Hmm 게시판</title>
 <%@ include file="/header.jsp"%>
-<style type="text/css">
-#writebutton {
-	top: 1%;
-	height: 40%;
-	width: 80%;
-}
-
-#write {
-	margin-top: 5%;
-	top: 36px;
-	width: 150px;
-}
-
-#empty {
-	margin-top: 9%;
-}
-</style>
-
 </head>
 <body>
 	<div id="empty"></div>
