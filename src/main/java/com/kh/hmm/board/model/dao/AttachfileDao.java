@@ -16,9 +16,9 @@ public class AttachfileDao
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	public ArrayList<Attachfile> selectAttachfiles(int bCode)
+	public ArrayList<Attachfile> selectAttachfiles(String boardCode)
 	{
-		List<Attachfile> list=sqlSession.selectList("attachfileList",bCode);
+		List<Attachfile> list=sqlSession.selectList("attachfileList",boardCode);
 		return (ArrayList<Attachfile>)list;
 	}	
 }

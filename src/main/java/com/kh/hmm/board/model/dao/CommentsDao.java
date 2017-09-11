@@ -1,8 +1,5 @@
 package com.kh.hmm.board.model.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,24 +14,23 @@ public class CommentsDao
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	public ArrayList<Comments> selectComments(int bcode) 
+	public Comments selectBoard() 
 	{
-		List<Comments> list=sqlSession.selectList("selectComments",bcode);
-		return (ArrayList<Comments>)list;
+		return (Comments)sqlSession.selectOne("selectBoard");
 	}
 
-	public int insertComments(Comments c) 
+	public int insertBoard(Board b) 
 	{
-		return sqlSession.insert("insertComments",c);
+		return sqlSession.insert("insertBoard",b);
 	}
 	
-	public int updateComments(Comments c) 
+	public int updateBoard(Board b) 
 	{
-		return sqlSession.update("updateComments",c);
+		return sqlSession.update("insertBoard",b);
 	}
 	
-	public int deleteComments(Comments c) 
+	public int deleteBoard(Board b) 
 	{
-		return sqlSession.delete("updateComments",c);
+		return sqlSession.delete("insertBoard",b );
 	}
 }

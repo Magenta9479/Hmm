@@ -25,40 +25,19 @@ public class BoardController
 	@Autowired
 	private BoardService boardService;
 	
-	@RequestMapping(value = "boardLists.do", method = RequestMethod.GET)
-	public String selectBoardList(Model model,int dis) 
+	@RequestMapping(value = "boardAllList.do", method = RequestMethod.GET)
+	public String selectBoardList(Board b, Model model) 
 	{
-		logger.info("selectBoardList("+dis+") call...");
-		String rturn=null;
-		ArrayList<Board> list=boardService.selectBoardList(dis);		
+		logger.info("selectBoardList() call...");
+		
+		ArrayList<Board> list=boardService.selectBoardList(0);		
 		
 		if(list != null)
 		{
 			model.addAttribute("list", list);
 		}		
 		
-		if(dis==0) rturn="index";
-		else rturn="board";
-		
-		
-		return "../../"+rturn;
-	}
-	
-	@RequestMapping(value = "boardOne.do", method = RequestMethod.GET)
-	public String selectBoardOne(Model model,int bcode) 
-	{
-		logger.info("selectBoardList("+bcode+") call...");
-		
-		Board board=boardService.selectBoardOne(bcode);		
-		
-		if(board != null)
-		{
-			model.addAttribute("board", board);
-		}		
-		
 		return "../../index";
 	}
 
-	
-	
 }
