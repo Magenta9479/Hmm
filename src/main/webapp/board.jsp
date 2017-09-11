@@ -98,8 +98,12 @@
 							<th>작성일자</th>
 						</tr>
 					</thead>
+					
+					<c:set var="num" value="1"/>
+					
 					<tbody>
 						<c:forEach var="l" items="${list }" >
+						
 
 						<tr>
 							<td>${num }</td><c:set var="num" value="${num+1 }"/>

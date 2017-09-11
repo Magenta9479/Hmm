@@ -28,13 +28,32 @@ public class BoardController
 	@RequestMapping(value = "boardLists.do", method = RequestMethod.GET)
 	public String selectBoardList(Model model,int dis) 
 	{
-		logger.info("selectBoardList() call...");
-		
+		logger.info("selectBoardList("+dis+") call...");
+		String rturn=null;
 		ArrayList<Board> list=boardService.selectBoardList(dis);		
 		
 		if(list != null)
 		{
 			model.addAttribute("list", list);
+		}		
+		
+		if(dis==0) rturn="index";
+		else rturn="board";
+		
+		
+		return "../../"+rturn;
+	}
+	
+	@RequestMapping(value = "boardOne.do", method = RequestMethod.GET)
+	public String selectBoardOne(Model model,int bcode) 
+	{
+		logger.info("selectBoardList("+bcode+") call...");
+		
+		Board board=boardService.selectBoardOne(bcode);		
+		
+		if(board != null)
+		{
+			model.addAttribute("board", board);
 		}		
 		
 		return "../../index";
