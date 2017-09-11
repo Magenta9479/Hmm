@@ -13,15 +13,12 @@
 <head>
 
 <title>Hmm | 전 세계의 개발자들을 널리 fuck 하리라.</title>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="resources/css/index.css" rel="stylesheet" type="text/css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <%@ include file="/header.jsp"%>
@@ -52,14 +49,10 @@
 				<div class="pull-right">
 					<div class="sort_options">
 
-						<h3>
-							최신순 <span class="glyphicon glyphicon-chevron-down"></span>
-						</h3>
+						<h3>최신순 <span class="glyphicon glyphicon-chevron-down"></span></h3>
 						&nbsp; &nbsp; &nbsp;
 
-						<h3>
-							모든 카테고리 <span class="glyphicon glyphicon-chevron-down"></span>
-						</h3>
+						<h3>모든 카테고리 <span class="glyphicon glyphicon-chevron-down"></span></h3>
 						&nbsp; &nbsp;
 					</div>
 				</div>
@@ -113,5 +106,6 @@
 	</div>
 
 </body>
+
 <%@ include file="/footer.jsp"%>
 </html>

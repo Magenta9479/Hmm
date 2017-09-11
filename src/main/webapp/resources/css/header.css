@@ -133,3 +133,44 @@
   font-size: 22px;
   transition: 0.4s;
 }
+
+
+
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+/*
+#E6E2AF
+#A7A37E
+#EFECCA
+#046380
+#002F2F
+*/
+
+* {
+
+}
+
+.bottomnav {
+  bottom: 0;
+  background-color: navy;
+  padding: 250px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: auto;
+  width: 100%;
+  border: none;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.bottomnav ul {
+  list-style: none;
+}
+
+.bottomnav  a {
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
