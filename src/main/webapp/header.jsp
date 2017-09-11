@@ -16,6 +16,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<script type="text/javascript">
+	function profileUpdate() {
+		location.href="updateProfile.do";
+	}
+</script>
 <body>
 	<%
 		if (session.getAttribute("member") != null)
@@ -25,10 +30,8 @@
 	<%
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>
-
 	<%@ include file="WEB-INF/views/member/login.jsp"%>
 	<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
-	<%@ include file="WEB-INF/views/member/updateMember.jsp"%>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
@@ -116,7 +119,6 @@
 		</div>
 
 	</div>
-
 	<script>
 		$("#menu-toggle").click(function(e) {
 			e.preventDefault();
