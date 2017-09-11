@@ -14,122 +14,128 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-					<link href="resources/css/QnA.css" rel="stylesheet" type="text/css">
-						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-						<title>QnA 게시판</title>
-						<%@ include file="/header.jsp"%>
-						<style type="text/css">
-							#writebutton {
-								top: 1%;
-								height: 40%;
-								width: 80%;
-							}
-							#write {
-								margin-top: 5%;
-								top: 36px;
-								width: 150px;
-							}
-							#empty {
-								margin-top: 9%;
-							}
-						</style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="resources/css/QnA.css" rel="stylesheet" type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>QnA 게시판</title>
+<%@ include file="/header.jsp"%>
+<style type="text/css">
+#writebutton {
+	top: 1%;
+	height: 40%;
+	width: 80%;
+}
 
-					</head>
-					<body>
-						<div id="empty"></div>
-						<div id="board" class="board">
-							<div id="writebutton">
-								<button id="write" type="button" class="btn btn-primary btn-md">내 글쓰기</button>
-							</div>
-							<!-- 검색창, 검색 정렬들의 패널 -->
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<!-- 패널의 왼쪽, 검색창 -->
-									<div class="input-group col-md-6 pull-left">
-										<input type="text" class="search-query form-control" placeholder="검색하기..."/>
-										<span class="input-group-btn">
-											<button id="search_icon" class="btn btn-success" type="button">
-												<span class=" glyphicon glyphicon-search"></span>
-											</button>
-										</span>
+#write {
+	margin-top: 5%;
+	top: 36px;
+	width: 150px;
+}
+
+#empty {
+	margin-top: 9%;
+}
+</style>
+
+</head>
+<body>
+	<div id="empty"></div>
+	<div id="board" class="board">
+		<div id="writebutton">
+			<button id="write" type="button" class="btn btn-primary btn-md">내
+				글쓰기</button>
+		</div>
+		<!-- 검색창, 검색 정렬들의 패널 -->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- 패널의 왼쪽, 검색창 -->
+				<div class="input-group col-md-6 pull-left">
+					<input type="text" class="search-query form-control"
+						placeholder="검색하기..." /> <span class="input-group-btn">
+						<button id="search_icon" class="btn btn-success" type="button">
+							<span class=" glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+				<!-- 패널의 오른쪽, 정렬창 -->
+				<div class="pull-right">
+
+					<div class="sort_options">
+
+						<h3>
+							최신순 <span class="glyphicon glyphicon-chevron-down"></span>
+						</h3>
+						&nbsp; &nbsp; &nbsp;
+
+						<h3>
+							모든 카테고리 <span class="glyphicon glyphicon-chevron-down"></span>
+						</h3>
+						&nbsp; &nbsp;
+					</div>
+				</div>
+			</div>
+
+			<!-- 게시판 테이블 -->
+			<div class="table-responsive">
+				<table class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th>글번호</th>
+							<th class="col-md-5">제목</th>
+							<th>카테고리</th>
+							<th>작성자</th>
+							<th>추천수</th>
+							<th>답글</th>
+							<th>조회수</th>
+							<th>작성일자</th>
+						</tr>
+					</thead>
+
+					<c:set var="num" value="1" />
+
+					<tbody>
+						<c:forEach var="l" items="${list }">
+
+							<tr>
+								<td>${num }</td>
+								<c:set var="num" value="${num+1 }" />
+								<td>${l.title }</td>
+								<td>${l.name}</td>
+								<td>
+									<div class="profile">
+										<a href="profile.jsp"> <img class="img-circle"
+											src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" /></a>
+										${l.writernick }
 									</div>
-									<!-- 패널의 오른쪽, 정렬창 -->
-									<div class="pull-right">
+								</td>
+								<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
+								<td>${l.commentnum}</td>
+								<td>${l.viewnum }</td>
+								<td>${l.postdate }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
 
-										<div class="sort_options">
-
-											<h3>
-												최신순
-												<span class="glyphicon glyphicon-chevron-down"></span>
-											</h3>
-											&nbsp; &nbsp; &nbsp;
-
-											<h3>
-												모든 카테고리
-												<span class="glyphicon glyphicon-chevron-down"></span>
-											</h3>
-											&nbsp; &nbsp;
-										</div>
-									</div>
-								</div>
-
-								<!-- 게시판 테이블 -->
-								<div class="table-responsive">
-									<table class="table table-hover table-striped">
-										<thead>
-											<tr>
-												<th>글번호</th>
-												<th class="col-md-5">제목</th>
-												<th>카테고리</th>
-												<th>작성자</th>
-												<th>추천수</th>
-												<th>답글</th>
-												<th>조회수</th>
-												<th>작성일자</th>
-											</tr>
-										</thead>
-
-										<c:set var="num" value="1"/>
-
-										<tbody>
-											<c:forEach var="l" items="${list }">
-
-												<tr>
-													<td>${num }</td><c:set var="num" value="${num+1 }"/>
-													<td>${l.title }</td>
-													<td>${l.name}</td>
-													<td>
-														<div class="profile">
-															<a href="profile.jsp">
-																<img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120"/></a>
-															${l.writernick }
-														</div>
-													</td>
-													<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
-													<td>${l.commentnum}</td>
-													<td>${l.viewnum }</td>
-													<td>${l.postdate }</td>
-												</tr>
-											</c:forEach>
-										</tbody>
-									</table>
-								</div>
-							</div>
-
-						</div>
-						<br>
-							<br>
-								<br>
-									<br>
-										<br>
-											<br>
-												<br>
-													<br>
-														<br></body>
-														<%@ include file="/footer.jsp"%>
-													</html>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+<%@ include file="/footer.jsp"%>
+</html>
