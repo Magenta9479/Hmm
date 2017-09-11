@@ -206,5 +206,14 @@ public class Board
 		this.commentnum = commentnum;
 	}
 
+	@Override
+	public String toString()
+	{
+		return "Board [bcode=" + bcode + ", title=" + title + ", content=" + content + ", distinguish=" + distinguish
+				+ ", name=" + name + ", writerid=" + writerid + ", writernick=" + writernick + ", postdate=" + postdate
+				+ ", isdelete=" + isdelete + ", hasfile=" + hasfile + ", viewnum=" + viewnum + ", best=" + best
+				+ ", good=" + good + ", bad=" + bad + ", worst=" + worst + ", commentnum=" + commentnum + "]";
+	}
+
 	
 }

@@ -1,7 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page import="org.springframework.ui.Model" %>
 <c:if test="${list eq null}">
 	<script>
 		window.location.href="boardLists.do?dis=0";
@@ -77,11 +77,11 @@
 										</thead>
 										<tbody>
 											<c:set var="num" value="1"/>
-<%-- 						<c:set var="" value="${requestScope.cate}"/> --%>
 						<c:forEach var="l" items="${list }" >
 
-							<%-- <tr onclick="location.href='commentsLists.do?bcode=${l.bcode}'" style="cursor:pointer;"> --%>
-							<tr>
+											
+							<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'" style="cursor:pointer;">
+							 <tr>
 								<td>${num }</td><c:set var="num" value="${num+1 }"/>
 								<td>${l.title }</td>
 								<td>${l.name}</td>
