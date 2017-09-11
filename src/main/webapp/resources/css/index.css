@@ -7,45 +7,46 @@
 #046380
 #002F2F
 */
+
 * {
-	font-family: Monospace;
+  font-family: Monospace;
 }
 
-body {
-}
+body {}
 
 .thumbnail {
-	position: relative;
-	width: 100%;
-	height: 400px;
-	overflow: hidden;
-	margin-top: 35	px;
-	position: relative;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 35 px;
+  position: relative;
 }
 
 .thumbnail img {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 100%;
-	opacity: 0.6;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  opacity: 0.6;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .board {
-	border: none;
-	background-color: white;
-	height: 100%;
-	width: auto;
-	margin-left: 300px;
-	margin-right: 300px;
+  border: none;
+  background-color: white;
+  height: 100%;
+  width: auto;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 .panel {
-	border: none;
+  border: none;
 }
+
 
 /*.selectpicker {
 	padding: 7px;
@@ -57,22 +58,23 @@ body {
 .selectpicker:hover {
 	cursor: pointer;
 }*/
-.sort_options h3{
-	display: inline;
-	font-size: 16px;
+
+.sort_options h3 {
+  display: inline;
+  font-size: 16px;
 }
 
 .sort_options:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .table {
-	border: none;
+  border: none;
 }
 
 .img-circle {
-	display: inline-block;
-	border: 1px silver solid;
-	width: 25px;
-	height: 25px;
+  display: inline-block;
+  border: 1px silver solid;
+  width: 25px;
+  height: 25px;
 }
