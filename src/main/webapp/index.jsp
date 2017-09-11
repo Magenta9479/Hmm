@@ -78,18 +78,19 @@
 										<tbody>
 											<c:set var="num" value="1"/>
 						<c:forEach var="l" items="${list }" >
+
 											
 							<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'" style="cursor:pointer;">
-							<!-- <tr> -->
+							 <tr>
 								<td>${num }</td><c:set var="num" value="${num+1 }"/>
 								<td>${l.title }</td>
 								<td>${l.name}</td>
 								<td>
 									<div class="profile">
-										<a href="profile.jsp"> 
+										<a href="profile.jsp">
 											<img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" />
-										</a> 
-										${l.writernick }										
+										</a>
+										${l.writernick }
 									</div>
 								</td>
 								<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
@@ -97,14 +98,15 @@
 								<td>${l.viewnum }</td>
 								<td>${l.postdate }</td>
 							</tr>
-						
+
 						</c:forEach>
 										</tbody>
 									</table>
 								</div>
 							</div>
 
-						</div>
+						</div>						
 
 					</body>
+					<%@ include file="/footer.jsp"%>
 				</html>

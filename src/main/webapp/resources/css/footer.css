@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+/*
+#E6E2AF
+#A7A37E
+#EFECCA
+#046380
+#002F2F
+*/
+
+* {
+  //border: 1px dotted gold;
+  font-family: 'Hanna', serif;
+  font-weight: lighter;
+}
+
+.navbar {
+  bottom: 0;
+  background-color: #002F2F;
+  padding: 10px;
+  height: 70px;
+  width: 100%;
+  border: none;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
