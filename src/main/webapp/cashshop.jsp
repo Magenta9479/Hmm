@@ -60,7 +60,6 @@ function gopage2(){
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
-
 			<div id="box" class="col-sm-4">
 			<img style =" width : 120%; height :100%; " src="https://item.kakaocdn.net/do/96c4a590bb9fee0f9b570f1245fdf7b0f43ad912ad8dd55b04db6a64cddaf76d">
 				<div id="button">
@@ -82,7 +81,7 @@ function gopage2(){
 		</div>
 	</div>
 
-	<div id="container-fluid1">
+	<div id="container-fluid">
 		<div class="row">
 			<div id="box" class="col-sm-4">
 			<img style =" width : 120%; height :100%; " src="https://item.kakaocdn.net/do/af2e957732dad678a8b5f540f8b31045f43ad912ad8dd55b04db6a64cddaf76d">
@@ -102,7 +101,7 @@ function gopage2(){
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
-			<div id="background"></div>
+			<div id="background"></div><!-- 내비게이션 배경 -->
 			<div id="box" class="col-sm-4">
 			<img style =" width : 120%; height :100%; " src="http://mblogthumb2.phinf.naver.net/20130521_45/ssunde1_1369117742177yoCHe_GIF/%B0%F8%B0%A8.gif?type=w2">
 				<div id="button">
@@ -116,7 +115,7 @@ function gopage2(){
 	</div>
 </div>
 
-	<div id="container-fluid1">
+	<div id="container-fluid">
 		<div class="row">
 			<div id="box" class="col-sm-4">
 			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfs12.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMi5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExNC8xMTQ4OC5naWY=&filename=colorline15.gif">
@@ -147,7 +146,7 @@ function gopage2(){
 			</div>
 		</div>
 	</div>
-	<div id="container-fluid1">
+	<div id="container-fluid">
 		<div class="row">
 			<div id="box" class="col-sm-4">
 			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfile207.uf.daum.net/image/1308F4084979EADEFAA475">
@@ -180,7 +179,7 @@ function gopage2(){
 	</div>
 
 	<div id = "medal">
-	<div id="container-fluid1">
+	<div id="container-fluid">
 		<div class="row">
 			<div id="box" class="col-sm-4">
 			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
@@ -211,7 +210,7 @@ function gopage2(){
 			</div>
 		</div>
 	</div>
-	<div id="container-fluid1">
+	<div id="container-fluid">
 		<div class="row">
 			<div id="box" class="col-sm-4">
 			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">

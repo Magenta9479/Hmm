@@ -1,4 +1,4 @@
-package com.kh.hmm.item.vo;
+package com.kh.hmm.item.model.vo;
 
 import java.sql.Date;
 
