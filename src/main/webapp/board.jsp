@@ -10,7 +10,7 @@
 	<script>
 		window.location.href="boardLists.do?dis=<%=distri%>";
 	</script>
-</c:if> 
+</c:if>
 
 <!DOCTYPE html>
 <html>
@@ -28,13 +28,13 @@
 <%@ include file="/header.jsp"%>
 <style type="text/css">
 #writebutton{
-	
+
 	top : 1%;
     height: 40%;
 	width : 80%;
 
-	
-} 
+
+}
 #write{
 	margin-top:5%;
 	top: 36px;
@@ -98,12 +98,12 @@
 							<th>작성일자</th>
 						</tr>
 					</thead>
-					
+
 					<c:set var="num" value="1"/>
-					
+
 					<tbody>
 						<c:forEach var="l" items="${list }" >
-						
+
 
 						<tr>
 							<td>${num }</td><c:set var="num" value="${num+1 }"/>
@@ -130,4 +130,5 @@
 	</div>
 	<br><br><br><br><br><br><br><br><br>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
