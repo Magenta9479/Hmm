@@ -8,9 +8,9 @@
 
 <c:if test="${list eq null}">
 	<script>
-		window.location.href="boardLists.do?dis=<%=distri%>";
+		window.location.href = "boardLists.do?dis=<%=distri%>";
 	</script>
-</c:if> 
+</c:if>
 
 <!DOCTYPE html>
 <html>
@@ -27,31 +27,30 @@
 <title>QnA 게시판</title>
 <%@ include file="/header.jsp"%>
 <style type="text/css">
-#writebutton{
-	
-	top : 1%;
-    height: 40%;
-	width : 80%;
+#writebutton {
+	top: 1%;
+	height: 40%;
+	width: 80%;
+}
 
-	
-} 
-#write{
-	margin-top:5%;
+#write {
+	margin-top: 5%;
 	top: 36px;
 	width: 150px;
 }
-#empty{
-	margin-top : 9%;
-}
 
+#empty {
+	margin-top: 9%;
+}
 </style>
 
 </head>
 <body>
-	<div id = "empty"></div>
-	<div id= "board" class="board">
-	<div id = "writebutton">
-		<button id ="write"  type="button" class="btn btn-primary btn-md" >내 글쓰기</button>
+	<div id="empty"></div>
+	<div id="board" class="board">
+		<div id="writebutton">
+			<button id="write" type="button" class="btn btn-primary btn-md">내
+				글쓰기</button>
 		</div>
 		<!-- 검색창, 검색 정렬들의 패널 -->
 		<div class="panel panel-default">
@@ -98,29 +97,29 @@
 							<th>작성일자</th>
 						</tr>
 					</thead>
-					
-					<c:set var="num" value="1"/>
-					
-					<tbody>
-						<c:forEach var="l" items="${list }" >
-						
 
-						<tr>
-							<td>${num }</td><c:set var="num" value="${num+1 }"/>
-							<td>${l.title }</td>
-							<td>${l.name}</td>
-							<td>
-								<div class="profile">
-									<a href="profile.jsp"> <img class="img-circle"
-										src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" /></a>
-									${l.writernick }
-								</div>
-							</td>
-							<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
-							<td>${l.commentnum}</td>
-							<td>${l.viewnum }</td>
-							<td>${l.postdate }</td>
-						</tr>
+					<c:set var="num" value="1" />
+
+					<tbody>
+						<c:forEach var="l" items="${list }">
+
+							<tr>
+								<td>${num }</td>
+								<c:set var="num" value="${num+1 }" />
+								<td>${l.title }</td>
+								<td>${l.name}</td>
+								<td>
+									<div class="profile">
+										<a href="profile.jsp"> <img class="img-circle"
+											src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" /></a>
+										${l.writernick }
+									</div>
+								</td>
+								<td>${l.best*(5)+l.good*(3)+l.bad*(-3)+l.worst*(-5) }</td>
+								<td>${l.commentnum}</td>
+								<td>${l.viewnum }</td>
+								<td>${l.postdate }</td>
+							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
@@ -128,6 +127,15 @@
 		</div>
 
 	</div>
-	<br><br><br><br><br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </body>
+<%@ include file="/footer.jsp"%>
 </html>
