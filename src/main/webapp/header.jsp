@@ -30,6 +30,7 @@
 						<%@ include file="WEB-INF/views/member/login.jsp"%>
 						<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
 						<%@ include file="WEB-INF/views/member/updateMember.jsp"%>
+						<%@ include file="WEB-INF/views/member/profileUpload2.jsp"%>
 
 						<nav class="navbar navbar-inverse navbar-fixed-top">
 							<div class="container-fluid">

@@ -15,13 +15,11 @@
 		(MEM_SEQ.NEXTVAL,#{id},#{password},#{nickname},#{email},null,0,0,0,0,#{job},SYSDATE,null)
 	</insert>
 
-	<update id="update">
+	<update id="update" parameterType="Member">
 		update member set
 		PASSWORD=#{password},
 		NICKNAME=#{nickname},
 		EMAIL=#{email},
-		PHOTO=#{photo},
-		JOB=#{job} WHERE
-		ID=#{id}
+		JOB=#{job} WHERE MEMBERCODE=#{membercode}
 	</update>
 </mapper>
