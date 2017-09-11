@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" type="text/css" href="cashshop.css"> -->
+<link rel="stylesheet" type="text/css" href="resources/css/cashshop.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -13,112 +15,67 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>CashShop</title>
-<style type="text/css">
-#residualcash {
-	margin-top: 180px;
-}
-#salesitem{
-	margin-top : 100px;
+<script type="text/javascript">
+function gopage0(){
+	document.getElementById("body").scrollIntoView();	
 }
 
-#container-fluid {
-	margin-top: 100px;
-	margin-left: 9%;
-	width: 100%;
+function gopage(){
+document.getElementById("residualcash").scrollIntoView();
 }
-
-#container-fluid1 {
-	margin-top: 100px;
-	margin-left: 9%;
-	width: 100%;
-}
-
-#box {
-	margin-right: 30px;
-	width: 300px;
-	height: 200px;
-	left: 16%;
-}
-
-#button {
-	position: absolute;
-	top: 210px;
-	width: 300px;
-	height: 200px;
-	right: 20px;
-	left: 2px;
-}
-
-#buy {
-	width: 45%;
-	margin-right: 20px;
-}
-
-#charge {
-	width: 45%;
-}
-
-#cash {
-	size: 200px;
-}
-
-#menu {
-	position : fixed;
-	top: 200px;
-	width: 100%;
-	left: 83%;
-	height :30% ;
-}
-#submenu{
-	width : 8%;
-}
-</style>
+function gopage1(){
+	document.getElementById("background").scrollIntoView();
+	}
+function gopage2(){
+	document.getElementById("medal").scrollIntoView();
+	}
+	
+</script>
 <%@ include file="/header.jsp"%>
 </head>
-<body>
+<body id = "body">
 	<div id="menu" class="container">
-	<button id = "submenu"  type="button" class="btn btn-primary btn-block">전체보기</button>
-	<button id = "submenu"  type="button" class="btn btn-primary btn-block">테두리</button>
-	<button id = "submenu"  type="button" class="btn btn-primary btn-block">배경</button>
-	<button id = "submenu"  type="button" class="btn btn-primary btn-block">메달</button>
-		<!-- <a href="#" class="btn btn-primary">전체보기</a> 
-		<a href="#" class="btn btn-primary">테 두 리</a> 
-		<a href="#" 	class="btn btn-primary">배 경</a> 
-		<a href="#" class="btn btn-primary">메 달</a> -->
+	<button id = "submenu"  class="w3-button w3-round-xlarge w3-black" onclick="gopage0();">전체보기</button><br><br>
+	<button id = "submenu"  class="w3-button w3-round-xlarge w3-black" onclick="gopage();">이모티콘</button><br><br>
+	<button id = "submenu"  class="w3-button w3-round-xlarge w3-black" onclick="gopage1();">테두리</button><br><br>
+	<button id = "submenu"  class="w3-button w3-round-xlarge w3-black" onclick="gopage2();">메달</button>
 	</div>
 	
 	<div id="residualcash">
 		<p style="text-align: center">
-			<b>잔여 캐시 : </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-				id="cash" name="cash" type="text" readonly>
+			<b>남은 따루 : </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input id="cash" name="cash" type="text" value= "${member.ddaru}                                            따루" readonly>
 		</p>
 	</div>
 	<div id ="salesitem">
+	<div id = "emoticon">
 	<div id="container-fluid">
 		<div class="row">
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
+			<div id="box" class="col-sm-4">
+				<img style =" width : auto; height :auto; " src="http://mblogthumb1.phinf.naver.net/20160420_291/donga-bacchus_14611160044242ryl6_GIF/002.gif?type=w2">
 				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
+					<button id="buy" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
 
-			<div id="box" class="col-sm-4"
-				style="background-color: lavenderblush;">
+			<div id="box" class="col-sm-4">
+			<img style =" width : 120%; height :100%; " src="https://item.kakaocdn.net/do/96c4a590bb9fee0f9b570f1245fdf7b0f43ad912ad8dd55b04db6a64cddaf76d">
 				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
+			<div id="box" class="col-sm-4">
+			<img style =" width : 120%; height :100%; " src="https://item.kakaocdn.net/do/f43d6e06d6563b7409e38f05f6df3666f43ad912ad8dd55b04db6a64cddaf76d">
 				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
@@ -127,151 +84,31 @@
 
 	<div id="container-fluid1">
 		<div class="row">
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
+			<div id="box" class="col-sm-4">
+			<img style =" width : 120%; height :100%; " src="https://item.kakaocdn.net/do/af2e957732dad678a8b5f540f8b31045f43ad912ad8dd55b04db6a64cddaf76d">
 				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
-			<div id="box" class="col-sm-4"
-				style="background-color: lavenderblush;">
+			<div id="box" class="col-sm-4">
+			<img style =" width : 120%; height :100%; " src="https://item.kakaocdn.net/do/c50482b35a90fbcca8622c92c9552ba8f43ad912ad8dd55b04db6a64cddaf76d">			
 				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
+			<div id="background"></div>
+			<div id="box" class="col-sm-4">
+			<img style =" width : 120%; height :100%; " src="http://mblogthumb2.phinf.naver.net/20130521_45/ssunde1_1369117742177yoCHe_GIF/%B0%F8%B0%A8.gif?type=w2">
 				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<hr>
-	배경
-	<div id="container-fluid1">
-		<div class="row">
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4"
-				style="background-color: lavenderblush;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="container-fluid1">
-		<div class="row">
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4"
-				style="background-color: lavenderblush;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<hr>
-	메달
-	
-	<div id="container-fluid1">
-		<div class="row">
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4"
-				style="background-color: lavenderblush;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="container-fluid1">
-		<div class="row">
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4"
-				style="background-color: lavenderblush;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#cashModal">충전하기</button>
-				</div>
-			</div>
-			<div id="box" class="col-sm-4" style="background-color: lavender;">
-				<div id="button">
-					<button id="buy" type="button" class="btn btn-primary"
-						data-toggle="modal" data-target="#buyModal">구매하기</button>
-					<button id="charge" type="button" class="btn btn-primary"
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
 						data-toggle="modal" data-target="#cashModal">충전하기</button>
 				</div>
 			</div>
@@ -279,6 +116,134 @@
 	</div>
 </div>
 
+	<div id="container-fluid1">
+		<div class="row">
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfs12.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMi5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExNC8xMTQ4OC5naWY=&filename=colorline15.gif">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfile208.uf.daum.net/R400x0/1717D03C5030651A1D14E0">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfs11.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMS5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExMy8xMTM1NC5naWY=&filename=color_line26.gif">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="container-fluid1">
+		<div class="row">
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfile207.uf.daum.net/image/1308F4084979EADEFAA475">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfile206.uf.daum.net/image/144186064979ED58DACE1E">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="http://cfs9.blog.daum.net/image/36/blog/2008/01/27/16/16/479c2fb36d7d1&filename=1_e0o5i18276.gif">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id = "medal">
+	<div id="container-fluid1">
+		<div class="row">
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="container-fluid1">
+		<div class="row">
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+			<div id="box" class="col-sm-4">
+			<img style ="left : 1%; width : 100%; height :100%; " src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
+				<div id="button">
+					<button id="buy" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#buyModal">구매하기</button>
+					<button id="charge" type="button" class="w3-button w3-round-xlarge w3-black" 
+						data-toggle="modal" data-target="#cashModal">충전하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
 	<!--구매 Modal -->
 	<div class="modal fade" id="buyModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
