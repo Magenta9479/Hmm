@@ -7,7 +7,7 @@ import com.kh.hmm.member.model.vo.Member;
 
 public interface BoardService
 {
-	Board selectBoard(int boardCode);
+	Board selectBoardOne(int bcode);
 	
 	ArrayList<Board> selectBoardList(int dis);
 	//0:All,1:Com,2:QnA,3:Tech,4:Amu,5:PS
@@ -17,4 +17,6 @@ public interface BoardService
 	int updateBoard(Board b);
 	
 	int deletBoard(Board b);
+
+	
 }

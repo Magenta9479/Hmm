@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -30,7 +30,6 @@
 						<%@ include file="WEB-INF/views/member/login.jsp"%>
 						<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
 						<%@ include file="WEB-INF/views/member/updateMember.jsp"%>
-						<%@ include file="WEB-INF/views/member/profileUpload2.jsp"%>
 
 						<nav class="navbar navbar-inverse navbar-fixed-top">
 							<div class="container-fluid">
@@ -102,27 +101,27 @@
 								<nav id="spy">
 									<ul class="sidebar-nav nav">
 										<li>
-											<a href="#anch0">
+											<a href="board.jsp?dis=4">
 												<span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말 대잔치
 											</a>
 										</li>
 										<li>
-											<a href="#anch1">
+											<a href="board.jsp?dis=5">
 												<span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;프로젝트 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#anch2">
+											<a href="board.jsp?dis=1">
 												<span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;기업 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#anch3">
+											<a href="board.jsp?dis=3">
 												<span class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;신기술 게시판
 											</a>
 										</li>
 										<li>
-											<a href="#anch4">
+											<a href="board.jsp?dis=2">
 												<span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;Q & A
 											</a>
 										</li>
