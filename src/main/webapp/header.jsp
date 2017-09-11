@@ -10,7 +10,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico"
 	rel="stylesheet">
-<link href="resources/css/header.css" rel="stylesheet" type="text/css">
 <script
 	src="https://ajax.googleapis.com/aj
 	ax/libs/jquery/3.2.1/jquery.min.js"></script>
