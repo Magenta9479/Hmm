@@ -28,4 +28,10 @@ public class MemberServiceImpl implements MemberService
 	public Member updateMember(Member m) {
 		return mDao.updateMember(m);
 	}
+
+	@Override
+	public Member dupMember(Member m) {
+		// TODO Auto-generated method stub
+		return mDao.dupMember(m);
+	}
 }

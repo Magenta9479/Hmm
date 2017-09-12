@@ -8,19 +8,22 @@
 		SELECT *
 		FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
+	
+	<select id="chkDup" parameterType="Member" resultType="Member">
+		SELECT *
+		FROM MEMBER WHERE ID = #{id}
+	</select>
 
 	<insert id="enroll">
 		insert into member
 		values
-		(MEM_SEQ.NEXTVAL,#{id},#{password},#{nickname},#{email},null,0,0,0,0,#{job},SYSDATE,null)
+		(MEM_SEQ.NEXTVAL,#{id},#{password},#{email},null,0,0,0,0,#{job},SYSDATE,null)
 	</insert>
 
 	<update id="update">
 		update member set
 		PASSWORD=#{password},
-		NICKNAME=#{nickname},
 		EMAIL=#{email},
-		PHOTO=#{photo},
 		JOB=#{job} WHERE
 		ID=#{id}
 	</update>

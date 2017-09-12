@@ -15,15 +15,12 @@
 </head>
 <script type="text/javascript">
 	function profileUpdate() {
-		location.href="updateProfile.do";
+		location.href = "updateProfile.do";
 	}
 </script>
-<body>
-	<%
-		if (session.getAttribute("member") != null)
-	%>
-	<c:set var="member" value="${sessionScope.member}" />
 
+<body>
+	<c:set var="member" value="${sessionScope.member}" />
 	<%
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>
@@ -69,9 +66,8 @@
 
 							<c:when test="${null ne member }">
 								<ul class="nav navbar-nav">
-									<li data-toggle="modal" data-target="#updateModal"><a	href="#"> <span class="glyphicon glyphicon-user"> <c:out
-													value="${member.nickname }" />
-										</span>
+									<li onclick="profileUpdate();"><a href="#"> <span
+											class="glyphicon glyphicon-user"> ${member.id} </span>
 									</a></li>
 									<li data-toggle="modal" data-target="#myModal"><a
 										href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>

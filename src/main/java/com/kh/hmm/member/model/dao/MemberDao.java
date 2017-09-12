@@ -42,4 +42,8 @@ public class MemberDao
 			member = sqlSession.selectOne("login", m);
 		return member;
 	}
+
+	public Member dupMember(Member m) {
+		return sqlSession.selectOne("chkDup", m);
+	}
 }
