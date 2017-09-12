@@ -1,6 +1,7 @@
 package com.kh.hmm.board.model.vo;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Board
 {
@@ -8,42 +9,30 @@ public class Board
 	private String title;
 	private String content;
 	private int distinguish;
-	private String name;
 	private String writerid;
-	private String writernick;
 	private Date postdate;
 	private String isdelete;
 	private String hasfile;
-	private int viewnum;
-	private int best;
-	private int good;
-	private int bad;
-	private int worst;
-	private int commentnum;
+	
+	private BoardCode code;	
+	private BoardPoint point;	
 	
 	public Board() {}
 
-	public Board(int bcode, String title, String content, int distinguish, String name, String writerid,
-			String writernick, Date postdate, String isdelete, String hasfile, int viewnum, int best, int good, int bad,
-			int worst, int commentnum)
+	public Board(int bcode, String title, String content, int distinguish, String writerid, Date postdate,
+			String isdelete, String hasfile, BoardCode code, BoardPoint point)
 	{
 		super();
 		this.bcode = bcode;
 		this.title = title;
 		this.content = content;
 		this.distinguish = distinguish;
-		this.name = name;
 		this.writerid = writerid;
-		this.writernick = writernick;
 		this.postdate = postdate;
 		this.isdelete = isdelete;
 		this.hasfile = hasfile;
-		this.viewnum = viewnum;
-		this.best = best;
-		this.good = good;
-		this.bad = bad;
-		this.worst = worst;
-		this.commentnum = commentnum;
+		this.code = code;
+		this.point = point;
 	}
 
 	public int getBcode()
@@ -86,16 +75,6 @@ public class Board
 		this.distinguish = distinguish;
 	}
 
-	public String getName()
-	{
-		return name;
-	}
-
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-
 	public String getWriterid()
 	{
 		return writerid;
@@ -104,16 +83,6 @@ public class Board
 	public void setWriterid(String writerid)
 	{
 		this.writerid = writerid;
-	}
-
-	public String getWriternick()
-	{
-		return writernick;
-	}
-
-	public void setWriternick(String writernick)
-	{
-		this.writernick = writernick;
 	}
 
 	public Date getPostdate()
@@ -146,74 +115,36 @@ public class Board
 		this.hasfile = hasfile;
 	}
 
-	public int getViewnum()
+	public BoardCode getCode()
 	{
-		return viewnum;
+		return code;
 	}
 
-	public void setViewnum(int viewnum)
+	public void setCode(BoardCode code)
 	{
-		this.viewnum = viewnum;
+		this.code = code;
 	}
 
-	public int getBest()
+	public BoardPoint getPoint()
 	{
-		return best;
+		return point;
 	}
 
-	public void setBest(int best)
+	public void setPoint(BoardPoint point)
 	{
-		this.best = best;
-	}
-
-	public int getGood()
-	{
-		return good;
-	}
-
-	public void setGood(int good)
-	{
-		this.good = good;
-	}
-
-	public int getBad()
-	{
-		return bad;
-	}
-
-	public void setBad(int bad)
-	{
-		this.bad = bad;
-	}
-
-	public int getWorst()
-	{
-		return worst;
-	}
-
-	public void setWorst(int worst)
-	{
-		this.worst = worst;
-	}
-
-	public int getCommentnum()
-	{
-		return commentnum;
-	}
-
-	public void setCommentnum(int commentnum)
-	{
-		this.commentnum = commentnum;
+		this.point = point;
 	}
 
 	@Override
 	public String toString()
 	{
 		return "Board [bcode=" + bcode + ", title=" + title + ", content=" + content + ", distinguish=" + distinguish
-				+ ", name=" + name + ", writerid=" + writerid + ", writernick=" + writernick + ", postdate=" + postdate
-				+ ", isdelete=" + isdelete + ", hasfile=" + hasfile + ", viewnum=" + viewnum + ", best=" + best
-				+ ", good=" + good + ", bad=" + bad + ", worst=" + worst + ", commentnum=" + commentnum + "]";
+				+ ", writerid=" + writerid + ", postdate=" + postdate + ", isdelete=" + isdelete + ", hasfile="
+				+ hasfile + ", code=" + code + ", point=" + point + "]";
 	}
+
+	
+	
 
 	
 }

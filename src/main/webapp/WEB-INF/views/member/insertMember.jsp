@@ -22,9 +22,10 @@
 			alert('ID를 입력해주세요.');
 			return;
 		}
-		var pattern = /^[A-Za-z0-9]{0,4}$/;
+		/* var pattern = /^[A-Za-z0-9]{0,4}$/; */
+		var pattern = /^[A-Za-z0-9]$/;
 		if (!pattern.test(id)) {
-			alert('영문대,소문자 , 숫자 0 ~ 4 자리로 입력해 주세요.');
+			alert('영문대,소문자로 입력해 주세요.');
 			return;
 		}
 

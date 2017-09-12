@@ -69,6 +69,13 @@ public class Attachfile
 	{
 		this.filelink = filelink;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Attachfile [atcode=" + atcode + ", originname=" + originname + ", changedname=" + changedname
+				+ ", bcode=" + bcode + ", filelink=" + filelink + "]";
+	}
 	
 	
 }
