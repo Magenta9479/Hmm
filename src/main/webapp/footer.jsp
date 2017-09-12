@@ -12,8 +12,7 @@
 						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 					</head>
 					<body>
-						<nav id="bottom_navbar" class="navbar bottomnav">
-							<div class="container-fluid">
+						<nav class="navbar bottomnav">
 								<ul>
 									<li><a href="#">About Hmm</a></li>
 									<li><a href="#">구인란</a></li>
@@ -21,7 +20,6 @@
 									<li><a href="#">개인정보 약관</a></li>
 									<li><a href="#">연락처 및 찾아오시는 길</a></li>
 								</ul>
-							</div>
 						</nav>
 					</body>
 				</html>
