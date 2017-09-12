@@ -54,7 +54,7 @@
 						<li><a id="home_logo" href="index.jsp">Hmm</a></li>
 						<!-- 로그인 관련 메뉴 및 모달 -->
 						<c:choose>
-							<c:when test="${0 eq member }">
+							<c:when test="${null eq member }">
 								<ul class="nav navbar-nav">
 									<li data-toggle="modal" data-target="#loginModal"><a
 										style="cursor: pointer"> <span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
