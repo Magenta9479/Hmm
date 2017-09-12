@@ -1,37 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script
-	src="https://ajax.googleapis.com/aj
-	ax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="resources/css/login.css" rel="stylesheet" type="text/css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<body>
+				<!-- 로그인 모달 -->
+				<div class="container">
 
-<!-- 로그인 모달 -->
-<div class="container">
-	<!-- Modal -->
-	<div class="modal fade" id="loginModal" role="dialog">
-		<div class="modal-dialog">
+					<div id="loginModal" class="modal">
 
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">로그인</h4>
-				</div>
-				<div class="modal-body">
-					<form action="login.do" method="POST" name="loginForm">
-						<input type="text" name="id" placeholder="아이디를 입력해 주세요" required><br>
-						<input type="password" name="password" placeholder="비밀번호를 입력해 주세요" required>
-						<br> 
-						<input type="submit" value="로그인">
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
+						<form class="modal-content animate" action="login.do" method="POST" name="loginForm">
 
-		</div>
-	</div>
+							<div class="container">
+								<input type="text" name="id" placeholder="아이디를 입력해 주세요" required>
+									<input type="password" name="password" placeholder="비밀번호를 입력해 주세요" required>
+										<button type="submit" style="color : white">로그인</button>
+										<br>
+											<br>
+												<input type="checkbox" checked="checked">아이디 기억하기</div>
+												<div class="container">
+													<button type="button" data-dismiss="modal" class="cancelbtn">창닫기</button>
+													<span class="psw">혹시
+														<a href="#">비밀번호</a>를 잊으셨나요?
+													</span>
+												</div>
+											</form>
+										</div>
 
-</div>
-<!-- 로그인 모달 -->
+									</div>
+
+									<!-- 로그인 모달 -->
+
+									<script>
+										// Get the modal
+										var modal = document.getElementById('loginModal');
+
+										// When the user clicks anywhere outside of the modal, close it
+										window.onclick = function (event) {
+											if (event.target == modal) {
+												modal.style.display = "none";
+											}
+										}
+									</script>
+</body>

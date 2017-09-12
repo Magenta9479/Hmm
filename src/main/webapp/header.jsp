@@ -8,13 +8,10 @@
 <meta charset="utf-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Pacifico"
-	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/aj
-	ax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="resources/css/header.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <script type="text/javascript">
 	function profileUpdate() {
@@ -60,12 +57,9 @@
 							<c:when test="${null eq member }">
 								<ul class="nav navbar-nav">
 									<li data-toggle="modal" data-target="#loginModal"><a
-										style="cursor: pointer"> <span
-											class="glyphicon glyphicon-log-in"></span> 로그인
-									</a></li>
+										style="cursor: pointer"> <span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
 									<li data-toggle="modal" data-target="#insertModal"><a
-										style="cursor: pointer"> <span
-											class="glyphicon glyphicon-user"></span> 회원가입
+										style="cursor: pointer"> <span class="glyphicon glyphicon-user"></span> 회원가입
 									</a></li>
 								</ul>
 							</c:when>
@@ -89,7 +83,7 @@
 		<!-- 사이드바 -->
 		<div id="sidebar-wrapper">
 			<nav id="spy">
-				<ul class="sidebar-nav nav">
+				<ul class="sidebar-nav">
 					<li><a href="board.jsp?dis=4"> <span
 							class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말 대잔치
 					</a></li>
@@ -119,6 +113,7 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("active");
 		});
+
 	</script>
 </body>
 </html>

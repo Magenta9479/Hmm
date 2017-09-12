@@ -1,3 +1,9 @@
+/*매우 중요!!! Modal 누를 때 마다 화면 왼쪽 밀림 임현상 방지*/
+body {
+  padding-right: 0 !important;
+}
+/*매우 중요!!! Modal 누를 때 마다 화면 왼쪽 밀림 임현상 방지*/
+
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
@@ -10,13 +16,12 @@
 */
 
 * {
-  //border: 1px dotted gold;
   font-family: 'Hanna', serif;
   font-weight: lighter;
 }
 
 .topnav.navbar {
-  background-color: red;
+  background-color: #002F2F;
   padding: 10px;
   height: 70px;
   width: 100%;
@@ -40,27 +45,26 @@
   transition: all 500ms ease;
 }
 
-#home_logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 44px;
-  color: white;
-  margin-right: 500px;
-}
-
-#home_logo:hover {
-  color: gold;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
 #wrapper .navbar .container-fluid .navbar-nav {
   float: right;
 }
 
+#wrapper .navbar .container-fluid .navbar-nav #home_logo {
+  text-decoration: none;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  margin-right: 500px;
+  font-size: 40px;
+}
+
+#wrapper .navbar .container-fluid .navbar-nav #home_logo:hover {
+  color: gold;
+  background-color: inherit;
+  transition: 0.4s;
+}
+
 #wrapper .navbar .container-fluid .navbar-nav a {
+  text-decoration: none;
   font-family: 'Hanna', serif;
   font-size: 18px;
   color: white;
@@ -68,11 +72,8 @@
 
 #wrapper .navbar .container-fluid .navbar-nav a:hover {
   color: gold;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
+  background-color: inherit;
+  transition: 0.4s;
 }
 
 
@@ -100,12 +101,6 @@
   left: 240px;
 }
 
-#page-content-wrapper {
-  width: 100%;
-  padding-top: 70px;
-  transition: all 0.4s ease 0s;
-}
-
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -115,21 +110,23 @@
   padding: 0;
 }
 
-.sidebar-nav li {
-  line-height: 40px;
+#sidebar-wrapper a{
+  font-size: 24px;
 }
 
-.sidebar-nav li a {
-  color: white;
-  font-size: 18px;
-  display: block;
-  text-decoration: none;
-  padding-left: 25px;
-}
-
-.sidebar-nav li a:hover, .sidebar-nav li:active, .sidebar-nav li a:focus {
+#sidebar-wrapper a:hover {
+  font-size: 26px;
   background-color: gold;
   color: black;
-  font-size: 22px;
   transition: 0.4s;
+}
+
+
+.sidebar-nav li a {
+  text-decoration: none;
+  background-color: inherit;
+  color: white;
+  font-size: 20px;
+  display: block;
+  padding-left: 50px;
 }
