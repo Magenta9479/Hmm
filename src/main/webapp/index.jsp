@@ -48,7 +48,7 @@
 				<div class="pull-right">
 					<div class="sort_options">
 
-						<h3>최신순 <span class="glyphicon glyphicon-chevron-down"></span></h3>
+						<h3>최순실 <span class="glyphicon glyphicon-chevron-down"></span></h3>
 						&nbsp; &nbsp; &nbsp;
 
 						<h3>모든 카테고리 <span class="glyphicon glyphicon-chevron-down"></span></h3>
