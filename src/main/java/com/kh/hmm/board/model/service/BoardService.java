@@ -15,7 +15,7 @@ public interface BoardService
 	
 	int updateBoard(Board b);
 	
-	int deletBoard(Board b);
+	int deletBoard(int bcode);
 
 	
 }

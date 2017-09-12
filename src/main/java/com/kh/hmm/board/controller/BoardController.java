@@ -53,17 +53,13 @@ public class BoardController
 	@RequestMapping(value = "boardOne.do", method = RequestMethod.GET)
 	public String selectBoardOne(Model model,int bcode) 
 	{
-		logger.info("selectBoardList("+bcode+") call...");
+		logger.info("selectBoardOne("+bcode+") call...");
 
 		Board board=boardService.selectBoardOne(bcode);	
 		ArrayList<Comments> comments=null;
 		ArrayList<Attachfile> files=null;
 		
-		System.out.println(board);
-		System.out.println(board.getPoint());
-		System.out.println(board.getCode());
-		
-		/*if(board.getIsdelete()getCommentnum()>0)	
+		if(Integer.parseInt(board.getIsdelete())>0)	
 		{
 			comments=commentsService.selectCommentsList(bcode);
 		}
@@ -78,7 +74,10 @@ public class BoardController
 			model.addAttribute("board", board);
 			if(comments!=null) model.addAttribute("comments", comments);
 			if(files!=null) model.addAttribute("files", files);
-		}		*/
+		}		
+		
+		System.out.println(comments.size());
+		System.out.println(files);
 		
 		return "../../index";//보드 상세보기로 넘어가야한다.
 	}	

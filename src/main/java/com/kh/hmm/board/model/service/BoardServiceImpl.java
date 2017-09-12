@@ -42,9 +42,9 @@ public class BoardServiceImpl implements BoardService
 	}
 
 	@Override
-	public int deletBoard(Board b)
+	public int deletBoard(int bcode)
 	{
-		return bDao.deleteBoard(b);
+		return bDao.deleteBoard(bcode);
 	}
 
 	
