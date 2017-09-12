@@ -1,20 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="resources/css/insertMember.css" rel="stylesheet" type="text/css">
-	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="resources/css/insertMember.css" rel="stylesheet"
+	type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script type="text/javascript">
+	$(function() {
+		$('#emailBtn').toggle(function() {
+			$('#emailCheck').style.visibility = "visible";
+		}, function() {
+			$('#emailCheck').style.visibility = "hidden";
+		});
+	});
 	function validationCheck() {
-		if ($('#password').val() == $('#passwordConfirm').val())
+		if (($('#password').val() != '' || $('#passwordConfirm').val() != '')
+				&& $('#password').val() == $('#passwordConfirm').val())
 			$('form').submit();
 		else
 			alert("비밀번호를 한번 더 확인해주세요!!");
 	}
+
 	function chkDup() {
 
 		var id = $('#insertID').val();
@@ -22,10 +35,9 @@
 			alert('ID를 입력해주세요.');
 			return;
 		}
-		/* var pattern = /^[A-Za-z0-9]{0,4}$/; */
-		var pattern = /^[A-Za-z0-9]$/;
+		var pattern = /^[A-Za-z0-9]{6,20}$/;
 		if (!pattern.test(id)) {
-			alert('영문대,소문자로 입력해 주세요.');
+			alert('영문대/소문자, 숫자 합쳐서 6~20자리로 입력해 주세요.');
 			return;
 		}
 
@@ -52,10 +64,12 @@
 </script>
 <!-- 회원가입 모달 -->
 <body>
-<div class="container">
+	<div class="container">
+
 
 	<!-- Modal -->
 	<div class="modal" id="insertModal">
+
 
 			<!-- Modal content-->
 			<div class="modal-content animate">
@@ -88,20 +102,20 @@
 				</div>
 			</div>
 
+		</div>
+
 	</div>
+	<!-- 회원가입 모달 -->
 
-</div>
-<!-- 회원가입 모달 -->
+	<script>
+		// Get the modal
+		var modal = document.getElementById('insertModal');
 
-<script>
-	// Get the modal
-	var modal = document.getElementById('insertModal');
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function (event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
 		}
-	}
-</script>
+	</script>
 </body>
