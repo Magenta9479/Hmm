@@ -1,3 +1,9 @@
+/*매우 중요!!! Modal 누를 때 마다 화면 왼쪽 밀림 임현상 방지*/
+body {
+  padding-right: 0 !important;
+}
+/*매우 중요!!! Modal 누를 때 마다 화면 왼쪽 밀림 임현상 방지*/
+
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
@@ -107,7 +113,6 @@
 .sidebar-nav li {
   line-height: 40px;
 }
-
 
 .sidebar-nav li a {
   text-decoration: none;
