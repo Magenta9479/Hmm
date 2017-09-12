@@ -65,22 +65,22 @@
 				<div class="modal-body">
 					<form action="enroll.do" method="POST">
 						<input type="hidden" value="N" id="insertChk" /> <input
-							type="text" name="id" placeholder="아이디" id="insertID" required>
+							type="text" name="id" placeholder="아이디	ex) 영문 대소문자 + 숫자, 최소 6 자리에서 20자리까지 가능." id="insertID" required>
 						&nbsp; &nbsp;
 						<button type="submit" style="color : white" onclick="chkDup()">중복확인</button><br>
 						<input type="password" name="password" placeholder="비밀번호" required
 							id="password"><br> <input type="password"
 							name="passwordConfirm" placeholder="비밀번호 확인" required
 							id="passwordConfirm"><br> <input type="email"
-							name="email" placeholder="이메일" required /><br> <select
-							name="job">
+							name="email" placeholder="이메일" required /><br>
+							<select	name="job">
 							<option value="student">학생</option>
 							<option value="business">회사원</option>
 							<option value="jobless">무직</option>
 							<option value="etc">기타</option>
 						</select> <br> &nbsp;&nbsp;
 							<button type="submit" style="color : white" onclick="validationCheck()">회원가입</button>
-							
+
 					</form>
 				</div>
 				<div class="modal-footer">
