@@ -1,26 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="resources/css/insertMember.css" rel="stylesheet" type="text/css">
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- 회원가입 모달 -->
+<body>
 <div class="container">
 
 	<!-- Modal -->
-	<div class="modal fade" id="insertModal" role="dialog">
-		<div class="modal-dialog">
+	<div class="modal" id="insertModal" role="dialog">
 
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content animate">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">회원가입</h4>
 				</div>
 				<div class="modal-body">
 					<form action="enroll.do" method="POST">
-						<input type="text" name="id" placeholder="아이디"><br> 
-						<input type="password" name="password" placeholder="비밀번호"><br>
-						<input type="password" name="passwordConfirm" placeholder="비밀번호 확인"><br> 
-						<input type="text" name="nickname" placeholder="닉네임" /><br> 
-						<input type="email" name="email" placeholder="이메일" /><br> 
+						<input type="text" name="id" placeholder="아이디" required><br>
+						<input type="password" name="password" placeholder="비밀번호" required><br>
+						<input type="password" name="passwordConfirm" placeholder="비밀번호 확인" required><br>
+						<input type="text" name="nickname" placeholder="닉네임" required/><br>
+						<input type="email" name="email" placeholder="이메일" required/><br>
 						<select name="job">
 							<option value="student">학생</option>
 							<option value="business">회사원</option>
@@ -32,12 +35,24 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">창 닫기</button>
 				</div>
 			</div>
 
-		</div>
 	</div>
 
 </div>
 <!-- 회원가입 모달 -->
+
+<script>
+	// Get the modal
+	var modal = document.getElementById('insertModal');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+</script>
+</body>
