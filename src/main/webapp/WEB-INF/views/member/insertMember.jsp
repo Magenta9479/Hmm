@@ -66,8 +66,10 @@
 <body>
 	<div class="container">
 
-		<!-- Modal -->
-		<div class="modal" id="insertModal" role="dialog">
+
+	<!-- Modal -->
+	<div class="modal" id="insertModal">
+
 
 			<!-- Modal content-->
 			<div class="modal-content animate">
