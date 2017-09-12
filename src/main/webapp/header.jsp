@@ -82,7 +82,7 @@
 		</nav>
 		<!-- 사이드바 -->
 		<div id="sidebar-wrapper">
-			<nav id="spy">
+
 				<ul class="sidebar-nav">
 					<li><a href="boardLists.do?dis=4"> <span
 							class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말 대잔치
@@ -104,7 +104,7 @@
 							class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp; 캐쉬샵
 					</a></li>
 				</ul>
-			</nav>
+
 		</div>
 
 	</div>

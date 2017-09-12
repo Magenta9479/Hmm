@@ -58,21 +58,23 @@
 	height: 25px;
 }
 
-/* #writebutton{
+#writebutton{
 	top : 1%;
     height: 40%;
 	width : 51%;
 	
 }
-#write {
-	margin-top:5%;
+#write{
+	position : absolute;
+	margin-top:60px;
 	top: 36px;
 	width: 150px;
+	left :  71%;
 	
-} 
+	}
 
 #empty{
 margin-top : 9%;
 }
- */
+
 
