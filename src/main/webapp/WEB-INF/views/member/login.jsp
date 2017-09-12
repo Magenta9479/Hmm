@@ -14,7 +14,7 @@
 						<div class="modal-content animate" action="login.do" method="POST" name="loginForm">
 
 
-								<div class="modal-header">
+								<div class="modal-header" style="background-color: silver;">
 									<h4 class="modal-title">로그인</h4>
 								</div>
 								<div class="modal-body">
@@ -29,11 +29,11 @@
 														<a href="#">비밀번호</a>를 잊으셨나요?
 													</span>
 												</div>
-												<div class="modal-footer">
+												<div class="modal-footer" style="background-color: silver;">
 													<button type="button" class="cancelbtn" data-dismiss="modal">창 닫기</button>
 												</div>
 
-									
+
 
 									</div>
 								</div>

@@ -10,6 +10,10 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+input[type=text]:focus, input[type=password]:focus {
+    border: 1px #4CAF50 solid;
+}
+
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
