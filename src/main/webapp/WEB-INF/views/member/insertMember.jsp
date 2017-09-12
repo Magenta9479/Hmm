@@ -14,11 +14,42 @@
 
 <script type="text/javascript">
 	$(function() {
-		$('#emailBtn').toggle(function() {
-			$('#emailCheck').style.visibility = "visible";
-		}, function() {
-			$('#emailCheck').style.visibility = "hidden";
+		$('#emailCode').hide();
+		$('#codeCheck').hide();
+		
+		$('#emailCheck').click(function(){
+			$('#emailCode').toggle('slow');
+			$('#codeCheck').toggle('slow');
+			$.ajax({
+				type : "POST",
+				url : "sendMail.do",
+				data : "email=" + $('#input[name=email]'),
+				dataType : "text",
+				success : function(rData) {
+					if (rData) {
+						var SetTime = 180;		// 최초 설정 시간(기본 : 초)
+						m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";	// 남은 시간 계산
+						
+						var msg = "현재 남은 시간은 <font color='red'>" + m + "</font> 입니다.";
+						
+						document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
+								
+						SetTime--;					// 1초씩 감소
+						$('#insertChk').val("Y");
+					} else {
+						alert("아이디 중복 입니다!!");
+					}
+				},
+				error : function() {
+					alert("아이디 중복 확인 실패!!");
+				}
+			});
 		});
+		
+		$('#codeCheck').click(function(){
+			
+		});
+		
 	});
 	function validationCheck() {
 		if (($('#password').val() != '' || $('#passwordConfirm').val() != '')
@@ -84,7 +115,11 @@
 							id="password"><br> <input type="password"
 							name="passwordConfirm" placeholder="비밀번호 확인" required
 							id="passwordConfirm"><br> <input type="email"
-							name="email" placeholder="이메일" required /><br>
+							name="email" placeholder="이메일" required />
+							<button id="emailCheck" style="color : white">이메일 인증</button>
+							<br>
+							<input type="text" id="emailCode"><br>
+							<button id="codeCheck">인증확인</button>
 							<select	name="job">
 							<option value="student">학생</option>
 							<option value="business">회사원</option>
