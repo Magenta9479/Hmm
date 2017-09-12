@@ -9,11 +9,10 @@ public class Item
 	private int usagedate;
 	private String filelink;
 	private int price;
-	private Date purchasedate;
-	
+		
 	public Item() {}
 
-	public Item(int itemcode, String name, int usagedate, String filelink, int price, Date purchasedate)
+	public Item(int itemcode, String name, int usagedate, String filelink, int price)
 	{
 		super();
 		this.itemcode = itemcode;
@@ -21,7 +20,6 @@ public class Item
 		this.usagedate = usagedate;
 		this.filelink = filelink;
 		this.price = price;
-		this.purchasedate = purchasedate;
 	}
 
 	public int getItemcode()
@@ -74,15 +72,7 @@ public class Item
 		this.price = price;
 	}
 
-	public Date getPurchasedate()
-	{
-		return purchasedate;
-	}
-
-	public void setPurchasedate(Date purchasedate)
-	{
-		this.purchasedate = purchasedate;
-	}
+	
 
 	
 	

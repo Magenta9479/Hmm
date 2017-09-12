@@ -4,12 +4,28 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="commentsMapper">
 
- 	<resultMap id="commentsResultMap" type="Comments"></resultMap>
+ 	<resultMap id="commentsMap" type="Comments">
+ 		<id column="CCODE" property="ccode" />
+ 		<result column="CONTENT" property="content"/>
+ 		<result column="WRITERID" property="writerid"/>
+ 		<result column="POSTDATE" property="postdate"/>
+ 		<result column="LEV" property="lev"/>
+ 		<result column="UPPER" property="upper"/>
+ 		<association property="point" javaType="CommentsPoint">
+ 			<id column="CCODE" property="ccode" />
+	 		<result column="GOOD" property="good"/>
+	 		<result column="BAD" property="bad"/>
+	 		<result column="CAL" property="cal"/>
+ 		</association>
+ 	</resultMap>
  	
-	<select id="selectComments" resultMap="commentsResultMap" parameterType="_int" resultType="Comments">
+	<select id="selectComments" resultMap="commentsMap" parameterType="_int">
 		SELECT *
-		FROM COMMENTS
+		FROM (SELECT * FROM COMMENTS JOIN COMMENTSPOINT USING(CCODE))
 		WHERE BCODE=#{bcode}
+		START WITH UPPER IS NULL
+		CONNECT BY PRIOR CCODE=UPPER
+		ORDER SIBLINGS BY POSTDATE;
 	</select>
 	
 </mapper>

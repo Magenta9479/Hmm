@@ -1,27 +1,33 @@
 package com.kh.hmm.board.model.vo;
 
+import java.sql.Date;
+
 public class Comments
 {
 	private int ccode;
 	private String content;
-	private String writernick;
 	private String writerid;
+	private Date postdate;
 	private int lev;
 	private int upper;
 	private int bcode;
 	
+	private CommentsPoint point;
+	
 	public Comments() {}
 
-	public Comments(int ccode, String content, String writernick, String writerid, int lev, int upper, int bcode)
+	public Comments(int ccode, String content, String writerid, Date postdate, int lev, int upper, int bcode,
+			CommentsPoint point)
 	{
 		super();
 		this.ccode = ccode;
 		this.content = content;
-		this.writernick = writernick;
 		this.writerid = writerid;
+		this.postdate = postdate;
 		this.lev = lev;
 		this.upper = upper;
 		this.bcode = bcode;
+		this.point = point;
 	}
 
 	public int getCcode()
@@ -44,16 +50,6 @@ public class Comments
 		this.content = content;
 	}
 
-	public String getWriternick()
-	{
-		return writernick;
-	}
-
-	public void setWriternick(String writernick)
-	{
-		this.writernick = writernick;
-	}
-
 	public String getWriterid()
 	{
 		return writerid;
@@ -62,6 +58,16 @@ public class Comments
 	public void setWriterid(String writerid)
 	{
 		this.writerid = writerid;
+	}
+
+	public Date getPostdate()
+	{
+		return postdate;
+	}
+
+	public void setPostdate(Date postdate)
+	{
+		this.postdate = postdate;
 	}
 
 	public int getLev()
@@ -94,7 +100,22 @@ public class Comments
 		this.bcode = bcode;
 	}
 
-	
+	public CommentsPoint getPoint()
+	{
+		return point;
+	}
+
+	public void setPoint(CommentsPoint point)
+	{
+		this.point = point;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Comments [ccode=" + ccode + ", content=" + content + ", writerid=" + writerid + ", postdate=" + postdate
+				+ ", lev=" + lev + ", upper=" + upper + ", bcode=" + bcode + ", point=" + point + "]";
+	}
 	
 	
 }

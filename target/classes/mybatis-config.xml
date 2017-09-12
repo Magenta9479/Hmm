@@ -6,9 +6,15 @@
 	<typeAliases>
 		<typeAlias type="com.kh.hmm.member.model.vo.Member" alias="Member" />
 		<typeAlias type="com.kh.hmm.board.model.vo.Board" alias="Board" />
+		<typeAlias type="com.kh.hmm.board.model.vo.BoardCode" alias="BoardCode" />
+		<typeAlias type="com.kh.hmm.board.model.vo.BoardPoint" alias="BoardPoint" />
+		
 		<typeAlias type="com.kh.hmm.board.model.vo.Comments" alias="Comments" />
+		<typeAlias type="com.kh.hmm.board.model.vo.CommentsPoint" alias="CommentsPoint" />
+		
 		<typeAlias type="com.kh.hmm.board.model.vo.Attachfile" alias="Attachfile" />
 		<typeAlias type="com.kh.hmm.item.model.vo.Item" alias="Item" />
+		<typeAlias type="com.kh.hmm.item.model.vo.Purchaseditem" alias="Purchaseditem" />
 	</typeAliases>
 
 	<mappers>

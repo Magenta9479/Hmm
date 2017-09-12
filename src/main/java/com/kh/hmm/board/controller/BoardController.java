@@ -59,7 +59,11 @@ public class BoardController
 		ArrayList<Comments> comments=null;
 		ArrayList<Attachfile> files=null;
 		
-		if(board.getCommentnum()>0)	
+		System.out.println(board);
+		System.out.println(board.getPoint());
+		System.out.println(board.getCode());
+		
+		/*if(board.getIsdelete()getCommentnum()>0)	
 		{
 			comments=commentsService.selectCommentsList(bcode);
 		}
@@ -74,7 +78,7 @@ public class BoardController
 			model.addAttribute("board", board);
 			if(comments!=null) model.addAttribute("comments", comments);
 			if(files!=null) model.addAttribute("files", files);
-		}		
+		}		*/
 		
 		return "../../index";//보드 상세보기로 넘어가야한다.
 	}	
