@@ -8,7 +8,6 @@ public class Member {
 	private int membercode;
 	private String id;
 	private String password;
-	private String nickname;
 	private String email;
 	private String photo;
 	private int medal;
@@ -33,18 +32,17 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [membercode=" + membercode + ", id=" + id + ", password=" + password + ", nickname=" + nickname
-				+ ", email=" + email + ", photo=" + photo + ", medal=" + medal + ", exp=" + exp + ", chash=" + chash
-				+ ", ddaru=" + ddaru + ", job=" + job + ", enrolldate=" + enrolldate + ", quitedate=" + quitedate + "]";
+		return "Member [membercode=" + membercode + ", id=" + id + ", password=" + password + ",email=" + email
+				+ ", photo=" + photo + ", medal=" + medal + ", exp=" + exp + ", chash=" + chash + ", ddaru=" + ddaru
+				+ ", job=" + job + ", enrolldate=" + enrolldate + ", quitedate=" + quitedate + "]";
 	}
 
-	public Member(int membercode, String id, String password, String nickname, String email, String photo, int medal,
-			int exp, int chash, int ddaru, String job, Date enrolldate, Date quitedate) {
+	public Member(int membercode, String id, String password, String email, String photo, int medal, int exp, int chash,
+			int ddaru, String job, Date enrolldate, Date quitedate) {
 		super();
 		this.membercode = membercode;
 		this.id = id;
 		this.password = password;
-		this.nickname = nickname;
 		this.email = email;
 		this.photo = photo;
 		this.medal = medal;
@@ -78,14 +76,6 @@ public class Member {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
 	}
 
 	public String getEmail() {

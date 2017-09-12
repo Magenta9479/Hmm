@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="org.springframework.ui.Model"%>
-<c:if test="${list eq null}">
+<%-- <c:if test="${list eq null}">
 	<script>
 		window.location.href = "boardLists.do?dis=0";
 	</script>
-</c:if>
+</c:if> --%>
 
 <!DOCTYPE html>
 <html>
@@ -66,7 +66,7 @@
 			</div>
 
 			<!-- 게시판 테이블 -->
-			<div class="table-responsive">
+<%-- 			<div class="table-responsive">
 				<table class="table table-hover table-striped">
 					<thead>
 						<tr>
@@ -107,7 +107,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
+			</div> --%>
 		</div>
 
 	</div>

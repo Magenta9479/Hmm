@@ -3,12 +3,15 @@ package com.kh.hmm.member.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +33,8 @@ public class MemberController {
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String loginMember(Member m, HttpSession session) {
 		logger.info("login() call...");
+		if (m.getId() == null)
+			return "redirec:/";
 		Member member = memberService.loginMember(m);
 		if (member != null) {
 			session.setAttribute("member", member);
@@ -61,33 +66,12 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "update.do", method = RequestMethod.POST)
-	public String memberUpdate(Member m, HttpSession session, @RequestParam("photo") MultipartFile uploadfile) {
+	public String memberUpdate(Member m, HttpSession session) {
 		logger.info("memberUpdate() call...");
-		int i = 1;
-
-		Member member = memberService.enrollMember(m);
+		Member member = memberService.updateMember(m);
 		if (member != null) {
 			session.setAttribute("member", member);
-			uploadfile = m.getUploadFile();
-			if (uploadfile != null) {
-				String fileName = uploadfile.getOriginalFilename();
-				m.setPhoto(fileName);
-				try {
-					// 1. FileOutputStream 사용
-					// byte[] fileData = file.getBytes();
-					// FileOutputStream output = new FileOutputStream("C:/images/" + fileName);
-					// output.write(fileData);
 
-					// 2. File 사용
-					File file = new File("C:\\Hmm\\uploadProfile\\" + m.getId() + fileName);
-					if (file.exists()) {
-						file = new File("C:\\Hmm\\uploadProfile\\" + m.getId() + fileName + (i++));
-					}
-					uploadfile.transferTo(file);
-				} catch (Exception e) {
-					e.printStackTrace();
-				} // try - catch
-			} // if
 		}
 		return "redirect:/";
 	}
@@ -98,7 +82,8 @@ public class MemberController {
 		logger.info("memberUploadProfile() call...");
 		int i = 1;
 		Member m = (Member) session.getAttribute("member");
-		String savePath = "C:/Hmm/uploadProfile/" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
+		Member member = null;
+		String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
 
 		// 파일 객체 생성
 		File file = new File(savePath);
@@ -119,25 +104,53 @@ public class MemberController {
 		String rename = m.getId() + extension;
 
 		String fullPath = savePath + "\\" + rename;
-
+		m.setPhoto(fullPath);
 		if (!uploadfile.isEmpty()) {
 			try {
 				byte[] bytes = uploadfile.getBytes();
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fullPath)));
 				stream.write(bytes);
 				stream.close();
+				member = memberService.updateMember(m);
+
+				if (member != null) {
+					session.setAttribute("member", member);
+				}
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 
-		return "redirect:/resources/views/member/updateMember.jsp";
+		return "member/updateMember";
 	}
-	
-	@RequestMapping(value="updateProfile.do", method=RequestMethod.GET)
-	public String goUpdateProfile(Model model)
-	{
+
+	@RequestMapping(value = "updateProfile.do", method = RequestMethod.GET)
+	public String goUpdateProfile(Model model) {
 		logger.info("memberUploadProfile() call...");
 		return "member/updateMember";
+	}
+
+	@RequestMapping(value = "idCheck.do", method = RequestMethod.POST)
+	public void idCheck(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+		System.out.println("idCheck() call....");
+		PrintWriter out = response.getWriter();
+		int chk = 0;
+		System.out.println("리퀘스트 값 : "+request.getParameter("id"));
+		try {
+			String paramId = (request.getParameter("id") == null) ? "" : String.valueOf(request.getParameter("id"));
+			Member m = new Member();
+			m.setId(paramId.trim());
+			System.out.println("member 아이디 값 : " + m.getId());
+			Member member = memberService.dupMember(m);
+			if (member == null)
+				chk = 1;
+			out.print(chk);
+			out.flush();
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			out.print(0);
+		}
 	}
 }

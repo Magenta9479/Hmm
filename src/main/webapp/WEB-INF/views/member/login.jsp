@@ -4,6 +4,7 @@
 <script
 	src="https://ajax.googleapis.com/aj
 	ax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!-- 로그인 모달 -->
 <div class="container">
 	<!-- Modal -->
@@ -18,9 +19,10 @@
 				</div>
 				<div class="modal-body">
 					<form action="login.do" method="POST" name="loginForm">
-						<input type="text" name="id" placeholder="아이디를 입력해 주세요"><br>
-						<input type="password" name="password" placeholder="비밀번호를 입력해 주세요">
-						<br> <input type="submit" value="로그인">
+						<input type="text" name="id" placeholder="아이디를 입력해 주세요" required><br>
+						<input type="password" name="password" placeholder="비밀번호를 입력해 주세요" required>
+						<br> 
+						<input type="submit" value="로그인">
 					</form>
 				</div>
 				<div class="modal-footer">
