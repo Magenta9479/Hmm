@@ -10,10 +10,6 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-    border: 1px #4CAF50 solid;
-}
-
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
@@ -66,7 +62,7 @@ span.psw {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* Add Zoom Animation */

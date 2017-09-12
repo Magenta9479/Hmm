@@ -66,14 +66,12 @@
 <body>
 	<div class="container">
 
-
-	<!-- Modal -->
-	<div class="modal" id="insertModal">
-
+		<!-- Modal -->
+		<div class="modal" id="insertModal" role="dialog">
 
 			<!-- Modal content-->
 			<div class="modal-content animate">
-				<div class="modal-header" style="background-color: silver;">
+				<div class="modal-header">
 					<h4 class="modal-title">회원가입</h4>
 				</div>
 				<div class="modal-body">
@@ -97,7 +95,7 @@
 
 					</form>
 				</div>
-				<div class="modal-footer" style="background-color: silver;">
+				<div class="modal-footer">
 					<button type="button" class="cancelbtn" data-dismiss="modal">창 닫기</button>
 				</div>
 			</div>

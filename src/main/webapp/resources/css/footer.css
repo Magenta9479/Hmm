@@ -16,8 +16,8 @@
 .bottomnav {
   background-color: #002F2F;
   padding: 250px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   border: none;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   margin-bottom: 0px;
@@ -26,6 +26,7 @@
 .bottomnav ul {
   list-style: none;
   line-height: 40px;
+
 }
 
 .bottomnav ul li a {
