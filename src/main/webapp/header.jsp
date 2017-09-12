@@ -89,7 +89,7 @@
 			</div>
 		</nav>
 		<!-- 사이드바 -->
-		<div id="sidebar-wrapper">
+		<div id="sidebar-wrapper" class="sidebar-wrappercls">
 			<nav id="spy">
 				<ul class="sidebar-nav nav">
 					<li><a href="board.jsp?dis=4"> <span
@@ -121,6 +121,7 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("active");
 		});
+
 	</script>
 </body>
 </html>

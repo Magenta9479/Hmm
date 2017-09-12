@@ -11,19 +11,16 @@
 
 * {
   //border: 1px gold dotted;
-
 }
 
 .bottomnav {
-  bottom: 0;
   background-color: #002F2F;
   padding: 250px;
   padding-top: 100px;
   padding-bottom: 100px;
-  height: auto;
-  width: 100%;
   border: none;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0px;
 }
 
 .bottomnav ul {

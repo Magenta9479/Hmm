@@ -39,27 +39,26 @@
   transition: all 500ms ease;
 }
 
-#home_logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 44px;
-  color: white;
-  margin-right: 500px;
-}
-
-#home_logo:hover {
-  color: gold;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
 #wrapper .navbar .container-fluid .navbar-nav {
   float: right;
 }
 
+#wrapper .navbar .container-fluid .navbar-nav #home_logo {
+  text-decoration: none;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  margin-right: 500px;
+  font-size: 40px;
+}
+
+#wrapper .navbar .container-fluid .navbar-nav #home_logo:hover {
+  color: gold;
+  background-color: inherit;
+  transition: 0.4s;
+}
+
 #wrapper .navbar .container-fluid .navbar-nav a {
+  text-decoration: none;
   font-family: 'Hanna', serif;
   font-size: 18px;
   color: white;
@@ -67,11 +66,8 @@
 
 #wrapper .navbar .container-fluid .navbar-nav a:hover {
   color: gold;
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
+  background-color: inherit;
+  transition: 0.4s;
 }
 
 
@@ -112,17 +108,12 @@
   line-height: 40px;
 }
 
-.sidebar-nav li a {
-  color: white;
-  font-size: 18px;
-  display: block;
-  text-decoration: none;
-  padding-left: 50px;
-}
 
-.sidebar-nav li a:hover, .sidebar-nav li:active, .sidebar-nav li a:focus {
-  background-color: gold;
-  color: black;
-  font-size: 22px;
-  transition: 0.4s;
+.sidebar-nav li a {
+  text-decoration: none;
+  background-color: inherit;
+  color: white;
+  font-size: 20px;
+  display: block;
+  padding-left: 50px;
 }
