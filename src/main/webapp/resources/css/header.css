@@ -17,7 +17,6 @@ body {
 
 * {
   font-family: 'Hanna', serif;
-  font-weight: lighter;
 }
 
 .topnav.navbar {
@@ -31,8 +30,7 @@ body {
 
 #menu-toggle {
   text-decoration: none;
-  font-size: 26px;
-  float: left;
+  font-size: 30px;
   color: #fff;
 }
 
@@ -76,12 +74,11 @@ body {
   transition: 0.4s;
 }
 
-
 /*사이드바*/
 
 #sidebar-wrapper {
   margin-left: -240px;
-  top: 70px;
+  top: s0px;
   left: 0;
   width: 240px;
   background: #002F2F;
@@ -103,30 +100,27 @@ body {
 
 .sidebar-nav {
   position: absolute;
-  top: 0;
   width: 280px;
   list-style: none;
   margin: 0;
+  margin-top: 20px;
   padding: 0;
+  line-height: 60px;
 }
-
-#sidebar-wrapper a{
-  font-size: 24px;
-}
-
-#sidebar-wrapper a:hover {
-  font-size: 26px;
-  background-color: gold;
-  color: black;
-  transition: 0.4s;
-}
-
 
 .sidebar-nav li a {
   text-decoration: none;
   background-color: inherit;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   display: block;
-  padding-left: 50px;
+  padding-left: 30px;
+}
+
+
+.sidebar-nav li a:hover {
+  font-size: 26px;
+  background-color: gold;
+  color: black;
+  transition: 0.4s;
 }
