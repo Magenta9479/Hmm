@@ -85,9 +85,9 @@
 			</div>
 		</nav>
 		<!-- 사이드바 -->
-		<div id="sidebar-wrapper" class="sidebar-wrappercls">
+		<div id="sidebar-wrapper">
 			<nav id="spy">
-				<ul class="sidebar-nav nav">
+				<ul class="sidebar-nav">
 					<li><a href="board.jsp?dis=4"> <span
 							class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말 대잔치
 					</a></li>

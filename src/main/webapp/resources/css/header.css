@@ -110,9 +110,17 @@ body {
   padding: 0;
 }
 
-.sidebar-nav li {
-  line-height: 40px;
+#sidebar-wrapper a{
+  font-size: 24px;
 }
+
+#sidebar-wrapper a:hover {
+  font-size: 26px;
+  background-color: gold;
+  color: black;
+  transition: 0.4s;
+}
+
 
 .sidebar-nav li a {
   text-decoration: none;
