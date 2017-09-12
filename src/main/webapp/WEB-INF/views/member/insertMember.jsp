@@ -73,7 +73,7 @@
 
 			<!-- Modal content-->
 			<div class="modal-content animate">
-				<div class="modal-header">
+				<div class="modal-header" style="background-color: silver;">
 					<h4 class="modal-title">회원가입</h4>
 				</div>
 				<div class="modal-body">
@@ -97,7 +97,7 @@
 
 					</form>
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer" style="background-color: silver;">
 					<button type="button" class="cancelbtn" data-dismiss="modal">창 닫기</button>
 				</div>
 			</div>
