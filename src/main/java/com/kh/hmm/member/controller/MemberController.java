@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.hmm.member.model.service.MemberService;
+import com.kh.hmm.member.model.service.MemberServiceImpl;
 import com.kh.hmm.member.model.vo.Member;
 
 @Controller
@@ -153,4 +155,19 @@ public class MemberController {
 			out.print(0);
 		}
 	}
+	
+	
+    // 회원가입 이메일 인증
+    @RequestMapping(value = "sendMail.do", method = RequestMethod.POST/*, produces = "application/json"*/)
+    public boolean sendMailAuth(HttpSession session, @RequestParam String email) {
+        int ran = new Random().nextInt(100000) + 10000; // 10000 ~ 99999
+        String joinCode = String.valueOf(ran);
+        session.setAttribute("joinCode", joinCode);
+ 
+        String subject = "회원가입 인증 코드 발급 안내 입니다.";
+        StringBuilder sb = new StringBuilder();
+        sb.append("귀하의 인증 코드는 " + joinCode + " 입니다.");
+        boolean flag = memberService.send(subject, sb.toString(), "아이디@gmail.com", email, null);
+        return flag;
+    }  
 }
