@@ -14,6 +14,9 @@
 						<form class="modal-content animate" action="login.do" method="POST" name="loginForm">
 
 							<div class="container">
+								<div class="modal-header">
+									<h4 class="modal-title">로그인</h4>
+								</div>
 								<input type="text" name="id" placeholder="아이디를 입력해 주세요" required>
 									<input type="password" name="password" placeholder="비밀번호를 입력해 주세요" required>
 										<button type="submit" style="color : white">로그인</button>
