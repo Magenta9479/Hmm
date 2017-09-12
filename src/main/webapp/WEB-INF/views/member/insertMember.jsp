@@ -55,7 +55,7 @@
 <div class="container">
 
 	<!-- Modal -->
-	<div class="modal" id="insertModal" role="dialog">
+	<div class="modal" id="insertModal">
 
 			<!-- Modal content-->
 			<div class="modal-content animate">

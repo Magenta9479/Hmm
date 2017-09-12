@@ -85,23 +85,23 @@
 
 				<ul class="sidebar-nav">
 					<li><a href="boardLists.do?dis=4"> <span
-							class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;아무말 대잔치
+							class="glyphicon glyphicon-comment"></span>&nbsp;아무말 대잔치
 					</a></li>
 					<li><a href="boardLists.do?dis=5"> <span
-							class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;프로젝트 게시판
+							class="glyphicon glyphicon-globe"></span>&nbsp;프로젝트 게시판
 					</a></li>
 					<li><a href="boardLists.do?dis=1"> <span
-							class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;기업 게시판
+							class="glyphicon glyphicon-briefcase"></span>&nbsp;기업 게시판
 					</a></li>
 					<li><a href="boardLists.do?dis=3"> <span
-							class="glyphicon glyphicon-education"></span>&nbsp;&nbsp;신기술 게시판
+							class="glyphicon glyphicon-education"></span>&nbsp;신기술 게시판
 					</a></li>
 					<li><a href="boardLists.do?dis=2"> <span
-							class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;Q &
+							class="glyphicon glyphicon-question-sign"></span>&nbsp;Q &
 							A
 					</a></li>
 					<li><a href="cashshop.jsp"> <span
-							class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp; 캐쉬샵
+							class="glyphicon glyphicon-shopping-cart"></span>&nbsp; 캐쉬샵
 					</a></li>
 				</ul>
 
