@@ -66,7 +66,8 @@
 					<form action="enroll.do" method="POST">
 						<input type="hidden" value="N" id="insertChk" /> <input
 							type="text" name="id" placeholder="아이디" id="insertID" required>
-						&nbsp; &nbsp; <input type="button" value="중복확인" onclick="chkDup()"><br>
+						&nbsp; &nbsp;
+						<button type="submit" style="color : white" onclick="chkDup()">중복확인</button><br>
 						<input type="password" name="password" placeholder="비밀번호" required
 							id="password"><br> <input type="password"
 							name="passwordConfirm" placeholder="비밀번호 확인" required
@@ -77,13 +78,13 @@
 							<option value="business">회사원</option>
 							<option value="jobless">무직</option>
 							<option value="etc">기타</option>
-						</select> <br> <input type="button" value="회원가입"
-							onclick="validationCheck()"> &nbsp;&nbsp; <input
-							type="reset" value="취소하기">
+						</select> <br> &nbsp;&nbsp;
+							<button type="submit" style="color : white" onclick="validationCheck()">회원가입</button>
+							
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">창 닫기</button>
+					<button type="button" class="cancelbtn" data-dismiss="modal">창 닫기</button>
 				</div>
 			</div>
 
