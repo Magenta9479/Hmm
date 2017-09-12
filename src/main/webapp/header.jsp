@@ -60,20 +60,16 @@
 							<c:when test="${null eq member }">
 								<ul class="nav navbar-nav">
 									<li data-toggle="modal" data-target="#loginModal"><a
-										style="cursor: pointer"> <span
-											class="glyphicon glyphicon-log-in"></span> 로그인
-									</a></li>
+										style="cursor: pointer"> <span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
 									<li data-toggle="modal" data-target="#insertModal"><a
-										style="cursor: pointer"> <span
-											class="glyphicon glyphicon-user"></span> 회원가입
+										style="cursor: pointer"> <span class="glyphicon glyphicon-user"></span> 회원가입
 									</a></li>
 								</ul>
 							</c:when>
 
 							<c:when test="${null ne member }">
 								<ul class="nav navbar-nav">
-									<li data-toggle="modal" data-target="#updateModal"><a
-										href="#"> <span class="glyphicon glyphicon-user"> <c:out
+									<li data-toggle="modal" data-target="#updateModal"><a	href="#"> <span class="glyphicon glyphicon-user"> <c:out
 													value="${member.nickname }" />
 										</span>
 									</a></li>
