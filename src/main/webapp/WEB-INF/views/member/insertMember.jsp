@@ -21,11 +21,10 @@
 		});
 	});
 	function validationCheck() {
-		if ($('#password').val() == $('#passwordConfirm').val())
+		if (($('#password').val() != '' || $('#passwordConfirm').val() != '')
+				&& $('#password').val() == $('#passwordConfirm').val())
 			$('form').submit();
-		else if (($('#password').val() == $('#passwordConfirm').val())
-				|| $('#password').val() == ''
-				|| $('#passwordConfirm').val() == '')
+		else
 			alert("비밀번호를 한번 더 확인해주세요!!");
 	}
 
