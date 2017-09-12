@@ -14,8 +14,7 @@
 
 <title>Hmm | 전 세계의 개발자들을 널리 fuck 하리라.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="resources/css/index.css" rel="stylesheet" type="text/css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -29,7 +28,6 @@
 	<div class="thumbnail">
 		<img src="https://static.pexels.com/photos/7114/laptop-mobile.jpg"
 			alt="Cover Photo" />
-
 	</div>
 
 	<!-- 게시판 영역 -->

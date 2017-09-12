@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/*
+#E6E2AF
+#A7A37E
+#EFECCA
+#046380
+#002F2F
+*/
+
+* {
+  //border: 1px gold solid;
+}
+
+.container {
+  margin-top: 10px;
+}
