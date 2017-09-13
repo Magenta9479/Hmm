@@ -64,7 +64,6 @@
 											<th>카테고리</th>
 											<th>작성자</th>
 											<th>추천수</th>
-											<th>답글</th>
 											<th>조회수</th>
 											<th>작성일자</th>
 										</tr>
@@ -77,7 +76,7 @@
 
 												<td>${num }</td>
 												<c:set var="num" value="${num+1 }"/>
-												<td>${l.title }</td>
+												<td>${l.title }&nbsp;<span class="badge">${l.isdelete}</span></td>
 												<td>${l.code.name}</td>
 												<td>
 													<div class="profile">
@@ -88,7 +87,6 @@
 													</div>
 												</td>
 												<td>${l.point.best*(5)+l.point.good*(3)+l.point.bad*(-3)+l.point.worst*(-5) }</td>
-												<td>${l.isdelete}</td>
 												<td>${l.point.viewnum }</td>
 												<td>${l.postdate }</td>
 											</tr>

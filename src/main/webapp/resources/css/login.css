@@ -38,6 +38,7 @@ input[type=text]:focus, input[type=password]:focus {
     color: white;
     width: auto;
     padding: 10px 18px;
+    border: none;
 }
 
 .container {
