@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.hmm.board.model.dao.BoardDao;
 import com.kh.hmm.board.model.vo.Board;
+import com.kh.hmm.board.model.vo.BoardPoint;
 import com.kh.hmm.member.model.dao.MemberDao;
 import com.kh.hmm.member.model.vo.Member;
 
@@ -45,6 +46,12 @@ public class BoardServiceImpl implements BoardService
 	public int deletBoard(int bcode)
 	{
 		return bDao.deleteBoard(bcode);
+	}
+
+	@Override
+	public int checkBoard(BoardPoint point)
+	{
+		return bDao.checkBoard(point);
 	}
 
 	

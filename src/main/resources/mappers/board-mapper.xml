@@ -90,8 +90,6 @@
 				BEST=#{best},GOOD=#{good},BAD=#{bad},WORST=#{worst},
 				CAL=((5)*#{best}+(3)*#{good}+(-3)*#{bad}+(-5)*#{worst})
 			)
-		WHERE BCODE=#{bcode}	
-		 
-		
+		WHERE BCODE=#{bcode}		
 	</update>
 </mapper>

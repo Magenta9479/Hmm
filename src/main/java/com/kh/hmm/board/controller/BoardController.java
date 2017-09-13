@@ -15,6 +15,7 @@ import com.kh.hmm.board.model.service.BoardService;
 import com.kh.hmm.board.model.service.CommentsService;
 import com.kh.hmm.board.model.vo.Attachfile;
 import com.kh.hmm.board.model.vo.Board;
+import com.kh.hmm.board.model.vo.BoardPoint;
 import com.kh.hmm.board.model.vo.Comments;
 
 @Controller
@@ -76,9 +77,46 @@ public class BoardController
 			if(files!=null) model.addAttribute("files", files);
 		}		
 		
-		System.out.println(comments.size());
-		System.out.println(files);
-		
 		return "../../index";//보드 상세보기로 넘어가야한다.
 	}	
+	
+	@RequestMapping(value = "boardCheck.do", method = RequestMethod.POST)
+	public int checkBoard(BoardPoint point) 
+	{//아작스 처리를 요한다.
+		logger.info("checkBoard("+point+") call...");
+
+		int result=boardService.checkBoard(point);
+
+		return result;
+	}	
+	
+	@RequestMapping(value = "boardInsert.do", method = RequestMethod.POST)
+	public int insertBoard(Board b) 
+	{//아작스 처리를 요한다.
+		logger.info("insertBoard("+b+") call...");
+
+		int result=boardService.insertBoard(b);
+
+		return result;
+	}
+	
+	@RequestMapping(value = "boardUpdate.do", method = RequestMethod.POST)
+	public int updateBoard(Board b) 
+	{//아작스 처리를 요한다.
+		logger.info("updateBoard("+b+") call...");
+
+		int result=boardService.updateBoard(b);
+
+		return result;
+	}
+	
+	@RequestMapping(value = "boardDelete.do", method = RequestMethod.POST)
+	public String deleteBoard(int bcode) 
+	{
+		logger.info("deleteBoard("+bcode+") call...");
+
+		boardService.deletBoard(bcode);
+
+		return "../../Board";
+	}
 }

@@ -7,7 +7,11 @@ import com.kh.hmm.member.model.vo.Member;
 
 public interface AttachfileService
 {
-
 	ArrayList<Attachfile> selectFileList(int bcode);
 	
+	int insertAttachfile(Attachfile file);
+	
+	int deleteAttachfile(int atcode);
+	
+	int updateAttachfile(Attachfile file);
 }
