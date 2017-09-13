@@ -31,7 +31,7 @@
 				data : "email=" + email,
 				dataType : "text",
 				success : function(rData, textStatus, xhr) {
-					if (rData != "fail") {
+					if (rData != "emailDup") {
 						joinCode = rData;
 						alert("인증코드가 이메일로 전송 되었습니다!!");
 						interval = setInterval(function Timer(){
@@ -46,7 +46,12 @@
 								$('#codeCheck').text(msg);
 							}
 						},1000);
-					} else {
+					} 
+					else if(rData == "emailDup")
+						{
+						alert("이메일이 이미 등록 되어있습니다!!");
+						}
+					else if(rData == "fail"){
 						alert("유효하지 않은 이메일 입니다!!");
 					}
 				},
@@ -120,6 +125,7 @@
 <body>
 	<div class="container">
 
+
 		<!-- Modal -->
 		<div class="modal" id="insertModal" role="dialog">
 
@@ -143,7 +149,7 @@
 						<button id="emailCheck" style="color: white" type="button">이메일
 							인증</button>
 						<br> <input type="text" id="emailCode"><br>
-						<button id="codeCheck">인증확인</button>
+						<button id="codeCheck" style="color: white">인증확인</button>
 						<select name="job">
 							<option value="student">학생</option>
 							<option value="business">회사원</option>
