@@ -1,3 +1,4 @@
+
 .modal-header {
   background-color: #002F2F;
   color: white;
@@ -14,7 +15,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=text]:focus, input[type=password]:focus {
-    border: 1px #002F2F solid;
+  border: 1px green solid;
 }
 
 /* Set a style for all buttons */
