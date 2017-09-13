@@ -9,10 +9,14 @@
 #046380
 #002F2F
 */
+
+* {
+  font-family: 'Hanna', serif;
+}
+
 .board {
   border: none;
   background-color: white;
-  height: 100%;
   width: auto;
   margin-left: 300px;
   margin-right: 300px;
@@ -23,13 +27,21 @@
   border: none;
 }
 
-.sort_options h3 {
-  display: inline;
+.input-group .form-control{
+  padding: 10px;
   font-size: 16px;
 }
 
-.sort_options:hover {
+.input-group {
+  width: 600px; 
+}
+
+.sort_options select:hover, .sort_options option:hover {
   cursor: pointer;
+}
+
+.sort_options .selectpicker{
+  width: 150px;
 }
 
 .table {
