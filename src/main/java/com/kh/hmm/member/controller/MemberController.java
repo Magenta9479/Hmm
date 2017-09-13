@@ -92,7 +92,8 @@ public class MemberController {
 		else {
 			Member m = (Member) session.getAttribute("member");
 			Member member = null;
-			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
+//			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
+			String savePath = "resources/img/"+m.getId();
 
 			// 파일 객체 생성
 			File file = new File(savePath);
@@ -112,7 +113,7 @@ public class MemberController {
 
 			String rename = m.getId() + extension;
 
-			String fullPath = savePath + "\\" + rename;
+			String fullPath = savePath + "/" + rename;
 			m.setPhoto(fullPath);
 			if (!uploadfile.isEmpty()) {
 				try {
@@ -166,12 +167,23 @@ public class MemberController {
 
 	// 회원가입 이메일 인증
 	@RequestMapping(value = "sendMail.do", method = RequestMethod.POST)
-	public void sendMailAuth(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+	public void sendMailAuth(Member m,HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
+		PrintWriter out = response.getWriter();
 		System.out.println("이메일 인증 컨트롤러.....");
 		String email = request.getParameter("email");
+		m.setEmail(email);
+		Member member = memberService.emailCheck(m);
+		
+		if(member != null)
+		{
+			System.out.println("이메일 중복");
+			out.print("emailDup");
+			out.flush();
+			out.close();
+			return;
+		}
 		System.out.println(email);
-		PrintWriter out = response.getWriter();
 		if (!email.contains("@")) {
 			out.print("fail");
 			return;
