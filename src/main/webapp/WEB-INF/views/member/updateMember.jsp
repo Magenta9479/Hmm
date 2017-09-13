@@ -56,16 +56,18 @@
 	<div class="panel panel-success">
 	<div class="panel-heading">프로필 수정</div>
 	<div class="panel-body">
-		<form action="uploadFile.do" method="POST"
+		<form id="pictureUpload" action="uploadFile.do" method="POST"
 			enctype="multipart/form-data">
 			<img id="profileImg"
 				src="resources/img/${member.id}/${member.id}.jpg"
-				alt="profileImg"
-				style="border: 1px solid black; max-height: 300px;" /><br>
+				alt="profileImg"/><br>
 			<input type='file' id="imgUpload" name="photo" id="photo" /> <br />
 			<input type="submit" value="파일 업로드">
 		</form>
-		<hr />
+		<hr>
+			<label>
+				비밀번호 및 이메일 재설정
+			</label>
 		<form action="update.do" method="POST">
 			<input type="text" name="id" placeholder="아이디"
 				value="${member.id}" readonly><br> <input
