@@ -1,10 +1,26 @@
 @CHARSET "UTF-8";
 
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+* {
+	font-family: 'Hanna', serif;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+}
+
 #residualcash {
 	margin-top: 180px;
 }
-#salesitem{
-	margin-top : 100px;
+
+#salesitem {
+	margin-top: 100px;
 }
 
 #container-fluid {
@@ -41,40 +57,87 @@
 }
 
 #charge {
+	background-color: #ff8040;
 	width: 45%;
 }
- 
+
 #cash {
-	width : 15%;
+	width: 15%;
+	text-align: right;
 }
+
 #menu {
-	position : fixed;
+	position: fixed;
 	top: 200px;
 	width: 100%;
 	left: 83%;
-	height :30% ;
+	height: 30%;
 }
-#submenu{
-	width : 8%;
+
+#submenu {
+	width: 8%;
 }
-#myitem{
-	width : 8%;
+
+#myitem {
+	width: 8%;
 }
-/* #itemdetail{
-	z-index: 1;
-	
+
+#itemtitle {
+	text-align: center;
 }
-#itemes{
-	z-index: 1;
-	
-} */
-#thisbuy{
-	/* position : absolute;
-	left : 20%; */
-	width : 20%;
-	heigth : 4%
+
+#thisbuy {
+	width: 14%;
+	height: 4.5%;
+	padding: 0px;
 }
-#close{
-	width : 20%;
-    height: 34px;
+
+#close {
+	width: 14%;
+	height: 4.5%;
+	position: absoulte;
+	left: 50%;
 }
+
+#myitemModal {
+	height: auto;
+	width: 1200px;
+}
+
+#itemheight {
+	width: 70%;
+	overflow: auto;
+	margin: 0px;
+	-ms-overflow-style: none;
+}
+/* 스크롤 숨기기 */
+::-webkit-scrollbar {
+	display: none;
+}
+
+#itemtable {
+	margin-left: 35px;
+}
+/* 아이템 상세보기 */
+#selectimage {
+	/* background : green; */
+	width: 50%;
+	height: 20%;
+	padding: 20px;
+}
+/* 선택아이템 이미지 */
+#selectimage img {
+	width: 100%;
+	heigth: 100%;
+}
+
+#information {
+	/* background : yellow; */
+	position: absolute;
+	top: 8%;
+	left: 50%;
+	width: 48%;
+	height: 85%;
+	border-left: 1px dotted black;
+}
+/* ----------------------- */
