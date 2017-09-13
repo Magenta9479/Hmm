@@ -76,18 +76,17 @@
 					<form id="pictureUpload" action="uploadFile.do" method="POST"
 						enctype="multipart/form-data">
 						<c:choose>
-							<c:when test="${null eq member.photo}">
-								<img id="profileImg" src="resources/img/defaultImg.jsp" alt="profileImg" />
-								<br>
+							<c:when test="${null eq photo}">
+								<img id="profileImg" src="resources/img/defaultImg.jpg"
+									alt="profileImg" />
 							</c:when>
-							<c:when test="${null ne member.photo}">
+							<c:when test="${null ne photo}">
+								<img id="profileImg" src="${photo}" alt="profileImg" />
 							</c:when>
-							<img id="profileImg" src="${member.photo}" alt="profileImg" />
-							<br>
 						</c:choose>
-
-						<input type='file' id="imgUpload" name="photo" id="photo" /> <br />
-						<input type="submit" value="파일 업로드">
+						<br> <input type='file' id="imgUpload" name="photo"
+							id="photo" /> <br />
+						<button type="button" onclick="validationFile()">파일 업로드</button>
 					</form>
 					<hr>
 					<label> 비밀번호 및 이메일 재설정 </label>
