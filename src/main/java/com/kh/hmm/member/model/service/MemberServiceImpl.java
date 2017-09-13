@@ -17,6 +17,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDao mDao;
+	@Autowired
 	private JavaMailSender javaMailSender;
 
 	public void setJavaMailSender(JavaMailSender javaMailSender) {
