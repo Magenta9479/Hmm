@@ -24,11 +24,27 @@
 form input[type=text],form input[type=password],form input[type=email] {
   width: 50%;
   margin: auto;
-  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form input[type=text]:focus,form input[type=password]:focus,form input[type=email]:focus {
+  border: 1px #002F2F solid;
 }
 
 form select{
   width: 50%;
   margin: auto;
-  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input[type=button], input[type=reset] {
+  background-color: #002F2F;
+  padding: 10px;
+  color: white;
+  box-shadow: none;
+  border: none;
+}
+
+input[type=button]:hover, input[type=reset]:hover {
+  opacity: 0.8;
 }
