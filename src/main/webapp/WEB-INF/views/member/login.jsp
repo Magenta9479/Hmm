@@ -18,7 +18,7 @@
 						<div class="modal-body">
 							<input type="text" name="id" placeholder="아이디를 입력해 주세요" required>
 								<input type="password" name="password" placeholder="비밀번호를 입력해 주세요" required>
-									<button type="button" style="color : white" onclick="onSubmit()">로그인</button>
+									<button type="button" style="color : white; background-color: #002F2F;" onclick="onSubmit()">로그인</button>
 									<br>
 										<br>
 											<input type="checkbox" checked="checked">아이디 기억하기</div>
