@@ -92,9 +92,8 @@ public class MemberController {
 		else {
 			Member m = (Member) session.getAttribute("member");
 			Member member = null;
-			// String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" +
-			// m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
-			String savePath = "resources/img/" + m.getId();
+//			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
+			String savePath = "resources/img/"+m.getId();
 
 			// 파일 객체 생성
 			File file = new File(savePath);

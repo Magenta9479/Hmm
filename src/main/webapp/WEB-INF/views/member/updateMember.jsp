@@ -76,21 +76,22 @@
 					<form id="pictureUpload" action="uploadFile.do" method="POST"
 						enctype="multipart/form-data">
 						<c:choose>
-							<c:when test="${null eq photo}">
-								<img id="profileImg" src="resources/img/defaultImg.jpg"
-									alt="profileImg" />
+							<c:when test="${null eq member.photo}">
+								<img id="profileImg" src="resources/img/defaultImg.jsp" alt="profileImg" />
+								<br>
 							</c:when>
-							<c:when test="${null ne photo }">
-								<img id="profileImg" src="${photo}" alt="profileImg" />
+							<c:when test="${null ne member.photo}">
 							</c:when>
+							<img id="profileImg" src="${member.photo}" alt="profileImg" />
+							<br>
 						</c:choose>
-						<br> <input type='file' id="imgUpload" name="photo"
-							id="photo" /> <br /> <!-- <input type="button" value="파일 업로드"> -->
-							<button onclick="validationFile()" type="button">파일 업로드</button>
+
+						<input type='file' id="imgUpload" name="photo" id="photo" /> <br />
+						<input type="submit" value="파일 업로드">
 					</form>
 					<hr>
 					<label> 비밀번호 및 이메일 재설정 </label>
-					<form action="update.do" method="POST" id="updateForm">
+					<form action="update.do" method="POST">
 						<input type="text" name="id" placeholder="아이디"
 							value="${member.id}" readonly><br> <input
 							type="password" name="password" placeholder="비밀번호"
@@ -107,7 +108,6 @@
 						</select> <br> <input type="button" value="수정하기"
 							onclick="validationDate()"> &nbsp;&nbsp; <input
 							type="reset" value="취소하기"><br>
-
 					</form>
 				</div>
 
