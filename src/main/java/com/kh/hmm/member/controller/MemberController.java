@@ -136,6 +136,7 @@ public class MemberController {
 		}
 	}
 
+
 	@RequestMapping(value = "updateProfile.do", method = RequestMethod.GET)
 	public String goUpdateProfile(Model model) {
 		logger.info("memberUploadProfile() call...");
@@ -167,16 +168,15 @@ public class MemberController {
 
 	// 회원가입 이메일 인증
 	@RequestMapping(value = "sendMail.do", method = RequestMethod.POST)
-	public void sendMailAuth(Member m,HttpServletRequest request, HttpServletResponse response, HttpSession session)
+	public void sendMailAuth(Member m, HttpServletRequest request, HttpServletResponse response, HttpSession session)
 			throws Exception {
 		PrintWriter out = response.getWriter();
 		System.out.println("이메일 인증 컨트롤러.....");
 		String email = request.getParameter("email");
 		m.setEmail(email);
 		Member member = memberService.emailCheck(m);
-		
-		if(member != null)
-		{
+
+		if (member != null) {
 			System.out.println("이메일 중복");
 			out.print("emailDup");
 			out.flush();

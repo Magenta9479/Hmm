@@ -17,7 +17,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
+<script type="text/javascript">
 	$(function() {
 		var job = "${job}";
 		$('#updateJob option').each(function() {
@@ -44,9 +44,22 @@
 
 	function validationDate() {
 		if ($('#password').val() == $('#passwordConfirm').val())
-			$('form').submit();
+			$('#updateForm').submit();
 		else
 			alert("비밀번호를 한번 더 확인해주세요!!");
+	}
+
+	function validationFile() {
+		var file = $('#photo').val();
+		alert(file);
+		var fileExt = file.substring(file.lastIndexOf('.') + 1);
+		if (fileExt.toUpperCase() == "JPG" || fileExt.toUpperCase() == "PNG"
+				|| fileExt.toUpperCase() == "GIF") {
+			$('#pictureUpload').submit();
+		} else {
+			alert("jpg, png, gif 파일만 업로드 가능합니다!!");
+			return;
+		}
 	}
 </script>
 </head>
@@ -95,7 +108,6 @@
 						</select> <br> <input type="button" value="수정하기"
 							onclick="validationDate()"> &nbsp;&nbsp; <input
 							type="reset" value="취소하기"><br>
-
 					</form>
 				</div>
 
