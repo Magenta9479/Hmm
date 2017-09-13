@@ -15,6 +15,7 @@ import com.kh.hmm.board.model.service.BoardService;
 import com.kh.hmm.board.model.service.CommentsService;
 import com.kh.hmm.board.model.vo.Attachfile;
 import com.kh.hmm.board.model.vo.Board;
+import com.kh.hmm.board.model.vo.BoardPoint;
 import com.kh.hmm.board.model.vo.Comments;
 
 @Controller
@@ -53,17 +54,13 @@ public class BoardController
 	@RequestMapping(value = "boardOne.do", method = RequestMethod.GET)
 	public String selectBoardOne(Model model,int bcode) 
 	{
-		logger.info("selectBoardList("+bcode+") call...");
+		logger.info("selectBoardOne("+bcode+") call...");
 
 		Board board=boardService.selectBoardOne(bcode);	
 		ArrayList<Comments> comments=null;
 		ArrayList<Attachfile> files=null;
 		
-		System.out.println(board);
-		System.out.println(board.getPoint());
-		System.out.println(board.getCode());
-		
-		/*if(board.getIsdelete()getCommentnum()>0)	
+		if(Integer.parseInt(board.getIsdelete())>0)	
 		{
 			comments=commentsService.selectCommentsList(bcode);
 		}
@@ -78,8 +75,48 @@ public class BoardController
 			model.addAttribute("board", board);
 			if(comments!=null) model.addAttribute("comments", comments);
 			if(files!=null) model.addAttribute("files", files);
-		}		*/
+		}		
 		
 		return "../../index";//보드 상세보기로 넘어가야한다.
 	}	
+	
+	@RequestMapping(value = "boardCheck.do", method = RequestMethod.POST)
+	public int checkBoard(BoardPoint point) 
+	{//아작스 처리를 요한다.
+		logger.info("checkBoard("+point+") call...");
+
+		int result=boardService.checkBoard(point);
+
+		return result;
+	}	
+	
+	@RequestMapping(value = "boardInsert.do", method = RequestMethod.POST)
+	public int insertBoard(Board b) 
+	{//아작스 처리를 요한다.
+		logger.info("insertBoard("+b+") call...");
+
+		int result=boardService.insertBoard(b);
+
+		return result;
+	}
+	
+	@RequestMapping(value = "boardUpdate.do", method = RequestMethod.POST)
+	public int updateBoard(Board b) 
+	{//아작스 처리를 요한다.
+		logger.info("updateBoard("+b+") call...");
+
+		int result=boardService.updateBoard(b);
+
+		return result;
+	}
+	
+	@RequestMapping(value = "boardDelete.do", method = RequestMethod.POST)
+	public String deleteBoard(int bcode) 
+	{
+		logger.info("deleteBoard("+bcode+") call...");
+
+		boardService.deletBoard(bcode);
+
+		return "../../Board";
+	}
 }

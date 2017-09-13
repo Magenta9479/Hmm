@@ -46,4 +46,8 @@ public class MemberDao
 	public Member dupMember(Member m) {
 		return sqlSession.selectOne("chkDup", m);
 	}
+
+	public Member emailCheck(Member m) {
+		return (Member)sqlSession.selectOne("emailChk", m);
+	}
 }

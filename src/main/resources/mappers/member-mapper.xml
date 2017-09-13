@@ -13,6 +13,12 @@
 		SELECT *
 		FROM MEMBER WHERE ID = #{id}
 	</select>
+	
+	<select id="emailChk" parameterType="Member" resultType="Member">
+		SELECT *
+		FROM MEMBER WHERE EMAIL = #{email}
+	</select>
+	
 
 	<insert id="enroll">
 		insert into member

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.hmm.board.model.vo.Board;
+import com.kh.hmm.board.model.vo.BoardPoint;
 
 @Repository("boardDao")
 public class BoardDao
@@ -52,25 +53,21 @@ public class BoardDao
 
 	public int insertBoard(Board b) 
 	{
-		pre="insert";
-		post="Board";
-		
-		return sqlSession.insert(distributor(b.getDistinguish(),pre,post),b);
+		return sqlSession.insert("insertBoard",b);
 	}
 	
 	public int updateBoard(Board b) 
-	{
-		pre="update";
-		post="Board";
-		
-		return sqlSession.update(distributor(b.getDistinguish(),pre,post),b);
+	{	
+		return sqlSession.update("updateBoard",b);
 	}
 	
-	public int deleteBoard(Board b) 
+	public int deleteBoard(int bcode) 
 	{
-		pre="delete";
-		post="Board";
-		
-		return sqlSession.delete(distributor(b.getDistinguish(),pre,post),b);
+		return sqlSession.delete("deleteBoard",bcode);
+	}
+
+	public int checkBoard(BoardPoint point)
+	{
+		return sqlSession.update("checkBoard",point);
 	}
 }
