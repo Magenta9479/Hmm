@@ -90,7 +90,6 @@ public class MemberController {
 		if (uploadfile.isEmpty())
 			return "member/updateMember";
 		else {
-			int i = 1;
 			Member m = (Member) session.getAttribute("member");
 			Member member = null;
 			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
@@ -166,16 +165,32 @@ public class MemberController {
 	}
 
 	// 회원가입 이메일 인증
-	@RequestMapping(value = "sendMail.do", method = RequestMethod.POST/* , produces = "application/json" */)
-	public boolean sendMailAuth(HttpSession session, @RequestParam String email) {
+	@RequestMapping(value = "sendMail.do", method = RequestMethod.POST)
+	public void sendMailAuth(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		System.out.println("이메일 인증 컨트롤러.....");
+		String email = request.getParameter("email");
+		System.out.println(email);
+		PrintWriter out = response.getWriter();
+		if (!email.contains("@")) {
+			out.print("fail");
+			return;
+		}
+
 		int ran = new Random().nextInt(100000) + 10000; // 10000 ~ 99999
 		String joinCode = String.valueOf(ran);
-		session.setAttribute("joinCode", joinCode);
 
 		String subject = "회원가입 인증 코드 발급 안내 입니다.";
 		StringBuilder sb = new StringBuilder();
 		sb.append("귀하의 인증 코드는 " + joinCode + " 입니다.");
-		boolean flag = memberService.send(subject, sb.toString(), "아이디@gmail.com", email, null);
-		return flag;
+		boolean flag = memberService.send(subject, sb.toString(), "wkdgma91@gmail.com", email, null);
+		System.out.println("flag 값 확인 : " + flag);
+		if (flag) {
+			out.print(joinCode);
+		} else {
+			out.print("fail");
+		}
+		out.flush();
+		out.close();
 	}
 }
