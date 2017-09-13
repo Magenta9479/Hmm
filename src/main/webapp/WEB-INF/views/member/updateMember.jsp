@@ -8,7 +8,6 @@
 <c:set var="job" value="${member.job }" scope="session" />
 <c:set var="photo" value="${member.photo }" scope="session" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="resources/css/updateMember.css" rel="stylesheet" type="text/css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -50,25 +49,25 @@
 
 <%@ include file="/header.jsp"%>
 <body>
-	<div class="container">
 
-
+<div class="board">
 				<!-- Modal content-->
 <div class="panel panel-default">
 	<div class="panel panel-success">
 	<div class="panel-heading">프로필 수정</div>
-
 	<div class="panel-body">
-		<form action="uploadFile.do" method="POST"
+		<form id="pictureUpload" action="uploadFile.do" method="POST"
 			enctype="multipart/form-data">
 			<img id="profileImg"
 				src="resources/img/${member.id}/${member.id}.jpg"
-				alt="profileImg"
-				style="border: 1px solid black; widgh: 150px; height: 150px;" /><br>
+				alt="profileImg"/><br>
 			<input type='file' id="imgUpload" name="photo" id="photo" /> <br />
 			<input type="submit" value="파일 업로드">
 		</form>
-		<hr />
+		<hr>
+			<label>
+				비밀번호 및 이메일 재설정
+			</label>
 		<form action="update.do" method="POST">
 			<input type="text" name="id" placeholder="아이디"
 				value="${member.id}" readonly><br> <input
@@ -83,21 +82,21 @@
 				<option value="business">회사원</option>
 				<option value="jobless">무직</option>
 				<option value="etc">기타</option>
-			</select> <br> <label>메달 갯수 : ${member.medal}</label> <br> <label>경험치
-				: ${member.exp}</label> <br> <label>남은 캐시 : ${member.chash}</label>
-			<br> <label>남은 따루 : ${member.ddaru}</label> <br> <label>가입일
-				: ${member.enrolldate}</label> <br> <input type="button"
+			</select> <br>   <input type="button"
 				value="수정하기" onclick="validationDate()"> &nbsp;&nbsp; <input
-				type="reset" value="취소하기">
+				type="reset" value="취소하기"><br>
+
 		</form>
 	</div>
 
-	<div class="panel-footer">Panel Footer</div>
+	<div class="panel-footer"><label>메달 갯수 : ${member.medal}</label> <br> <label>경험치
+		: ${member.exp}</label> <br> <label>남은 캐시 : ${member.chash}</label>
+	<br> <label>남은 따루 : ${member.ddaru}</label> <br> <label>가입일
+		: ${member.enrolldate}</label></div>
 
 </div>
 </div>
 </div>
-
 
 </body>
 </html>

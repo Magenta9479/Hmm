@@ -23,6 +23,24 @@ public class AttachfileServiceImpl implements AttachfileService
 		return afDao.selectAttachfiles(bcode);
 	}
 
+	@Override
+	public int insertAttachfile(Attachfile file)
+	{
+		return afDao.insertAttachfile(file);
+	}
+
+	@Override
+	public int deleteAttachfile(int atcode)
+	{
+		return afDao.deleteAttachfile(atcode);
+	}
+
+	@Override
+	public int updateAttachfile(Attachfile file)
+	{
+		return afDao.updateAttachfile(file);
+	}
+
 
 
 
