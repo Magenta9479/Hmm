@@ -55,6 +55,41 @@
 		WHERE A.BCODE=#{bcode}
 	</select>
 	
-
+	<insert id="insertBoard" parameterType="Board">
+		INSERT INTO BOARD VALUES
+		(
+			BOARD_SEQ.NEXTVAL,#{title},#{content},#{distinguish},
+			#{writerid},#{postdate},#{isdelete},#{hasfile}
+		)
+	</insert>
 	
+	<update id="updateBoard" parameterType="Board">
+		UPDATE BOARD 
+		SET (	
+				TITLE=#{title},CONTENT=#{content},DISTINGUISH=#{distinguish},
+				WRITERID=#{writerid},POSTDATE=#{postdate},ISDELETE=#{isdelete},HASFILE=#{hasfile}
+			)		
+		WHERE BCODE=#{bcode}
+	</update>
+
+	<delete id="deleteBoard" parameterType="_int">
+		UPDATE BOARD 
+		SET ISDELETE='TRUE'
+		WHERE BCODE=#{bcode}
+	</delete>
+	
+	<update id="viewBoard" parameterType="BoardPoint">
+		UPDATE BOARDPOINT 
+		SET VIEWNUM=#{viewnum}
+		WHERE BCODE=#{bcode}		
+	</update>
+	
+	<update id="checkBoard" parameterType="BoardPoint">
+		UPDATE BOARDPOINT 
+		SET (
+				BEST=#{best},GOOD=#{good},BAD=#{bad},WORST=#{worst},
+				CAL=((5)*#{best}+(3)*#{good}+(-3)*#{bad}+(-5)*#{worst})
+			)
+		WHERE BCODE=#{bcode}		
+	</update>
 </mapper>
