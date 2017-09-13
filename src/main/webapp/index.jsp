@@ -13,24 +13,34 @@
 	<head>
 
 		<title>Hmm | 전 세계의 개발자들을 널리 fuck 하리라.</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-				<link href="resources/css/index.css" rel="stylesheet" type="text/css">
-					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-				</head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link href="resources/css/index.css" rel="stylesheet" type="text/css">
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			</head>
 
-				<%@ include file="/header.jsp"%>
 
-				<body>
-					
+			<%@ include file="/header.jsp"%>
 
-					<!-- 게시판 영역 -->
-					<div class="board">
-						<!-- 검색창, 검색 정렬들의 패널 -->
-						<div class="panel panel-default">
-							<div class="panel-body">
+			<body>
+				<!-- 게시판 영역 -->
+				<div class="board">
+					<!-- 검색창, 검색 정렬들의 패널 -->
+					<div class="panel panel-default">
 
+
+
+						<div class="panel-body">
+							<div class="panel pull-left">
+								<form>
+									<div class="input-group">
+										<input type="text" class="form-control" size="50" placeholder="검색어를 입력하세요...">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-success">검색</button>
+											</div>
+										</div>
+									</form>
+								</div>
 								<div class="panel pull-right">
 									<div class="sort_options">
 

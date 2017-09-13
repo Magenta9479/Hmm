@@ -19,7 +19,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for all buttons */
-button {
+.modal-body button {
     background-color: #002F2F;
     color: white;
     padding: 14px 20px;
@@ -29,7 +29,7 @@ button {
     width: 100%;
 }
 
-button:hover {
+.modal-body button:hover {
     opacity: 0.8;
 }
 
