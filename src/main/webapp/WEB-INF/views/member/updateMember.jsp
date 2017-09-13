@@ -18,6 +18,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+	fileExt = 0;
 	$(function() {
 		var job = "${job}";
 		$('#updateJob option').each(function() {
@@ -26,6 +27,7 @@
 		});
 
 		$("#imgUpload").on('change', function() {
+			fileExt = this.value;
 			readURL(this);
 		});
 
@@ -50,11 +52,11 @@
 	}
 
 	function validationFile() {
-		var file = $('#photo').val();
-		alert(file);
-		var fileExt = file.substring(file.lastIndexOf('.') + 1);
-		if (fileExt.toUpperCase() == "JPG" || fileExt.toUpperCase() == "PNG"
-				|| fileExt.toUpperCase() == "GIF") {
+		var file = fileExt.substring(fileExt.lastIndexOf('.') + 1);
+		alert(file.toUpperCase());
+		if (file.toUpperCase() == "JPG" || file.toUpperCase() == "PNG"
+				|| file.toUpperCase() == "GIF") {
+			/* document.getElementById("pictureUpload").submit(); */
 			$('#pictureUpload').submit();
 		} else {
 			alert("jpg, png, gif 파일만 업로드 가능합니다!!");
@@ -73,7 +75,7 @@
 			<div class="panel panel-success">
 				<div class="panel-heading">프로필 수정</div>
 				<div class="panel-body">
-					<form id="pictureUpload" action="uploadFile.do" method="POST"
+					<form id="pictureUpload" name="pictureUpload" action="uploadFile.do" method="POST"
 						enctype="multipart/form-data">
 						<c:choose>
 							<c:when test="${null eq photo}">
