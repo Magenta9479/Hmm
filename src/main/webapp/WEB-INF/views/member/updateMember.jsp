@@ -8,7 +8,6 @@
 <c:set var="job" value="${member.job }" scope="session" />
 <c:set var="photo" value="${member.photo }" scope="session" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="resources/css/updateMember.css" rel="stylesheet" type="text/css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -50,9 +49,8 @@
 
 <%@ include file="/header.jsp"%>
 <body>
-	<div class="container">
 
-
+<div class="board">
 				<!-- Modal content-->
 <div class="panel panel-default">
 	<div class="panel panel-success">
@@ -97,7 +95,6 @@
 </div>
 </div>
 </div>
-
 
 </body>
 </html>
