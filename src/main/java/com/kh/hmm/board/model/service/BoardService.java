@@ -3,6 +3,7 @@ package com.kh.hmm.board.model.service;
 import java.util.ArrayList;
 
 import com.kh.hmm.board.model.vo.Board;
+import com.kh.hmm.board.model.vo.BoardPoint;
 
 public interface BoardService
 {
@@ -16,6 +17,8 @@ public interface BoardService
 	int updateBoard(Board b);
 	
 	int deletBoard(int bcode);
+
+	int checkBoard(BoardPoint point);
 
 	
 }
