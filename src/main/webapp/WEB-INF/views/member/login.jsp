@@ -34,7 +34,6 @@
 					</span>
 					<button type="button" class="cancelbtn" data-dismiss="modal">창
 						닫기</button>
-
 				</div>
 
 			</div>
