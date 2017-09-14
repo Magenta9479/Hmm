@@ -33,4 +33,9 @@
 		JOB=#{job} WHERE
 		ID=#{id}
 	</update>
+	
+	<update id="updatePhoto">
+	update member set
+		PHOTO=#{photo} where ID=#{id}
+	</update>
 </mapper>

@@ -80,22 +80,22 @@ public class MemberController {
 			session.setAttribute("member", member);
 
 		}
-		return "redirect:/";
+		return "member/updateMember";
 	}
 
 	@RequestMapping(value = "uploadFile.do", method = RequestMethod.POST)
 	public String memberUpdate(HttpServletRequest request, HttpSession session,
 			@RequestParam("photo") MultipartFile uploadfile) {
 		logger.info("memberUploadProfile() call...");
-		if (uploadfile.isEmpty())
+		if (uploadfile.isEmpty()) {
+			System.out.println("파일이 비어있음");
 			return "member/updateMember";
-		else {
+		} else {
 			Member m = (Member) session.getAttribute("member");
 			Member member = null;
 			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
-//			String savePath = "resources/img/"+m.getId();
+			// String savePath = "resources/img/"+m.getId();
 
-			
 			// 파일 객체 생성
 			File file = new File(savePath);
 			// !표를 붙여주어 파일이 존재하지 않는 경우의 조건을 걸어줌
@@ -114,7 +114,7 @@ public class MemberController {
 
 			String rename = m.getId() + extension;
 
-			String fullPath = savePath + "//" + rename;
+			String fullPath = savePath + "\\" + rename;
 			m.setPhoto(fullPath);
 			if (!uploadfile.isEmpty()) {
 				try {
@@ -122,7 +122,7 @@ public class MemberController {
 					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fullPath)));
 					stream.write(bytes);
 					stream.close();
-					member = memberService.updateMember(m);
+					member = memberService.updatePhoto(m);
 
 					if (member != null) {
 						session.setAttribute("member", member);
@@ -136,7 +136,6 @@ public class MemberController {
 			return "member/updateMember";
 		}
 	}
-
 
 	@RequestMapping(value = "updateProfile.do", method = RequestMethod.GET)
 	public String goUpdateProfile(Model model) {

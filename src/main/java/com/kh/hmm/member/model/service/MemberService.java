@@ -9,6 +9,7 @@ public interface MemberService
 	Member loginMember(Member m);
 	Member enrollMember(Member m);
 	Member updateMember(Member m);
+	Member updatePhoto(Member m);
 	Member emailCheck(Member m);
 	  /** 메일 전송
      *  @param subject 제목

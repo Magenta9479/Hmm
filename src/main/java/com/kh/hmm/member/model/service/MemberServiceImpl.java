@@ -78,4 +78,9 @@ public class MemberServiceImpl implements MemberService {
 	public Member emailCheck(Member m) {
 		return mDao.emailCheck(m);
 	}
+
+	@Override
+	public Member updatePhoto(Member m) {
+		return mDao.updatePhoto(m);
+	}
 }
