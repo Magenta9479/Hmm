@@ -75,8 +75,8 @@
 
 				<div class="panel-heading">프로필 수정</div>
 				<div class="panel-body">
-					<form id="pictureUpload" name="pictureUpload" action="uploadFile.do" method="POST"
-						enctype="multipart/form-data">
+					<form id="pictureUpload" name="pictureUpload"
+						action="uploadFile.do" method="POST" enctype="multipart/form-data">
 						<c:choose>
 							<c:when test="${null eq photo}">
 								<img id="profileImg" src="resources/img/defaultImg.jpg"
@@ -106,9 +106,10 @@
 							<option value="business">회사원</option>
 							<option value="jobless">무직</option>
 							<option value="etc">기타</option>
-						</select> <br> <input type="button" value="수정하기"
-							onclick="validationDate()"> &nbsp;&nbsp; <input
-							type="reset" value="취소하기"><br>
+						</select> <br>
+						<button type="button" onclick="validationDate()">수정하기</button>
+						<br>&nbsp;&nbsp; <input type="reset" value="취소하기">
+
 					</form>
 				</div>
 
