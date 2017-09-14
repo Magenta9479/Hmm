@@ -69,6 +69,7 @@
 				clearInterval(interval);
 				$('#codeCheck').text("인증성공");
 				$('#codeCheck').attr("disabled");
+				$('#insertChk').val("YY");
 			}
 			else
 				{
@@ -81,8 +82,13 @@
 	});
 	function validationCheck() {
 		if (($('#password').val() != '' || $('#passwordConfirm').val() != '')
-				&& $('#password').val() == $('#passwordConfirm').val())
+				&& $('#password').val() == $('#passwordConfirm').val()){
+		if($('#insertChk').val() == "YY")
+			{
 			$('form').submit();
+			}
+			
+		}
 		else
 			alert("비밀번호를 한번 더 확인해주세요!!");
 	}
@@ -149,7 +155,7 @@
 						<button id="emailCheck" style="color: white" type="button">이메일
 							인증</button>
 						<br> <input type="text" id="emailCode"><br>
-						<button id="codeCheck" style="color: white">인증확인</button>
+						<button type="button" id="codeCheck" style="color: white">인증확인</button>
 						<select name="job">
 							<option value="student">학생</option>
 							<option value="business">회사원</option>

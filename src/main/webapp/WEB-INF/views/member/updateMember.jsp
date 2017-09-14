@@ -53,10 +53,8 @@
 
 	function validationFile() {
 		var file = fileExt.substring(fileExt.lastIndexOf('.') + 1);
-		alert(file.toUpperCase());
 		if (file.toUpperCase() == "JPG" || file.toUpperCase() == "PNG"
 				|| file.toUpperCase() == "GIF") {
-			/* document.getElementById("pictureUpload").submit(); */
 			$('#pictureUpload').submit();
 		} else {
 			alert("jpg, png, gif 파일만 업로드 가능합니다!!");
@@ -66,14 +64,9 @@
 </script>
 </head>
 
-<%@ include file="/header.jsp"%>
 
-<%
-	Member m = (Member) session.getAttribute("member");
-	String fileExt = m.getPhoto();
-	fileExt = fileExt.substring(fileExt.lastIndexOf('.') + 1);
-%>
 <body>
+	<%@ include file="/header.jsp"%>
 
 	<div class="board">
 		<!-- Modal content-->
@@ -89,7 +82,7 @@
 								alt="profileImg" />
 						</c:when>
 						<c:when test="${null ne photo}">
-							<img id="profileImg" src="resources/img/${member.id}/${member.id}.<%=fileExt%>" alt="profileImg" />
+							<img id="profileImg" src="${photo}" alt="profileImg" />
 						</c:when>
 					</c:choose>
 					<br> <input type='file' id="imgUpload" name="photo" id="photo" />
