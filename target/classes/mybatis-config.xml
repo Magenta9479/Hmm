@@ -13,8 +13,13 @@
 		<typeAlias type="com.kh.hmm.board.model.vo.CommentsPoint" alias="CommentsPoint" />
 		
 		<typeAlias type="com.kh.hmm.board.model.vo.Attachfile" alias="Attachfile" />
+		
 		<typeAlias type="com.kh.hmm.item.model.vo.Item" alias="Item" />
 		<typeAlias type="com.kh.hmm.item.model.vo.Purchaseditem" alias="Purchaseditem" />
+		
+		<typeAlias type="com.kh.hmm.newTech.model.vo.Conlist" alias="Conlist" />
+		<typeAlias type="com.kh.hmm.newTech.model.vo.Prolist" alias="Prolist" />
+		<typeAlias type="com.kh.hmm.newTech.model.vo.Weeksubject" alias="Weeksubject" />
 	</typeAliases>
 
 	<mappers>
@@ -23,5 +28,6 @@
 		<mapper resource="mappers/comments-mapper.xml" />
 		<mapper resource="mappers/attachfile-mapper.xml" />
 		<mapper resource="mappers/item-mapper.xml" />
+		<mapper resource="mappers/weeksubject-mapper.xml" />
 	</mappers>
 </configuration>
