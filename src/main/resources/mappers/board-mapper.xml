@@ -58,10 +58,15 @@
 	<insert id="insertBoard" parameterType="Board">
 		INSERT INTO BOARD VALUES
 		(
-			BOARD_SEQ.NEXTVAL,#{title},#{content},#{distinguish},
-			#{writerid},#{postdate},#{isdelete},#{hasfile}
+			#{bcode},#{title},#{content},#{distinguish},
+			#{writerid},SYSDATE,'n','n'
 		)
 	</insert>
+	
+	<select id="boardCode" resultType="java.lang.Integer">
+		SELECT BOARD_SEQ.NEXTVAL
+		FROM DUAL
+	</select>
 	
 	<update id="updateBoard" parameterType="Board">
 		UPDATE BOARD 
@@ -69,6 +74,12 @@
 				TITLE=#{title},CONTENT=#{content},DISTINGUISH=#{distinguish},
 				WRITERID=#{writerid},POSTDATE=#{postdate},ISDELETE=#{isdelete},HASFILE=#{hasfile}
 			)		
+		WHERE BCODE=#{bcode}
+	</update>
+	
+	<update id="updateAB" parameterType="_int">
+		UPDATE BOARD
+		SET HASFILE='y'
 		WHERE BCODE=#{bcode}
 	</update>
 
