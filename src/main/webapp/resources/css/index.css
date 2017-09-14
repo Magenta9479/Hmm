@@ -13,6 +13,9 @@
 * {
   font-family: 'Hanna', serif;
 }
+.jumbotron {
+  text-align: center; 
+}
 
 .board {
   border: none;
@@ -20,7 +23,6 @@
   width: auto;
   margin-left: 300px;
   margin-right: 300px;
-  margin-top: 200px;
 }
 
 .panel {

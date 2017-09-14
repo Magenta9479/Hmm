@@ -23,6 +23,11 @@
 			<%@ include file="/header.jsp"%>
 
 			<body>
+				<div class="jumbotron">
+				  <h1>점보트론 테스트</h1>
+				  <p>점보트론 테스트 점보트론 테스트 점보트론 테스트 점보트론 테스트 점보트론 테스트</p>
+				</div>
+
 				<!-- 게시판 영역 -->
 				<div class="board">
 					<!-- 검색창, 검색 정렬들의 패널 -->
