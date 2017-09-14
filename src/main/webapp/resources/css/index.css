@@ -13,6 +13,9 @@
 * {
   font-family: 'Hanna', serif;
 }
+#cover_photo {
+  height: 100%;
+}
 
 .jumbotron {
   text-align: center;

@@ -40,6 +40,7 @@
 
 			<body>
 				<div class="jumbotron">
+					<img id="cover_photo" src="resources/img/cover.jpg" />	
 					<h1>점보트론 테스트</h1>
 
 					<p id="demo"></p>
