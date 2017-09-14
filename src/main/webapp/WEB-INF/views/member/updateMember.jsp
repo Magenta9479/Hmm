@@ -17,7 +17,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
+<script type="text/javascript">x
 	fileExt = 0;
 	$(function() {
 		var job = "${job}";
@@ -71,8 +71,8 @@
 
 	<div class="board">
 		<!-- Modal content-->
-		<div class="panel panel-default">
-			<div class="panel panel-success">
+		<div class="panel panel-default panel-success">
+
 				<div class="panel-heading">프로필 수정</div>
 				<div class="panel-body">
 					<form id="pictureUpload" name="pictureUpload"
@@ -87,8 +87,8 @@
 							</c:when>
 						</c:choose>
 						<br> <input type='file' id="imgUpload" name="photo"
-							id="photo" /> <br />
-						<button type="button" onclick="validationFile()">파일 업로드</button>
+							id="photo"/> <br />
+						<button type="button" id="vali_btn" onclick="validationFile()" >파일 업로드</button>
 					</form>
 					<hr>
 					<label> 비밀번호 및 이메일 재설정 </label>
@@ -118,11 +118,12 @@
 						: ${member.exp}</label> <br> <label>남은 캐시 : ${member.chash}</label> <br>
 					<label>남은 따루 : ${member.ddaru}</label> <br> <label>가입일
 						: ${member.enrolldate}</label>
-				</div>
 
 			</div>
 		</div>
 	</div>
+
+	
 
 </body>
 </html>

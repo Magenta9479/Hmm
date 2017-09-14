@@ -35,6 +35,10 @@ text-align: center;"
   border: 1px silver solid;
 }
 
+#vali_btn {
+  margin: 0;
+}
+
 form input[type=text],form input[type=password],form input[type=email] {
   width: 50%;
   margin: auto;

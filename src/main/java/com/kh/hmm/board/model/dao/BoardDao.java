@@ -70,4 +70,14 @@ public class BoardDao
 	{
 		return sqlSession.update("checkBoard",point);
 	}
+
+	public int boardCode()
+	{
+		return sqlSession.selectOne("boardCode");
+	}
+
+	public int updateAB(int bcode)
+	{
+		return sqlSession.update("updateAB",bcode);
+	}
 }

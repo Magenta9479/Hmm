@@ -25,11 +25,11 @@
 					<button type="button"
 						style="color: white; background-color: #002F2F;"
 						onclick="onSubmit()">로그인</button>
-					<br> <br> <input type="checkbox" checked="checked">아이디
-					기억하기
+					<br> <br> <p><input type="checkbox" checked="checked">&nbsp;아이디
+					기억하기</p>
 				</div>
 				<div class="modal-footer">
-					<span class="psw" style="float: left">혹시 <a href="#">비밀번호</a>를
+					<span class="psw" style="float: left;">혹시 <a href="#" style="text-decoration: none;">비밀번호</a>를
 						잊으셨나요?
 					</span>
 					<button type="button" class="cancelbtn" data-dismiss="modal">창

@@ -13,14 +13,21 @@
 * {
   font-family: 'Hanna', serif;
 }
+#cover_photo {
+  height: 100%;
+}
+
+.jumbotron {
+  text-align: center;
+  height: 250px;
+  max-height: 250px;
+}
 
 .board {
   border: none;
-  background-color: white;
   width: auto;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 200px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .panel {
@@ -46,6 +53,10 @@
 
 .table {
   border: none;
+}
+
+#reply_num{
+  color: green;
 }
 
 .img-circle {
