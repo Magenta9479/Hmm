@@ -114,7 +114,7 @@ public class MemberController {
 
 			String rename = m.getId() + extension;
 
-			String fullPath = savePath + "//" + rename;
+			String fullPath = savePath + "\\" + rename;
 			m.setPhoto(fullPath);
 			if (!uploadfile.isEmpty()) {
 				try {
