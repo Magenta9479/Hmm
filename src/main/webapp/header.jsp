@@ -19,19 +19,15 @@
 	}
 </script>
 
+<%@ include file="WEB-INF/views/member/login.jsp"%>
+<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
+
 <body>
 	<c:set var="member" value="${sessionScope.member}" />
 	<%
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>
-	<%@ include file="WEB-INF/views/member/login.jsp"%>
-	<%@ include file="WEB-INF/views/member/insertMember.jsp"%>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="collapse navbar-collapse" id="myNavbar"></div>
-		</div>
-	</nav>
 
 	<!-- 최상단 네비게이션바와 사이드바 -->
 	<div id="wrapper">
@@ -116,4 +112,5 @@
 
 	</script>
 </body>
+
 </html>

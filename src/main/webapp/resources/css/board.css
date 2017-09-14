@@ -65,3 +65,10 @@
   width: 25px;
   height: 25px;
 }
+
+#writebutton{
+	position : absolute;
+	top : 115px;
+	left : 74%;
+	width : 10%;
+}
