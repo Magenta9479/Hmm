@@ -13,16 +13,16 @@
 * {
   font-family: 'Hanna', serif;
 }
+
 .jumbotron {
-  text-align: center; 
+  text-align: center;
 }
 
 .board {
   border: none;
-  background-color: white;
   width: auto;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .panel {
@@ -48,6 +48,10 @@
 
 .table {
   border: none;
+}
+
+#reply_num{
+  color: green;
 }
 
 .img-circle {

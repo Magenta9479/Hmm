@@ -17,7 +17,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
+<script type="text/javascript">x
 	fileExt = 0;
 	$(function() {
 		var job = "${job}";
@@ -87,8 +87,8 @@
 							</c:when>
 						</c:choose>
 						<br> <input type='file' id="imgUpload" name="photo"
-							id="photo" /> <br />
-						<button type="button" id="vali_btn" onclick="validationFile()">파일 업로드</button>
+							id="photo"/> <br />
+						<button type="button" id="vali_btn" onclick="validationFile()" >파일 업로드</button>
 					</form>
 					<hr>
 					<label> 비밀번호 및 이메일 재설정 </label>
@@ -121,6 +121,8 @@
 			</div>
 		</div>
 	</div>
+
+	
 
 </body>
 </html>

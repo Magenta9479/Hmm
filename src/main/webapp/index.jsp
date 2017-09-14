@@ -7,7 +7,6 @@
 		window.location.href = "boardLists.do?dis=0";
 	</script>
 </c:if>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,23 +16,38 @@
 			<link href="resources/css/index.css" rel="stylesheet" type="text/css">
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-			</head>
 
+				<script type="text/javascript">
+					window.onload = typeWriter;
+
+					var i = 0;
+					var txt = '모두가 하나되는 FUCKING IT 커뮤니티에 여러분을 초대합니다 히역히역히역!';
+					var speed = 50;
+
+					function typeWriter() {
+						if (i < txt.length) {
+							document.getElementById("demo").innerHTML += txt.charAt(i);
+							i++;
+							setTimeout(typeWriter, speed);
+						}
+					}
+				</script>
+			</head>
 
 			<%@ include file="/header.jsp"%>
 
 			<body>
 				<div class="jumbotron">
-				  <h1>점보트론 테스트</h1>
-				  <p>점보트론 테스트 점보트론 테스트 점보트론 테스트 점보트론 테스트 점보트론 테스트</p>
+					<h1>점보트론 테스트</h1>
+
+					<p id="demo"></p>
+
 				</div>
 
         <!-- 게시판 영역 -->
 				<div class="board">
 					<!-- 검색창, 검색 정렬들의 패널 -->
 					<div class="panel panel-default">
-
-
 
 						<div class="panel-body">
 							<div class="panel pull-left">
@@ -61,7 +75,7 @@
             <button onclick="location.href='boardCode.do'" style="color:white;">SSIPPAL</button>
 							<!-- 게시판 테이블 -->
 							<div class="table-responsive">
-								<table class="table table-hover table-striped">
+								<table id="myTable" class="table table-hover table-striped">
 									<thead>
 										<tr>
 											<th>글번호</th>
@@ -77,11 +91,12 @@
 										<c:set var="num" value="1"/>
 										<c:forEach var="l" items="${list }">
 
-											<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'" style="cursor: pointer;">
+											<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'">
 
 												<td>${num }</td>
 												<c:set var="num" value="${num+1 }"/>
-												<td>${l.title }&nbsp;<span class="badge">${l.isdelete}</span></td>
+												<td>${l.title }<span id="reply_num">&nbsp;[${l.isdelete}]</span>
+												</td>
 												<td>${l.code.name}</td>
 												<td>
 													<div class="profile">
@@ -103,6 +118,7 @@
 						</div>
 
 					</div>
+
 				</body>
 
 
