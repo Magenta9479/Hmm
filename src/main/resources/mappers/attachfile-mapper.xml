@@ -15,7 +15,7 @@
 	
 	<insert id="attachInsert" parameterType="Attachfile">
 		INSERT INTO ATTACHFILE
-		VALUES(ATTACHFILE_SEQ.NEXTVAL,#{originname},#{changedname},#{bcode},#{filelink});
+		VALUES(ATTACHFILE_SEQ.NEXTVAL,#{originname},#{changedname},#{bcode},#{filelink})
 	</insert>
 	
 	<delete id="attachDelete" parameterType="_int">

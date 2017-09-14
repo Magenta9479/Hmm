@@ -54,5 +54,17 @@ public class BoardServiceImpl implements BoardService
 		return bDao.checkBoard(point);
 	}
 
+	@Override
+	public int boardCode()
+	{
+		return bDao.boardCode();
+	}
+
+	@Override
+	public int updateAB(int bcode)
+	{
+		return bDao.updateAB(bcode);
+	}
+
 	
 }
