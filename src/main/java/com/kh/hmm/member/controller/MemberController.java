@@ -109,19 +109,20 @@ public class MemberController {
 			}
 
 			String originalFilename = uploadfile.getOriginalFilename(); // fileName.jpg
-			String onlyFileName = originalFilename.substring(0, originalFilename.indexOf(".")); // fileName
 			String extension = originalFilename.substring(originalFilename.indexOf(".")); // .jpg
 
 			String rename = m.getId() + extension;
 
 			String fullPath = savePath + "\\" + rename;
-			m.setPhoto(fullPath);
 			if (!uploadfile.isEmpty()) {
 				try {
 					byte[] bytes = uploadfile.getBytes();
 					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fullPath)));
 					stream.write(bytes);
 					stream.close();
+					
+					fullPath = "resources\\img\\"+m.getId()+"\\"+rename;
+					m.setPhoto(fullPath);
 					member = memberService.updatePhoto(m);
 
 					if (member != null) {
@@ -133,13 +134,13 @@ public class MemberController {
 				}
 			}
 
-			return "member/updateMember";
+			return "redirect:/updateProfile.do";
 		}
 	}
 
 	@RequestMapping(value = "updateProfile.do", method = RequestMethod.GET)
 	public String goUpdateProfile(Model model) {
-		logger.info("memberUploadProfile() call...");
+		logger.info("프로필 수정 페이지로 이동....");
 		return "member/updateMember";
 	}
 
