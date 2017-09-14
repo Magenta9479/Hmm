@@ -100,19 +100,13 @@
 					</a></li>
 
 					<li>
-						<a href="#">About Hmm</a>
-					</li>					
-					<li>
-						<a href="#">이용약관</a>
+						<a href="#"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp; About Hmm</a>
 					</li>
 					<li>
-						<a href="#">개인정보 약관</a>
+						<a href="#contact"><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp; 연락처</a>
 					</li>
 					<li>
-						<a href="#contact">연락처</a>
-					</li>
-					<li>
-						<a href="#googleMap">찾아오시는 길</a>
+						<a href="#googleMap"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp; 찾아오시는 길</a>
 					</li>
 				</ul>
 
