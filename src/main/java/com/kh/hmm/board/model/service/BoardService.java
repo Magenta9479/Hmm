@@ -19,6 +19,10 @@ public interface BoardService
 	int deletBoard(int bcode);
 
 	int checkBoard(BoardPoint point);
+	
+	int boardCode();
+	
+	int updateAB(int bcode);
 
 	
 }

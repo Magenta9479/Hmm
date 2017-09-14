@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="org.springframework.ui.Model"%>
-<c:if test="${list eq null}">
+ <c:if test="${list eq null}">
 	<script>
 		window.location.href = "boardLists.do?dis=0";
 	</script>
@@ -46,7 +46,7 @@
 
 				</div>
 
-				<!-- 게시판 영역 -->
+        <!-- 게시판 영역 -->
 				<div class="board">
 					<!-- 검색창, 검색 정렬들의 패널 -->
 					<div class="panel panel-default">
@@ -74,7 +74,7 @@
 									</div>
 								</div>
 							</div>
-
+            <button onclick="location.href='boardCode.do'" style="color:white;">SSIPPAL</button>
 							<!-- 게시판 테이블 -->
 							<div class="table-responsive">
 								<table id="myTable" class="table table-hover table-striped">
@@ -125,5 +125,6 @@
 
 			</body>
 
-			<%@ include file="/footer.jsp"%>
-		</html>
+
+				<%@ include file="/footer.jsp"%>
+			</html>
