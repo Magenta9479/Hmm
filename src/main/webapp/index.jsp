@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="org.springframework.ui.Model"%>
-<c:if test="${list eq null}">
+ <c:if test="${list eq null}">
 	<script>
 		window.location.href = "boardLists.do?dis=0";
 	</script>
@@ -50,6 +50,8 @@
 					</div>
 				</div>
 			</div>
+
+			<button onclick="location.href='boardCode.do'" style="color:white;">SSIPPAL</button>
 
 			<!-- 게시판 테이블 -->
 			<div class="table-responsive">

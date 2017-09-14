@@ -1,6 +1,10 @@
 package com.kh.hmm.board.controller;
 
+import java.io.File;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.kh.hmm.board.model.service.AttachfileService;
 import com.kh.hmm.board.model.service.BoardService;
@@ -90,21 +97,31 @@ public class BoardController
 		return result;
 	}	
 	
+	@RequestMapping(value = "boardCode.do", method = RequestMethod.GET)
+	public String boardCode(Model m) 
+	{//아작스 처리를 요한다.
+		logger.info("boarCode() call...");
+
+		m.addAttribute("bcode",boardService.boardCode());
+		
+		return "../../filetest";
+	}
+	
 	@RequestMapping(value = "boardInsert.do", method = RequestMethod.POST)
-	public int insertBoard(Board b) 
+	public String insertBoard(Board b) 
 	{//아작스 처리를 요한다.
 		logger.info("insertBoard("+b+") call...");
 
-		int result=boardService.insertBoard(b);
-
-		return result;
+		boardService.insertBoard(b);
+		
+		return "../../filetest";//게시글 상세보기로
 	}
 	
 	@RequestMapping(value = "boardUpdate.do", method = RequestMethod.POST)
 	public int updateBoard(Board b) 
 	{//아작스 처리를 요한다.
 		logger.info("updateBoard("+b+") call...");
-
+		
 		int result=boardService.updateBoard(b);
 
 		return result;
@@ -119,4 +136,55 @@ public class BoardController
 
 		return "../../Board";
 	}
+	
+	@RequestMapping(value = "/fileUpload", method = RequestMethod.GET)
+    public String dragAndDrop(Model model) {
+         
+        return "fileUpload";
+         
+    }
+     
+    @RequestMapping(value = "fileUp.do") //ajax에서 호출하는 부분
+    @ResponseBody
+    public String upload(MultipartHttpServletRequest multipartRequest,int bcode) 
+    { //Multipart로 받는다.
+          
+        Iterator<String> itr =  multipartRequest.getFileNames();
+         
+        String filePath = "C:\\hmm\\Hmm\\src\\main\\webapp\\fileUpload\\post"; //설정파일로 뺀다.
+         System.out.println("!");
+        while (itr.hasNext()) 
+        { //받은 파일들을 모두 돌린다.            
+                      System.out.println("@");
+            MultipartFile mpf = multipartRequest.getFile(itr.next());
+      
+            String originname = mpf.getOriginalFilename(); //파일명
+            String now = new SimpleDateFormat("yyyyMMddHmsS").format(new Date(new java.util.Date().getTime()));
+            String changedname=now+originname;
+            String fileFullPath = filePath+"/"+changedname; //파일 전체 경로
+            
+            Attachfile file=new Attachfile();
+            file.setOriginname(originname);
+            file.setChangedname(changedname);
+            file.setFilelink(fileFullPath);
+            file.setBcode(bcode);
+            System.out.println(file);
+            
+            attachfileService.insertAttachfile(file);
+            boardService.updateAB(bcode);
+            
+            
+            
+            try 
+            {   //파일 저장
+                mpf.transferTo(new File(fileFullPath)); //파일저장 실제로는 service에서 처리
+            } catch (Exception e) {
+                System.out.println("postTempFile_ERROR======>"+fileFullPath);
+                e.printStackTrace();
+            }
+                          
+       }
+          
+        return "success";
+    }
 }
