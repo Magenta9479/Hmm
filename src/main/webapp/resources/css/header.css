@@ -73,6 +73,7 @@ body {
 /*사이드바*/
 
 #sidebar-wrapper {
+  font-family: 'Hanna', serif;
   margin-left: -240px;
   top: s0px;
   left: 0;
