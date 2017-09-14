@@ -12,10 +12,6 @@
 #002F2F
 */
 
-* {
-
-}
-
 .jumbotron {
   font-family: 'Hanna', serif;
   text-align: center;
@@ -60,7 +56,7 @@
 
 .input-group .form-control{
   padding: 10px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .input-group {

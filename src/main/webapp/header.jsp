@@ -98,6 +98,22 @@
 					<li><a href="cashshop.jsp"> <span
 							class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp; 캐쉬샵
 					</a></li>
+
+					<li>
+						<a href="#">About Hmm</a>
+					</li>					
+					<li>
+						<a href="#">이용약관</a>
+					</li>
+					<li>
+						<a href="#">개인정보 약관</a>
+					</li>
+					<li>
+						<a href="#contact">연락처</a>
+					</li>
+					<li>
+						<a href="#googleMap">찾아오시는 길</a>
+					</li>
 				</ul>
 
 		</div>
