@@ -15,7 +15,7 @@ body {
 #002F2F
 */
 
-.topnav.navbar {  
+.topnav.navbar {
   background-color: #002F2F;
   padding: 10px;
   height: 70px;
@@ -28,6 +28,8 @@ body {
   text-decoration: none;
   font-size: 30px;
   color: #fff;
+  height: 40px;
+  margin: auto;
 }
 
 #menu-toggle:hover {
