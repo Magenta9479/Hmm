@@ -28,7 +28,6 @@
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>
 
-
 	<!-- 최상단 네비게이션바와 사이드바 -->
 	<div id="wrapper">
 		<nav class="navbar navbar-fixed-top topnav" role="navigation">
