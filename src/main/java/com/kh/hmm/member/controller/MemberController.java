@@ -92,9 +92,10 @@ public class MemberController {
 		else {
 			Member m = (Member) session.getAttribute("member");
 			Member member = null;
-//			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
-			String savePath = "resources/img/"+m.getId();
+			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
+//			String savePath = "resources/img/"+m.getId();
 
+			
 			// 파일 객체 생성
 			File file = new File(savePath);
 			// !표를 붙여주어 파일이 존재하지 않는 경우의 조건을 걸어줌
@@ -113,7 +114,7 @@ public class MemberController {
 
 			String rename = m.getId() + extension;
 
-			String fullPath = savePath + "/" + rename;
+			String fullPath = savePath + "//" + rename;
 			m.setPhoto(fullPath);
 			if (!uploadfile.isEmpty()) {
 				try {
