@@ -1,10 +1,15 @@
 package com.kh.hmm.board.controller;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -108,13 +113,14 @@ public class BoardController
 	}
 	
 	@RequestMapping(value = "boardInsert.do", method = RequestMethod.POST)
-	public String insertBoard(Board b) 
+	public void insertBoard(Board b, HttpServletResponse response) throws IOException 
 	{//아작스 처리를 요한다.
 		logger.info("insertBoard("+b+") call...");
 
-		boardService.insertBoard(b);
-		
-		return "../../filetest";//게시글 상세보기로
+		System.out.println("개객기야 되는거 잖아");	
+		PrintWriter pw = response.getWriter();
+		pw.write(boardService.insertBoard(b));
+		pw.close();
 	}
 	
 	@RequestMapping(value = "boardUpdate.do", method = RequestMethod.POST)
@@ -148,14 +154,13 @@ public class BoardController
     @ResponseBody
     public String upload(MultipartHttpServletRequest multipartRequest,int bcode) 
     { //Multipart로 받는다.
-          
+    	logger.info("upload("+bcode+") call...");  
         Iterator<String> itr =  multipartRequest.getFileNames();
          
         String filePath = "C:\\hmm\\Hmm\\src\\main\\webapp\\fileUpload\\post"; //설정파일로 뺀다.
-         System.out.println("!");
+        
         while (itr.hasNext()) 
         { //받은 파일들을 모두 돌린다.            
-                      System.out.println("@");
             MultipartFile mpf = multipartRequest.getFile(itr.next());
       
             String originname = mpf.getOriginalFilename(); //파일명

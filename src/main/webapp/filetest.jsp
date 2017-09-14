@@ -130,14 +130,33 @@
                 }
                  
                 $('#writeBoard').click(function(){
-                	$('#writeForm').submit();
-
-                	for(var i=0;i<fileArray.length;i++)
-                	{
-                		sendFileToServer(fileArray[i].form,fileArray[i].stat);
-                	}
+                	
+           	 		var board=new Object();
+           	 		board.bcode=$('input[name=bcode]').val();
+           	 		board.title=$('input[name=title]').val();
+           		 	board.content=$('input[name=content]').val();
+      	    		board.distinguish=$('input[name=distinguish]').val();
+          		 	board.writerid=$('input[name=writerid]').val();
+      	     	    
+          		 	
+                	$.ajax({
+                        type : "POST",                        
+                        url : "boardInsert.do",
+                        data : board,
+                        dataType:"text",
+                        success : function(data) {                               
+                        	for(var i=0;i<fileArray.length;i++)
+                        	{
+                        		sendFileToServer(fileArray[i].form,fileArray[i].stat);
+                        	}
+                        },
+                        error:function(request,status,error){
+                            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                           }
                 });
-               
+
+                	
+                });              
                 
                 var rowCount=0;
                 function createStatusbar(obj){
@@ -230,13 +249,13 @@
     <body>
         <div id="fileUpload" class="dragAndDropDiv">Drag & Drop Files Here</div>
         
-        <form action="boardInsert.do" id="writeForm" method="POST">
-        	 <input name="bcode" type="hidden" value="${bcode}">
+        <!-- <form action="boardInsert.do" id="writeForm" method="POST"> -->
+        	<input name="bcode" type="hidden" value="${bcode}">
 	        <input name="title"/>
 	        <input name="content"/>
 	        <input name="distinguish" value="1"/>
 	        <input name="writerid" value="admin"/>
-        </form>        
+        <!-- </form>      -->   
         
         <button type="button" id="writeBoard" >글쓰기버튼이다 이것들아!</button>
         
