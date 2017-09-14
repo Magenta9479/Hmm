@@ -50,4 +50,14 @@ public class MemberDao
 	public Member emailCheck(Member m) {
 		return (Member)sqlSession.selectOne("emailChk", m);
 	}
+
+	public Member updatePhoto(Member m) {
+		int result;
+		Member member = null;
+		result = sqlSession.update("updatePhoto", m);
+		
+		if(result >= 1)
+			member = sqlSession.selectOne("login", m);
+		return member;
+	}
 }
