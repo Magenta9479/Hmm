@@ -5,6 +5,8 @@ public class Prolist
 	private int wscode;
 	private String id;
 	
+	public Prolist() {}
+	
 	public Prolist(int wscode, String id)
 	{
 		super();
