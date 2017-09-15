@@ -47,6 +47,9 @@
  	<select id="selectBoardList" resultMap="boardMap" parameterType="_int">
 		<include refid="boardTemplate"/>
 		WHERE A.DISTINGUISH=#{dis}
+		<if test="_parameter==3">
+		AND A.POSTDATE BETWEEN (SELECT MAX(STARTDATE) FROM WEEKSUBJECT) AND (SELECT MAX(STARTDATE) FROM WEEKSUBJECT)+6
+		</if>
 	</select>
  	 	
 	

@@ -5,6 +5,8 @@ public class Conlist
 	private int wscode;
 	private String id;
 	
+	public Conlist() {}
+	
 	public Conlist(int wscode, String id)
 	{
 		super();
