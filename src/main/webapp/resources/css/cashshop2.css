@@ -1,4 +1,4 @@
-@CHARSET "UTF-8";
+﻿@CHARSET "UTF-8";
 
 
 /*************************
@@ -9,7 +9,7 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 body {
- font-family: 'Hanna', serif;
+  font-family: 'Hanna', serif;
   background:;
   position: relative;
   font-weight:400px;
@@ -890,7 +890,7 @@ h2.title {
 
 .productinfo{
  position:relative;
- border : 1px  dashed green
+ border : 1px  dashed green;
 }
 
 .product-overlay {
