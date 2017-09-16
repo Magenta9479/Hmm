@@ -10,14 +10,17 @@
 	<link href="resources/css/board.css" rel="stylesheet" type="text/css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>New Tech!!!</title>
+<title>9월 3주차 신기술 찬/반 투표</title>
 </head>
 <body>
 
 <%@ include file="/header.jsp"%>
-	<h1>NEW TECH!!!!!</h1>
-	<button type="button" id="pro">찬성!!</button>
-	<a href="#" id="proCount"></a>
+  <div class="polls_heading">
+	<h2>9월 3주차 신기술 찬/반 투표 : </h2>
+  <h1>자바는 한물갔다!</h1>
+  </div>
+  <div class="polls_body">
+	<button type="button" id="pro">한물가지 않았다.<br>니들이 활용 못할 뿐.</button>
 	<script type="text/javascript">
 		$(function(){
 			
@@ -59,9 +62,10 @@
                         alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
                        }
             	});
-			});		
-			
-			$('#con').click(function(){
+
+			});
+
+      $('#con').click(function(){
 				$.ajax({
                     type : "POST",                        
                     url : "conInsert.do",
@@ -85,32 +89,20 @@
                        }
             	});
 			});	
+      
 		});
 	</script>
-	<button type="button" id="con">반대!!</button>
-	<a href="#" id="conCount"></a>
-	<div id="empty"></div>
-	<div id="board" class="board">
-		<div id="writebutton">
-			<button id="write" type="button" class="btn btn-primary btn-md">내
-				글쓰기</button>
-		</div>
-		<!-- 검색창, 검색 정렬들의 패널 -->
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<!-- 패널의 왼쪽, 검색창 -->
-				<div class="input-group col-md-6 pull-left">
-					<input type="text" class="search-query form-control"
-						placeholder="검색하기..." /> <span class="input-group-btn">
-						<button id="search_icon" class="btn btn-success" type="button">
-							<span class=" glyphicon glyphicon-search"></span>
-						</button>
-					</span>
-				</div>
-				<!-- 패널의 오른쪽, 정렬창 -->
-				<div class="pull-right">
+  <div class="between">VS</div>
+	<button type="button" id="con">한물갔다.
+    <br>밥벌이 하고 싶으면 파이썬이나 배우자.</button>
+  <br>
+	<a id="polls_result" href ="newtech2.jsp">금주 신기술 동향 투표 결과 확인하기</a>
+</div>
 
-					<div class="sort_options">
+  <!-- 게시판 영역 -->
+  <div class="board">
+    <!-- 검색창, 검색 정렬들의 패널 -->
+    <div class="panel panel-default">
 
 						<h3>
 							최신순 <span class="glyphicon glyphicon-chevron-down"></span>
