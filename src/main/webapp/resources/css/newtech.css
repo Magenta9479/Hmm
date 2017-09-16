@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
 /*
 #E6E2AF
 #A7A37E
@@ -7,6 +9,71 @@
 #046380
 #002F2F
 */
+
+* {
+  //border: 1px gold solid;
+  font-family: 'Hanna', serif;
+}
+
+.polls_heading {
+  text-align: center;
+  color: white;
+  background-color: #002F2F;
+  width: 100%;
+  padding: 20px;
+}
+
+.polls_heading h1 {
+  background-color: #002F2F;
+}
+
+.polls_body {
+  background-color: grey;
+  text-align: center;
+  padding: 20px;
+}
+
+.polls_body button{
+  font-size: 24px;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+}
+
+.polls_body button:hover {
+  color: gold;
+  opacity: 0.8;
+}
+
+.between {
+  color: white;
+  background-color: #3e3e3e;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  line-height: 200px;
+  text-align: center;
+  font-size: 50px;
+  margin: 20px;
+}
+
+.polls_body #con {
+  background-color: #1abc9c;
+}
+
+.polls_body #pro {
+  background-color: #eb7966;
+}
+
+#polls_result {
+  font-size: 20px;
+  color: white;
+}
 
 .board {
   border: none;

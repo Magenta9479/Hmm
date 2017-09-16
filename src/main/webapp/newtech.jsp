@@ -10,14 +10,17 @@
 	<link href="resources/css/newtech.css" rel="stylesheet" type="text/css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>New Tech!!!</title>
+<title>9월 3주차 신기술 찬/반 투표</title>
 </head>
 <body>
 
 <%@ include file="/header.jsp"%>
-	<h1>NEW TECH!!!!!</h1>
-	<button type="button" id="pro">찬성!!</button>
-	<a href="#" id="proCount"></a>
+  <div class="polls_heading">
+	<h2>9월 3주차 신기술 찬/반 투표 : </h2>
+  <h1>자바는 한물갔다!</h1>
+  </div>
+  <div class="polls_body">
+	<button type="button" id="pro">한물가지 않았다.<br>니들이 활용 못할 뿐.</button>
 	<script type="text/javascript">
 		$(function(){
 			$.ajax({
@@ -45,32 +48,16 @@
                        }
             	});
 			});
-			$('#proCount').click(function(){
-				$.ajax({
-                    type : "GET",
-                    url : "proList.do",
-                    dataType:"json",
-                    success : function(data) {
-                    	var jsonStr = JSON.stringify(data);  //객체를 문자열로 변환
-						var json = JSON.parse(jsonStr); //문자열을 배열 객체로 바꿈
 
-
-						for(var i in json.list)
-						{//모달로 표시되어야합니다
-							alert(json.list[i]);
-						}
-
-                    },
-                    error:function(request,status,error){
-                        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-                       }
-            	});
-			});
 		});
 	</script>
-	<button type="button" id="con">반대!!</button>
+  <div class="between">VS</div>
+	<button type="button" id="con">한물갔다.
+    <br>밥벌이 하고 싶으면 파이썬이나 배우자.</button>
+  <br>
+	<a id="polls_result" href ="newtech2.jsp">금주 신기술 동향 투표 결과 확인하기</a>
+</div>
 
-	<a href ="newtech2.jsp">금주 신기술 동향 투표 결과</a>
   <!-- 게시판 영역 -->
   <div class="board">
     <!-- 검색창, 검색 정렬들의 패널 -->
