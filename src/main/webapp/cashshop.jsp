@@ -183,19 +183,15 @@ $(this).addClass("active");
 						<!--------------------------------------------------emticon---------------------------------------------------------------------------- -->
 					
 						<div class="col-sm-4 filter emoticon bad ">
-							<div class="product-image-wrapper" style="margin-bottom: 21px;">
+							<div class="product-image-wrapper" style="margin-bottom: 27px;">
 								<div class="single-products">
-										<div class="productinfo text-center">
+										<div class="productinfo text-center"><br><br><br>
 									
-											<img style="width: 200px; height: 247px;" src="http://mblogthumb1.phinf.naver.net/20160420_291/donga-bacchus_14611160044242ryl6_GIF/002.gif?type=w2">
-											<h2>250따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-											
-											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal" title="구매하기"><i class="fa fa-shopping-cart"></i>구매하기</a>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal" title="충전하기"><i class="fa fa-shopping-cart"></i>충전하기</a>
-										</div>
+											<img style="width: 200px; height: 180px;" src="http://mblogthumb1.phinf.naver.net/20160420_291/donga-bacchus_14611160044242ryl6_GIF/002.gif?type=w2">
+										<br><br><br></div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2>250따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search"  ></span></a></h2>
+												<h2>250따루</h2>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 											</div>
@@ -206,17 +202,14 @@ $(this).addClass("active");
 							</div>
 						</div>
 						<div class="col-sm-4 filter emoticon happy">
-							<div class="product-image-wrapper" style="margin-bottom: 21px;">
+							<div class="product-image-wrapper" style="margin-bottom: 27px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="https://item.kakaocdn.net/do/96c4a590bb9fee0f9b570f1245fdf7b0f43ad912ad8dd55b04db6a64cddaf76d">
-										<h2>250따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="https://item.kakaocdn.net/do/96c4a590bb9fee0f9b570f1245fdf7b0f43ad912ad8dd55b04db6a64cddaf76d">								
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>250따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>250따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -229,15 +222,13 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter emoticon happy">
 							<div class="product-image-wrapper" style="margin-bottom: 27px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"	src="https://item.kakaocdn.net/do/f43d6e06d6563b7409e38f05f6df3666f43ad912ad8dd55b04db6a64cddaf76d">
-										<h2>250따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"	src="https://item.kakaocdn.net/do/f43d6e06d6563b7409e38f05f6df3666f43ad912ad8dd55b04db6a64cddaf76d">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>250따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>250따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -248,17 +239,15 @@ $(this).addClass("active");
 							</div>
 						</div>
 						<div class="col-sm-4 filter emoticon happy">
-							<div class="product-image-wrapper" style="margin-bottom: 24px;">
+							<div class="product-image-wrapper" style="margin-bottom: 27px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"	src="https://item.kakaocdn.net/do/af2e957732dad678a8b5f540f8b31045f43ad912ad8dd55b04db6a64cddaf76d">
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"	src="https://item.kakaocdn.net/do/af2e957732dad678a8b5f540f8b31045f43ad912ad8dd55b04db6a64cddaf76d">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -270,17 +259,15 @@ $(this).addClass("active");
 							</div>
 						</div>
 						<div class="col-sm-4 filter emoticon happy">
-							<div class="product-image-wrapper" style="margin-bottom: 24px;">
+							<div class="product-image-wrapper" style="margin-bottom: 27px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;" src="https://item.kakaocdn.net/do/c50482b35a90fbcca8622c92c9552ba8f43ad912ad8dd55b04db6a64cddaf76d">
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;" src="https://item.kakaocdn.net/do/c50482b35a90fbcca8622c92c9552ba8f43ad912ad8dd55b04db6a64cddaf76d">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -294,15 +281,13 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter emoticon happy">
 							<div class="product-image-wrapper" style="margin-bottom: 27px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;" src="http://mblogthumb2.phinf.naver.net/20130521_45/ssunde1_1369117742177yoCHe_GIF/%B0%F8%B0%A8.gif?type=w2">
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;" src="http://mblogthumb2.phinf.naver.net/20130521_45/ssunde1_1369117742177yoCHe_GIF/%B0%F8%B0%A8.gif?type=w2">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -316,15 +301,13 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter border">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="http://cfs12.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMi5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExNC8xMTQ4OC5naWY=&filename=colorline15.gif">
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="http://cfs12.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMi5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExNC8xMTQ4OC5naWY=&filename=colorline15.gif">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -338,15 +321,13 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter border">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="http://cfile208.uf.daum.net/R400x0/1717D03C5030651A1D14E0">
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="http://cfile208.uf.daum.net/R400x0/1717D03C5030651A1D14E0">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -358,19 +339,17 @@ $(this).addClass("active");
 						</div>
 						
 						<div class="col-sm-4 filter border">
-							<div class="product-image-wrapper" style="margin-bottom: 27px;">
+							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="http://cfs11.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMS5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExMy8xMTM1NC5naWY=&filename=color_line26.gif">
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="http://cfs11.planet.daum.net/upload_control/pcp_download.php?fhandle=NVNzZWFAZnMxMS5wbGFuZXQuZGF1bS5uZXQ6LzExMjgyOTY2LzExMy8xMTM1NC5naWY=&filename=color_line26.gif">
 
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>구매하기</a>
+											<h2>150따루</h2>
+											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
+											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
 									</div>
 								</div>
@@ -382,18 +361,13 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter border">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="http://cfile207.uf.daum.net/image/1308F4084979EADEFAA475">
-
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<p></p>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="http://cfile207.uf.daum.net/image/1308F4084979EADEFAA475">
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-											<p></p>
+											<h2>150따루</h2>
+										
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -407,16 +381,12 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter border">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="http://cfile206.uf.daum.net/image/144186064979ED58DACE1E">
-
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="http://cfile206.uf.daum.net/image/144186064979ED58DACE1E">
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -430,15 +400,13 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter border">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
-										<img style="width: 200px; height: 247px;"src="http://cfs9.blog.daum.net/image/36/blog/2008/01/27/16/16/479c2fb36d7d1&filename=1_e0o5i18276.gif">
-										<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+									<div class="productinfo text-center"><br><br><br>
+										<img style="width: 200px; height: 180px;"src="http://cfs9.blog.daum.net/image/36/blog/2008/01/27/16/16/479c2fb36d7d1&filename=1_e0o5i18276.gif">
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>150따루&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></h2>
+											<h2>150따루</h2>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -454,17 +422,14 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter medal">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
+									<div class="productinfo text-center"><br><br><br>
 										<img style="width: 100px; height: 100px;"src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
-										<h2>100따루</h2>
-										<p>매달 5개&nbsp;&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></p>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>100따루</h2>
-											<p>매달5개&nbsp;&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></p>
+											<p>매달5개</p>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -479,17 +444,14 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter medal">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
+									<div class="productinfo text-center"><br><br><br>
 										<img style="width: 100px; height: 100px;"src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
-										<h2>200따루</h2>
-										<p>매달 10개&nbsp;&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></p>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>200따루</h2>
-											<p>매달 10개&nbsp;&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></p>
+											<p>매달 10개</p>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
@@ -504,17 +466,14 @@ $(this).addClass("active");
 						<div class="col-sm-4 filter medal">
 							<div class="product-image-wrapper" style="margin-bottom: 24px;">
 								<div class="single-products">
-									<div class="productinfo text-center">
+									<div class="productinfo text-center"><br><br><br>
 										<img style="width: 100px; height: 100px;"src="https://sciencelevelup.kofac.re.kr/resources/images/mobile/course_big_icon_03.png">
-										<h2>300따루</h2>
-										<p>매달 15개&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></p>
-										<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
-												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
-									</div>
+										
+									<br><br><br></div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>150따루</h2>
-											<p>매달 15개&nbsp;&nbsp;<a id="itemdetail" class="btn btn-info"  title="아이템 상세보기" data-toggle="modal" data-target="#itdetail" style="background: darkgreen;"><span class="glyphicon glyphicon-search" ></span></a></p>
+											<p>매달 15개</p>
 											<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#buyModal"><i class="fa fa-shopping-cart"></i>구매하기</a>
 												<a href="#" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#cashModal"><i class="fa fa-shopping-cart"></i>충전하기</a>
 										</div>
