@@ -17,7 +17,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
+<script type="text/javascript">
 	$(function() {
 		var job = "${job}";
 		$('#updateJob option').each(function() {
@@ -44,9 +44,22 @@
 
 	function validationDate() {
 		if ($('#password').val() == $('#passwordConfirm').val())
-			$('form').submit();
+			$('#updateForm').submit();
 		else
 			alert("비밀번호를 한번 더 확인해주세요!!");
+	}
+
+	function validationFile() {
+		var file = $('#photo').val();
+		alert(file);
+		var fileExt = file.substring(file.lastIndexOf('.') + 1);
+		if (fileExt.toUpperCase() == "JPG" || fileExt.toUpperCase() == "PNG"
+				|| fileExt.toUpperCase() == "GIF") {
+			$('#pictureUpload').submit();
+		} else {
+			alert("jpg, png, gif 파일만 업로드 가능합니다!!");
+			return;
+		}
 	}
 </script>
 </head>
@@ -63,18 +76,17 @@
 					<form id="pictureUpload" action="uploadFile.do" method="POST"
 						enctype="multipart/form-data">
 						<c:choose>
-							<c:when test="${null eq member.photo}">
-								<img id="profileImg" src="resources/img/defaultImg.jsp" alt="profileImg" />
-								<br>
+							<c:when test="${null eq photo}">
+								<img id="profileImg" src="resources/img/defaultImg.jpg"
+									alt="profileImg" />
 							</c:when>
-							<c:when test="${null ne member.photo}">
+							<c:when test="${null ne photo}">
+								<img id="profileImg" src="${photo}" alt="profileImg" />
 							</c:when>
-							<img id="profileImg" src="${member.photo}" alt="profileImg" />
-							<br>
 						</c:choose>
-
-						<input type='file' id="imgUpload" name="photo" id="photo" /> <br />
-						<input type="submit" value="파일 업로드">
+						<br> <input type='file' id="imgUpload" name="photo"
+							id="photo" /> <br />
+						<button type="button" onclick="validationFile()">파일 업로드</button>
 					</form>
 					<hr>
 					<label> 비밀번호 및 이메일 재설정 </label>
@@ -95,7 +107,6 @@
 						</select> <br> <input type="button" value="수정하기"
 							onclick="validationDate()"> &nbsp;&nbsp; <input
 							type="reset" value="취소하기"><br>
-
 					</form>
 				</div>
 
