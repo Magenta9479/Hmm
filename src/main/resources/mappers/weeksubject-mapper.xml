@@ -6,4 +6,39 @@
 
  	<resultMap id="weeksubjecttMap" type="Weeksubject"></resultMap>
 	
+	<select id="selectWeek" resultType="Weeksubject">
+		SELECT *
+		FROM WEEKSUBJECT
+		WHERE SYSDATE BETWEEN STARTDATE AND STARTDATE+6
+	</select>
+	
+	<select id="proList" resultType="Prolist">
+		SELECT *
+		FROM PROLIST
+		WHERE WSCODE=(
+						SELECT WSCODE
+					 	FROM WEEKSUBJECT 
+					 	WHERE SYSDATE BETWEEN STARTDATE AND STARTDATE+6
+					 )
+	</select>
+	
+	<insert id="proInsert" parameterType="string">
+		INSERT INTO PROLIST VALUES(
+					(
+						SELECT WSCODE
+					 	FROM WEEKSUBJECT 
+					 	WHERE SYSDATE BETWEEN STARTDATE AND STARTDATE+6
+					 ),#{id})
+	</insert>
+	
+	<select id="proCount" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM PROLIST
+		WHERE WSCODE=(
+						SELECT WSCODE
+					 	FROM WEEKSUBJECT 
+					 	WHERE SYSDATE BETWEEN STARTDATE AND STARTDATE+6
+					 )
+	</select>
+	
 </mapper>

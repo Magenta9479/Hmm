@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- 
-<%
-	int distri=Integer.parseInt(request.getParameter("dis").toString());
-%>
-
-<c:if test="${list eq null}">
-	<script>
-		window.location.href = "boardLists.do?dis=<%=distri%>";
-	</script>
-</c:if> --%>
 
 <!DOCTYPE html>
 <html>
@@ -23,9 +13,10 @@
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Hmm 게시판</title>
-<%@ include file="/header.jsp"%>
+
 </head>
 <body>
+<%@ include file="/header.jsp"%>
 	<div id="empty"></div>
 	<div id="board" class="board">
 		<div id="writebutton">
@@ -116,6 +107,7 @@
 	<br>
 	<br>
 	<br>
+	<%@ include file="/footer.jsp"%>
 </body>
-<%@ include file="/footer.jsp"%>
+
 </html>

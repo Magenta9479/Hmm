@@ -6,16 +6,15 @@ public class Weeksubject
 {
 	private int wscode;
 	private String title;
-	private int pro;
-	private int con;
 	private Date startdate;
-	public Weeksubject(int wscode, String title, int pro, int con, Date startdate)
+	
+	public Weeksubject() {}
+	
+	public Weeksubject(int wscode, String title, Date startdate)
 	{
 		super();
 		this.wscode = wscode;
 		this.title = title;
-		this.pro = pro;
-		this.con = con;
 		this.startdate = startdate;
 	}
 	public int getWscode()
@@ -34,22 +33,6 @@ public class Weeksubject
 	{
 		this.title = title;
 	}
-	public int getPro()
-	{
-		return pro;
-	}
-	public void setPro(int pro)
-	{
-		this.pro = pro;
-	}
-	public int getCon()
-	{
-		return con;
-	}
-	public void setCon(int con)
-	{
-		this.con = con;
-	}
 	public Date getStartdate()
 	{
 		return startdate;
@@ -61,8 +44,10 @@ public class Weeksubject
 	@Override
 	public String toString()
 	{
-		return "Weeksubject [wscode=" + wscode + ", title=" + title + ", pro=" + pro + ", con=" + con + "]";
+		return "Weeksubject [wscode=" + wscode + ", title=" + title + ", startdate=" + startdate + "]";
 	}
+	
+	
 	
 	
 }
