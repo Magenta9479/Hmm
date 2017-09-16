@@ -57,6 +57,7 @@ public class BoardController
 		}		
 		
 		if(dis==0) rturn="index";
+		else if(dis==3) rturn="newtech";
 		else rturn="board";
 		
 		
