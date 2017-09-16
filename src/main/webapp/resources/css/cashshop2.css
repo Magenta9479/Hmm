@@ -9,7 +9,7 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 body {
- font-family: 'Hanna', serif;
+  font-family: 'Roboto', sans-serif;
   background:;
   position: relative;
   font-weight:400px;
@@ -890,7 +890,6 @@ h2.title {
 
 .productinfo{
  position:relative;
- border : 1px  dashed green
 }
 
 .product-overlay {
@@ -902,7 +901,7 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:0.9;
+  opacity:;
 }
 
 .single-products:hover .product-overlay {
