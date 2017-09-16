@@ -66,7 +66,8 @@
 			success : function(rData, textStatus, xhr) {
 				var chkRst = rData;
 				if (chkRst == "true") {
-					location.replace("/hmm");
+					/* location.replace("/hmm"); */
+					window.location.reload();
 				} else {
 					count = count + 1;
 					alert("아이디/패스워드를 확인해 주세요!!" + count);
