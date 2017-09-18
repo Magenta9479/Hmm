@@ -15,15 +15,15 @@
 
 <body>
   <%@ include file="/header.jsp"%>
-<div class="container">
+
 <h1 class="title">자바는 한물갔다!</h1>
 <div class="chart">
   <div id="option-1" class="option">
     <div class="results">
       <div class="on" style="width: 38%;"></div>
     </div>
-    <h3 class="option-label">한물가지 않았다. 니들이 활용 못할 뿐.
-      <span class="count">38%</span>
+    <h3 class="option-label">한물가지 않았다! 니들이 활용 못할 뿐.
+      <span class="count">38% <span class="head_counts">38명</span></span>
     </h3>
   </div>
   <div class="between">VS</div>
@@ -31,14 +31,14 @@
     <div class="results">
       <div class="on" style="width: 62%;"></div>
     </div>
-    <h3 class="option-label">한물갔다. 발벌이 하고 싶으면 파이썬이나 배우자.
-      <span class="count">62%</span>
+    <h3 class="option-label">한물갔다! 발벌이 하고 싶으면 파이썬이나 배우자.
+      <span class="count">62% <span class="head_counts">62명</span></span>
     </h3>
   </div>
 </div>
-<div id="participants">총 투표 참여자 : 30명</div>
-</div>
-	<%-- <%@ include file="/footer.jsp"%> --%>
+<div id="participants">총 투표 참여자 : 100명</div>
+
+	<%@ include file="/footer.jsp"%>
 </body>
 
 </body>

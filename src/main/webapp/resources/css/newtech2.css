@@ -1,12 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
 
-.container {
-background-color: grey;
+body {
+  background-color: silver;
 }
 
 .title {
@@ -51,11 +46,21 @@ background-color: grey;
 .option .option-label {
   font-size: 20px;
   font-family: 'Hanna', serif;
+  background-color: silver;
+  padding: 10px;
   width: 70%;
-  margin: 0 2.5%;
-  line-height: 90px;
+  margin: 10px, 2.5%;
   position: absolute;
   top: 20px;
+}
+
+.option .on {
+  width: 0;
+  height: 198px;
+  display: block;
+  position: relative;
+  top: 0;
+  border-radius: 5px;
 }
 
 .option .count {
@@ -69,13 +74,8 @@ background-color: grey;
   right: 0;
 }
 
-.option .on {
-  width: 0;
-  height: 198px;
-  display: block;
-  position: relative;
-  top: 0;
-  border-radius: 5px;
+.head_counts {
+  font-size: 30px;
 }
 
 .between {
@@ -86,7 +86,7 @@ background-color: grey;
   vertical-align: middle;
   text-align: center;
   position: absolute;
-  margin-left: 30%;
+  margin-left: 43%;
   margin-top: -1px;
   font-size: 100px;
   z-index: 1;

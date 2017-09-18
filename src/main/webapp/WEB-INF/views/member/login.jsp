@@ -14,11 +14,11 @@
 	<div id="loginModal" class="modal">
 
 		<div class="container">
-			<div class="modal-content animate">
-				<div class="modal-header">
+			<div class="modal-content animate" id="login-modal-content">
+				<div class="modal-header" id="login-modal-header">
 					<h4 class="modal-title">로그인</h4>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" id="login-modal-body">
 					<input type="text" name="id" placeholder="아이디를 입력해 주세요" required>
 					<input type="password" name="password" placeholder="비밀번호를 입력해 주세요"
 						required onkeydown='javascript:onEnterSubmit()'>
@@ -28,7 +28,7 @@
 					<br> <br> <p><input type="checkbox" checked="checked">&nbsp;아이디
 					기억하기</p>
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer" id="login-modal-footer">
 					<span class="psw" style="float: left;">혹시 <a href="#" style="text-decoration: none;">비밀번호</a>를
 						잊으셨나요?
 					</span>
