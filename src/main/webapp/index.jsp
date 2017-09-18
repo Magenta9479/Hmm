@@ -70,9 +70,11 @@
 						<c:set var="num" value="1" />
 						<c:forEach var="l" items="${list }">
 
-							<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'"
+						<%-- 	<tr onclick="location.href='boardOne.do?bcode=${l.bcode}'"
+								style="cursor: pointer;"> --%>
+				
+								<tr onclick="#"
 								style="cursor: pointer;">
-
 								<td>${num }</td>
 								<c:set var="num" value="${num+1 }" />
 								<td>${l.title }</td>
@@ -97,6 +99,7 @@
 		</div>
 
 	</div>
+
 
 </body>
 
