@@ -11,6 +11,8 @@ import java.util.Iterator;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,32 +67,56 @@ public class BoardController
 	}
 	
 	@RequestMapping(value = "boardOne.do", method = RequestMethod.GET)
-	public String selectBoardOne(Model model,int bcode) 
+	public void selectBoardOne(HttpServletResponse response,String bcode) 
 	{
 		logger.info("selectBoardOne("+bcode+") call...");
 
-		Board board=boardService.selectBoardOne(bcode);	
+		Board board=boardService.selectBoardOne(Integer.parseInt(bcode.toString()));	
 		ArrayList<Comments> comments=null;
 		ArrayList<Attachfile> files=null;
 		
 		if(Integer.parseInt(board.getIsdelete())>0)	
 		{
-			comments=commentsService.selectCommentsList(bcode);
+			comments=commentsService.selectCommentsList(Integer.parseInt(bcode.toString()));
 		}
 		
 		if(board.getHasfile()!=null) 
 		{
-			files=attachfileService.selectFileList(bcode);			
+			files=attachfileService.selectFileList(Integer.parseInt(bcode.toString()));			
 		}
 		
 		if(board != null)
 		{
-			model.addAttribute("board", board);
-			if(comments!=null) model.addAttribute("comments", comments);
-			if(files!=null) model.addAttribute("files", files);
+			JSONArray jarray=new JSONArray();
+			
+			JSONObject jobj=new JSONObject();
+			jobj.put("board", board);
+			
+			JSONArray commentsArray=null;
+			JSONArray filesArray=null;
+			
+			if(comments!=null) 
+			{
+				commentsArray=new JSONArray();
+				for(Comments c:comments) 
+				{
+					commentsArray.add(c);
+				}
+				jobj.put("comments",commentsArray);
+			}
+			
+			if(files!=null)
+			{
+				filesArray=new JSONArray();
+				for(Attachfile a:files) 
+				{
+					commentsArray.add(a);
+				}
+				jobj.put("files",filesArray);
+			}
+			System.out.println(jarray);
+			
 		}		
-		
-		return "../../index";//보드 상세보기로 넘어가야한다.
 	}	
 	
 	@RequestMapping(value = "boardCheck.do", method = RequestMethod.POST)
