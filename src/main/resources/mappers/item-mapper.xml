@@ -7,22 +7,37 @@
  	<resultMap id="itemResultMap" type="Item"></resultMap>
  	
 	<select id="selectItemList" resultMap="itemResultMap" resultType="Item">
-		SELECT A.*,'NULL' PURCHASEDATE
+		SELECT ITEMCODE, A.NAME, USAGEDATE, B.NAME MOOD, FILELINK,'NULL' PURCHASEDATE
 		FROM ITEM A
+		JOIN ITEMMOOD B
+		USING(MOOD)
 	</select>
 	
 	<select id="selectItemOne" resultType="Item" parameterType="_int">
-		SELECT A.*,'NULL' PURCHASEDATE
+		SELECT ITEMCODE, A.NAME, USAGEDATE, B.NAME MOOD, FILELINK,'NULL' PURCHASEDATE
 		FROM ITEM A
+		JOIN ITEMMOOD B
+		USING(MOOD)
 		WHERE ITEMCODE=#{itemcode}
 	</select>
 	
 	<select id="selectPurchasedItem" resultMap="itemResultMap" resultType="Item">
-		SELECT A.*,B.PURCHASEDATE
+		SELECT ITEMCODE, A.NAME, USAGEDATE, B.NAME MOOD, FILELINK, PURCHASEDATE
 		FROM ITEM A
-		JOIN PURCHASEDITEM B
-		ON A.ITEMCODE=B.ITEMCODE
-		WHERE B.MEMBERCODE=#{membercode}
+		JOIN ITEMMOOD B USING(MOOD)
+        JOIN PURCHASEDITEM USING (ITEMCODE)
+		WHERE MEMBERCODE=#{membercode}
 	</select>
+	
+	<insert id="insertOne" parameterType="Purchaseditem">
+		INSERT INTO PURCHASEDITEM
+		VALUES(#{membercode},#{itemcode},SYSDATE)	
+	</insert>
+	
+	<delete id="deleteOne" parameterType="Purchaseditem">
+		DELETE
+		FROM PUERCHASEDITEM
+		WHERE MEMBERCODE=#{membercode} AND ITEMCODE=#{itemcode}
+	</delete>
 	
 </mapper>

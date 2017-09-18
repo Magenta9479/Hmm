@@ -38,4 +38,10 @@
 	update member set
 		PHOTO=#{photo} where ID=#{id}
 	</update>
+	
+	<update id="updateDDARU" parameterType="Member">
+		UPDATE MEMEBER 
+		SET DDARU=#{ddaru}
+		WHERE MEMBERCODE=#{membercode}	
+	</update>
 </mapper>
