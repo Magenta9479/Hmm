@@ -83,4 +83,12 @@ public class MemberServiceImpl implements MemberService {
 	public Member updatePhoto(Member m) {
 		return mDao.updatePhoto(m);
 	}
+
+	@Override
+	public int updateDDARU(Member m)
+	{
+		return mDao.updateDDARU(m);
+	}
+	
+	
 }

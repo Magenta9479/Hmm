@@ -60,4 +60,9 @@ public class MemberDao
 			member = sqlSession.selectOne("login", m);
 		return member;
 	}
+	
+	public int updateDDARU(Member m) 
+	{
+		return sqlSession.update("updateDDARU",m);
+	}
 }
