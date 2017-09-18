@@ -25,4 +25,15 @@
 		WHERE B.MEMBERCODE=#{membercode}
 	</select>
 	
+	<insert id="insertOne" parameterType="Purchaseditem">
+		INSERT INTO PURCHASEDITEM
+		VALUES(#{membercode},#{itemcode},SYSDATE)	
+	</insert>
+	
+	<delete id="deleteOne" parameterType="Purchaseditem">
+		DELETE
+		FROM PUERCHASEDITEM
+		WHERE MEMBERCODE=#{membercode} AND ITEMCODE=#{itemcode}
+	</delete>
+	
 </mapper>
