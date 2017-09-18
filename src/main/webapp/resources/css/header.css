@@ -15,10 +15,6 @@ body {
 #002F2F
 */
 
-* {
-  font-family: 'Hanna', serif;
-}
-
 .topnav.navbar {
   background-color: #002F2F;
   padding: 10px;
@@ -32,6 +28,8 @@ body {
   text-decoration: none;
   font-size: 30px;
   color: #fff;
+  height: 40px;
+  margin: auto;
 }
 
 #menu-toggle:hover {
@@ -77,6 +75,7 @@ body {
 /*사이드바*/
 
 #sidebar-wrapper {
+  font-family: 'Hanna', serif;
   margin-left: -240px;
   top: s0px;
   left: 0;
@@ -103,7 +102,7 @@ body {
   width: 280px;
   list-style: none;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 0;
   line-height: 60px;
 }

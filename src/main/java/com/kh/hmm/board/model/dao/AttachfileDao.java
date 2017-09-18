@@ -21,5 +21,20 @@ public class AttachfileDao
 		List<Attachfile> list=sqlSession.selectList("attachfileList",bcode);
 
 		return (ArrayList<Attachfile>)list;
+	}
+
+	public int insertAttachfile(Attachfile file)
+	{
+		return sqlSession.insert("attachInsert",file);
+	}
+
+	public int deleteAttachfile(int atcode)
+	{
+		return sqlSession.delete("attachDelete",atcode);
+	}
+
+	public int updateAttachfile(Attachfile file)
+	{
+		return sqlSession.update("attachUpdate",file);
 	}	
 }

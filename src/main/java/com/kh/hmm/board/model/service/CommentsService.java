@@ -3,6 +3,7 @@ package com.kh.hmm.board.model.service;
 import java.util.ArrayList;
 
 import com.kh.hmm.board.model.vo.Comments;
+import com.kh.hmm.board.model.vo.CommentsPoint;
 
 public interface CommentsService
 {	
@@ -13,4 +14,6 @@ public interface CommentsService
 	int updateComments(Comments c);
 	
 	int deletComments(Comments c);
+	
+	int checkComments(CommentsPoint point);
 }

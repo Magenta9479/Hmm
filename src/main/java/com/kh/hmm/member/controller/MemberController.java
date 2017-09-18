@@ -80,20 +80,21 @@ public class MemberController {
 			session.setAttribute("member", member);
 
 		}
-		return "redirect:/";
+		return "member/updateMember";
 	}
 
 	@RequestMapping(value = "uploadFile.do", method = RequestMethod.POST)
 	public String memberUpdate(HttpServletRequest request, HttpSession session,
 			@RequestParam("photo") MultipartFile uploadfile) {
 		logger.info("memberUploadProfile() call...");
-		if (uploadfile.isEmpty())
+		if (uploadfile.isEmpty()) {
+			System.out.println("파일이 비어있음");
 			return "member/updateMember";
-		else {
-			int i = 1;
+		} else {
 			Member m = (Member) session.getAttribute("member");
 			Member member = null;
 			String savePath = "C:\\Hmm\\Hmm\\src\\main\\webapp\\resources\\img\\" + m.getId(); // 파일이 저장될 프로젝트 안의 폴더 경로
+			// String savePath = "resources/img/"+m.getId();
 
 			// 파일 객체 생성
 			File file = new File(savePath);
@@ -108,20 +109,21 @@ public class MemberController {
 			}
 
 			String originalFilename = uploadfile.getOriginalFilename(); // fileName.jpg
-			String onlyFileName = originalFilename.substring(0, originalFilename.indexOf(".")); // fileName
 			String extension = originalFilename.substring(originalFilename.indexOf(".")); // .jpg
 
 			String rename = m.getId() + extension;
 
 			String fullPath = savePath + "\\" + rename;
-			m.setPhoto(fullPath);
 			if (!uploadfile.isEmpty()) {
 				try {
 					byte[] bytes = uploadfile.getBytes();
 					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fullPath)));
 					stream.write(bytes);
 					stream.close();
-					member = memberService.updateMember(m);
+					
+					fullPath = "resources\\img\\"+m.getId()+"\\"+rename;
+					m.setPhoto(fullPath);
+					member = memberService.updatePhoto(m);
 
 					if (member != null) {
 						session.setAttribute("member", member);
@@ -132,13 +134,13 @@ public class MemberController {
 				}
 			}
 
-			return "member/updateMember";
+			return "redirect:/updateProfile.do";
 		}
 	}
 
 	@RequestMapping(value = "updateProfile.do", method = RequestMethod.GET)
 	public String goUpdateProfile(Model model) {
-		logger.info("memberUploadProfile() call...");
+		logger.info("프로필 수정 페이지로 이동....");
 		return "member/updateMember";
 	}
 
@@ -166,16 +168,42 @@ public class MemberController {
 	}
 
 	// 회원가입 이메일 인증
-	@RequestMapping(value = "sendMail.do", method = RequestMethod.POST/* , produces = "application/json" */)
-	public boolean sendMailAuth(HttpSession session, @RequestParam String email) {
+	@RequestMapping(value = "sendMail.do", method = RequestMethod.POST)
+	public void sendMailAuth(Member m, HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		PrintWriter out = response.getWriter();
+		System.out.println("이메일 인증 컨트롤러.....");
+		String email = request.getParameter("email");
+		m.setEmail(email);
+		Member member = memberService.emailCheck(m);
+
+		if (member != null) {
+			System.out.println("이메일 중복");
+			out.print("emailDup");
+			out.flush();
+			out.close();
+			return;
+		}
+		System.out.println(email);
+		if (!email.contains("@")) {
+			out.print("fail");
+			return;
+		}
+
 		int ran = new Random().nextInt(100000) + 10000; // 10000 ~ 99999
 		String joinCode = String.valueOf(ran);
-		session.setAttribute("joinCode", joinCode);
 
 		String subject = "회원가입 인증 코드 발급 안내 입니다.";
 		StringBuilder sb = new StringBuilder();
 		sb.append("귀하의 인증 코드는 " + joinCode + " 입니다.");
-		boolean flag = memberService.send(subject, sb.toString(), "아이디@gmail.com", email, null);
-		return flag;
+		boolean flag = memberService.send(subject, sb.toString(), "wkdgma91@gmail.com", email, null);
+		System.out.println("flag 값 확인 : " + flag);
+		if (flag) {
+			out.print(joinCode);
+		} else {
+			out.print("fail");
+		}
+		out.flush();
+		out.close();
 	}
 }

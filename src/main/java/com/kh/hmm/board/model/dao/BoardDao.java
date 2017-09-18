@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.hmm.board.model.vo.Board;
+import com.kh.hmm.board.model.vo.BoardPoint;
 
 @Repository("boardDao")
 public class BoardDao
@@ -63,5 +64,20 @@ public class BoardDao
 	public int deleteBoard(int bcode) 
 	{
 		return sqlSession.delete("deleteBoard",bcode);
+	}
+
+	public int checkBoard(BoardPoint point)
+	{
+		return sqlSession.update("checkBoard",point);
+	}
+
+	public int boardCode()
+	{
+		return sqlSession.selectOne("boardCode");
+	}
+
+	public int updateAB(int bcode)
+	{
+		return sqlSession.update("updateAB",bcode);
 	}
 }

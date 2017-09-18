@@ -17,6 +17,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDao mDao;
+	@Autowired
 	private JavaMailSender javaMailSender;
 
 	public void setJavaMailSender(JavaMailSender javaMailSender) {
@@ -71,5 +72,15 @@ public class MemberServiceImpl implements MemberService {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	@Override
+	public Member emailCheck(Member m) {
+		return mDao.emailCheck(m);
+	}
+
+	@Override
+	public Member updatePhoto(Member m) {
+		return mDao.updatePhoto(m);
 	}
 }
