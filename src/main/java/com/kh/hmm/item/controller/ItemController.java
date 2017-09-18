@@ -41,6 +41,11 @@ public class ItemController
 			model.addAttribute("list", list);
 		}		
 		
+		for(Item i:list) 
+		{
+			System.out.println(i);
+		}
+		
 		//매점으로
 		return "../../cashshop";
 	}
