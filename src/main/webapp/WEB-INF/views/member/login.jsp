@@ -29,12 +29,13 @@
 					<button type="button"
 						style="color: white; background-color: #002F2F;"
 						onclick="onSubmit()">로그인</button>
-					<br><hr>
-						<p>구글 계정으로 로그인하기:</p>
+					<br>
+					<hr>
+					<p>구글 계정으로 로그인하기:</p>
 					<div class="g-signin2" data-width="540" data-onsuccess="onSignIn"></div>
 				</div>
-				<span class="psw" style="float: left;">&nbsp; 혹시 <a
-					href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를
+				<span class="psw" style="float: left;">&nbsp; 혹시 <a href="#"
+					style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를
 					잊으셨나요?
 				</span>
 				<div class="modal-footer">
@@ -138,7 +139,7 @@
 					auth2.signOut().then(function() {
 						console.log('User signed out.');
 					});
-					location.href = "/hmm"
+					window.location.reload();
 				} else {
 					$('input[name=id]').val('');
 					$('input[name=password]').val('');
