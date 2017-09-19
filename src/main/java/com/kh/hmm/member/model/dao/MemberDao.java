@@ -1,5 +1,8 @@
 package com.kh.hmm.member.model.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,8 +14,8 @@ public class MemberDao {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public Member selectMember() {
-		return (Member) sqlSession.selectOne("selectMember");
+	public Member selectMember(String writerid) {
+		return (Member) sqlSession.selectOne("selectMember",writerid);
 	}
 
 	public Member loginMember(Member m) {
@@ -75,4 +78,10 @@ public class MemberDao {
 	public Member CheckEmailId(Member m) {
 		return (Member) sqlSession.selectOne("emailChk", m);
 	}
+	
+	public ArrayList<Integer> leveling(long exp)
+	{
+		List<Integer> list= sqlSession.selectList("leveling", exp);
+		return (ArrayList<Integer>) list;
+	} 
 }

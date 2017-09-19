@@ -1,4 +1,4 @@
-package com.kh.hmm.member.controller;
+﻿package com.kh.hmm.member.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -313,5 +313,18 @@ public class MemberController {
 			out.close();
 		}
 		return;
+	}
+
+	@RequestMapping(value = "leveling.do", method = RequestMethod.POST)
+	public void leveling(HttpServletResponse response,long exp)	throws Exception 
+	{
+		logger.info("leveling() call...");	
+		PrintWriter out = response.getWriter();
+		
+		ArrayList<Integer> lev=memberService.leveling(exp);
+		
+		out.write("[\""+lev.get(0).intValue()+"\",\""+lev.get(1).intValue()+"\"]");
+		out.flush();
+		out.close();		
 	}
 }
