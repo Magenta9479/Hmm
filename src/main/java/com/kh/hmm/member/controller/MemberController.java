@@ -53,13 +53,14 @@ public class MemberController {
 	}
 
 	@RequestMapping("logout.do")
-	public String logoutMember(HttpSession session) {
+	public String logoutMember(HttpSession session, HttpServletRequest request) {
 		logger.info("logoutMember() call...");
-
+		String url = request.getHeader("referer");
 		if (session.getAttribute("member") != null) {
 			session.invalidate();
 		}
-		return "redirect:/";
+		
+		return "redirect:"+url;
 	}
 
 	@RequestMapping(value = "enroll.do", method = RequestMethod.POST)
@@ -101,14 +102,15 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "update.do", method = RequestMethod.POST)
-	public String memberUpdate(Member m, HttpSession session) {
+	public String memberUpdate(Member m, HttpSession session,HttpServletRequest request) {
 		logger.info("memberUpdate() call...");
+		String url = request.getHeader("referer");
 		Member member = memberService.updateMember(m);
 		if (member != null) {
 			session.setAttribute("member", member);
 
 		}
-		return "member/updateMember";
+		return "redirect:"+url;
 	}
 
 	@RequestMapping(value = "uploadFile.do", method = RequestMethod.POST)

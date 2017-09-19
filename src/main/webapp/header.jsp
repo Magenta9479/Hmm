@@ -20,6 +20,7 @@
 	function profileUpdate() {
 		location.href = "updateProfile.do";
 	}
+
 </script>
 
 <%@ include file="WEB-INF/views/member/login.jsp"%>
@@ -71,9 +72,8 @@
 									<li onclick="profileUpdate();"><a href="#"> <span
 											class="glyphicon glyphicon-user"> ${member.id} </span>
 									</a></li>
-									<li data-toggle="modal" data-target="#myModal"><a
-										href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>
-											로그아웃
+									<li data-toggle="modal" data-target="#myModal"><a href="logout.do"> <span
+											class="glyphicon glyphicon-log-in"></span> 로그아웃
 									</a></li>
 								</ul>
 							</c:when>
