@@ -77,6 +77,14 @@ font-size: 20px;
 	 margin-left: 30px;
 }
 
+/* 스크롤되는 메뉴 */
+#floating{ position : absolute;}
+/* end */
+
+#floating img:hover{
+	
+}
+
 /* 스크롤 숨기기 */
 ::-webkit-scrollbar {
 	display: none;
