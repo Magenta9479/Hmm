@@ -3,6 +3,7 @@ package com.kh.hmm.member.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
@@ -72,6 +73,34 @@ public class MemberController {
 		return "redirect:/";
 	}
 
+	@RequestMapping(value = "google.do", method = RequestMethod.POST)
+	public void googleInsert(HttpServletRequest request, HttpServletResponse response, Member m, HttpSession session)
+			throws IOException {
+		logger.info("googleInsert() call...");
+		System.out.println(m);
+
+		PrintWriter out = response.getWriter();
+		m.setId(request.getParameter("id"));
+		m.setPassword(request.getParameter("password"));
+		m.setEmail(request.getParameter("email"));
+		m.setJob(request.getParameter("job"));
+		m.setPhoto(request.getParameter("photo"));
+
+		Member member = memberService.googleMember(m);
+		System.out.println("구글 멤버 세션 값 : " + member);
+
+		if (member != null) {
+			session.setAttribute("member", member);
+			out.print("true");
+		} else {
+			session.setAttribute("member", null);
+			out.print("false");
+		}
+		out.flush();
+		out.close();
+
+	}
+
 	@RequestMapping(value = "update.do", method = RequestMethod.POST)
 	public String memberUpdate(Member m, HttpSession session) {
 		logger.info("memberUpdate() call...");
@@ -120,8 +149,8 @@ public class MemberController {
 					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(fullPath)));
 					stream.write(bytes);
 					stream.close();
-					
-					fullPath = "resources\\img\\"+m.getId()+"\\"+rename;
+
+					fullPath = "resources\\img\\" + m.getId() + "\\" + rename;
 					m.setPhoto(fullPath);
 					member = memberService.updatePhoto(m);
 
@@ -205,5 +234,40 @@ public class MemberController {
 		}
 		out.flush();
 		out.close();
+	}
+
+	@RequestMapping(value = "idSearch.do", method = RequestMethod.POST)
+	public void sendMailId(Member m, HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		PrintWriter out = response.getWriter();
+		System.out.println("이메일 인증(아이디) 컨트롤러.....");
+		String email = request.getParameter("email");
+		if (!email.contains("@")) {
+			out.print(0); // 유효하지 않은 이메일
+			out.flush();
+			out.close();
+			return;
+		}
+
+		m.setEmail(email);
+		Member member = memberService.emailCheck(m);
+		if (member == null) {
+			out.print(1); // 등록되지 않은 이메일
+			out.flush();
+			out.close();
+			return;
+		}
+		System.out.println("아이디 찾기를 위한 이메일 : " + member.getEmail());
+
+		String subject = "hmm 아이디 발급 안내 입니다.";
+		StringBuilder sb = new StringBuilder();
+		sb.append("귀하의 아이디는 " + member.getId() + " 입니다.");
+		boolean flag = memberService.send(subject, sb.toString(), "wkdgma91@gmail.com", email, null);
+		if (!flag) {
+			out.print(2); // 이메일 발송 실패
+			out.flush();
+			out.close();
+		}
+		return;
 	}
 }

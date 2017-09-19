@@ -83,4 +83,9 @@ public class MemberServiceImpl implements MemberService {
 	public Member updatePhoto(Member m) {
 		return mDao.updatePhoto(m);
 	}
+
+	@Override
+	public Member googleMember(Member m) {
+		return mDao.googleMember(m);
+	}
 }

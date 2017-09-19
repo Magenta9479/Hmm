@@ -42,7 +42,7 @@
 
 			reader.readAsDataURL(input.files[0]);
 		}
-	}
+	} b
 
 	function validationDate() {
 		if ($('#password').val() == $('#passwordConfirm').val())
