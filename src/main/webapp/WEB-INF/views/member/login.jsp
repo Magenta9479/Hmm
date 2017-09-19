@@ -29,13 +29,14 @@
 					<button type="button"
 						style="color: white; background-color: #002F2F;"
 						onclick="onSubmit()">로그인</button>
-					<br> <span class="psw" style="float: left;">혹시 <a
-						href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를
-						잊으셨나요?
-					</span>
-					<hr />
+					<br><hr>
+						<p>구글 계정으로 로그인하기:</p>
 					<div class="g-signin2" data-width="540" data-onsuccess="onSignIn"></div>
 				</div>
+				<span class="psw" style="float: left;">&nbsp; 혹시 <a
+					href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를
+					잊으셨나요?
+				</span>
 				<div class="modal-footer">
 
 					<button type="button" class="cancelbtn" data-dismiss="modal">창
@@ -153,7 +154,7 @@
 	function popupSearch() {
 		var popUrl = "resources/search/Search.jsp";
 
-		var popOption = "width=500, height=500, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+		var popOption = "width=auto, height=auto, resizable=yes, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 
 		window.open(popUrl, "", popOption);
 	}

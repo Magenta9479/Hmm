@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 .modal-header {
   background-color: #002F2F;
@@ -6,6 +7,7 @@
 
 /* Full-width input fields */
 .modal-body input[type=text], .modal-body input[type=password] {
+  font-family: 'Hanna', serif;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -20,6 +22,7 @@
 
 /* Set a style for all buttons */
 .modal-body button {
+  font-family: 'Hanna', serif;
     background-color: #002F2F;
     color: white;
     padding: 14px 20px;
@@ -52,6 +55,7 @@ span.psw {
 
 /* The Modal (background) */
 .modal {
+  font-family: 'Hanna', serif;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
    /*  z-index: 1; Sit on top */
