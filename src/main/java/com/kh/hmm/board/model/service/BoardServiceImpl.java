@@ -66,5 +66,18 @@ public class BoardServiceImpl implements BoardService
 		return bDao.updateAB(bcode);
 	}
 
+	@Override
+	public void recommendation(String recom, int bcode)
+	{
+		bDao.recommendation(recom,bcode);
+	}
+
+	@Override
+	public void crecommendation(String recom, int ccode)
+	{
+		bDao.crecommendation(recom,ccode);
+	}
+
+
 	
 }
