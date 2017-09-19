@@ -24,5 +24,9 @@ public interface BoardService
 	
 	int updateAB(int bcode);
 
+	void recommendation(String recom, int bcode);
+
+	void crecommendation(String recom, int ccode);
+
 	
 }
