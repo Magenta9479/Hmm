@@ -51,5 +51,20 @@ v.search_idpw h4 {
     border: none;
     cursor: pointer;
     width: 100%;
+  }
 
-}
+  .search_idpw_body button:hover {
+    opacity: 0.8;
+  }
+
+.search_idpw_body .cancelbtn {
+      background-color: red;
+      color: white;
+      width: auto;
+      padding: 10px 18px;
+      border: none;
+  }
+
+  .search_idpw_body .cancelbtn:hover {
+    opacity: 0.8;
+  }

@@ -153,9 +153,7 @@
 
 	function popupSearch() {
 		var popUrl = "resources/search/Search.jsp";
-
-		var popOption = "width=auto, height=auto, resizable=yes, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
-
+		var popOption = "width=400, height=auto, resizable=yes, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 		window.open(popUrl, "", popOption);
 	}
 </script>
