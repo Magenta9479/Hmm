@@ -77,7 +77,7 @@
 							<tr>
 								<td>${num }</td>
 								<c:set var="num" value="${num+1 }" />
-								<td>${l.title }</td>
+								<td><a href="boardOne.do?bcode=${l.bcode}">${l.title }</a></td>
 								<td>${l.code.name}</td>
 								<td>
 									<div class="profile">

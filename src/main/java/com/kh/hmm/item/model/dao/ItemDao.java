@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.hmm.item.model.vo.Item;
+import com.kh.hmm.item.model.vo.Purchaseditem;
 
 @Repository("itemDao")
 public class ItemDao
@@ -30,6 +31,16 @@ public class ItemDao
 	{
 		List<Item> list=sqlSession.selectList("selectPurchasedItemList",membercode);
 		return (ArrayList<Item>)list;
+	}
+
+	public int insertOne(Purchaseditem pitem)
+	{
+		return sqlSession.insert("insertOne",pitem);
+	}
+
+	public int deleteOne(Purchaseditem pitem)
+	{
+		return sqlSession.delete("deleteOne",pitem);
 	}
 
 }

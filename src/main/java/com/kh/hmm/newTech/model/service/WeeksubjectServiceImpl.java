@@ -26,19 +26,7 @@ public class WeeksubjectServiceImpl implements WeeksubjectService
 	public int conInsert(String id)
 	{
 		return wDao.conInsert(id);
-	}
-
-	@Override
-	public ArrayList<Prolist> proList()
-	{
-		return wDao.proList();
-	}
-
-	@Override
-	public ArrayList<Conlist> conList()
-	{
-		return wDao.conList();
-	}
+	}	
 
 	@Override
 	public Weeksubject selectWeek()
@@ -56,5 +44,11 @@ public class WeeksubjectServiceImpl implements WeeksubjectService
 	public int conCount()
 	{
 		return wDao.conCount();
+	}
+
+	@Override
+	public int pcSearch(String id)
+	{
+		return wDao.pcSearch(id);
 	}
 }

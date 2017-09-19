@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -312,4 +313,17 @@ public class MemberController {
 		}
 		return;
 	}
+	
+	@RequestMapping(value = "leveling.do", method = RequestMethod.POST)
+	public void leveling(HttpServletResponse response,long exp)	throws Exception 
+	{
+		logger.info("leveling() call...");	
+		PrintWriter out = response.getWriter();
+		
+		ArrayList<Integer> lev=memberService.leveling(exp);
+		
+		out.write("[\""+lev.get(0).intValue()+"\",\""+lev.get(1).intValue()+"\"]");
+		out.flush();
+		out.close();		
+	}	
 }

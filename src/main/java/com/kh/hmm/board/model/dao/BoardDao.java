@@ -80,4 +80,27 @@ public class BoardDao
 	{
 		return sqlSession.update("updateAB",bcode);
 	}
+
+
+	public void recommendation(String recom, int bcode)
+	{
+		switch(recom) 
+		{
+			case "best":sqlSession.update("bestrecommendation",bcode);
+				break;
+			case "good":sqlSession.update("goodrecommendation",bcode);
+				break;
+			case "bad":sqlSession.update("badrecommendation",bcode);
+				break;
+			case "worst":sqlSession.update("worstrecommendation",bcode);
+				break;
+		}
+		
+	}
+
+	public void crecommendation(String recom, int ccode)
+	{
+		if(recom.compareTo("good")==0)	sqlSession.update("cgoodrecommendation",ccode);
+		else sqlSession.update("cbadrecommendation",ccode);
+	}
 }
