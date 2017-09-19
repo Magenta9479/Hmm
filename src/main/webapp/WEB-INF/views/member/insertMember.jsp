@@ -21,6 +21,11 @@
 
 		$('#emailCheck').click(function(){
 			var email = $('input[name=email]').val();
+			if(email == '')
+				{
+				alert("이메일을 입력해 주세요!!");
+				return;
+				}
 			var SetTime = 180;		// 최초 설정 시간(기본 : 초)
 			alert(email);
 			$('#emailCode').show('slow');
@@ -40,10 +45,10 @@
 							$('#codeCheck').text(msg);
 							SetTime--;					// 1초씩 감소
 
-							if(setTime <= 0){
+							if(setTime == 0){
 								alert("인증에 실패했습니다 다시 인증해 주세요!!");
 								clearInterval(interval);
-								$('#codeCheck').text(msg);
+								$('#codeCheck').text("인증확인");
 							}
 						},1000);
 					}
@@ -64,7 +69,7 @@
 			var code = $('#emailCode').val();
 			code.trim();
 
-			if(code == joinCode){
+			if(joinCode != 0 &&code == joinCode){
 				alert("인증에 성공했습니다!!");
 				clearInterval(interval);
 				$('#codeCheck').text("인증성공");

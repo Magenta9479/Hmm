@@ -8,6 +8,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 <!-- 로그인 모달 -->
 <div class="container">
 
@@ -25,17 +27,17 @@
 					<button type="button"
 						style="color: white; background-color: #002F2F;"
 						onclick="onSubmit()">로그인</button>
-					<br> <br> <p><input type="checkbox" checked="checked">&nbsp;아이디
-					기억하기</p>
+					<br> <span class="psw" style="float: left;">혹시 <a
+						href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를 잊으셨나요?
+					</span>
+					<hr />
+					<!-- <div class="g-signin2" onclick="onSignin()"></div> -->
 				</div>
 				<div class="modal-footer">
-					<span class="psw" style="float: left;">혹시 <a href="#" style="text-decoration: none;">비밀번호</a>를
-						잊으셨나요?
-					</span>
+
 					<button type="button" class="cancelbtn" data-dismiss="modal">창
 						닫기</button>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -66,7 +68,8 @@
 			success : function(rData, textStatus, xhr) {
 				var chkRst = rData;
 				if (chkRst == "true") {
-					location.replace("/hmm");
+					/* location.replace("/hmm"); */
+					window.location.reload();
 				} else {
 					count = count + 1;
 					alert("아이디/패스워드를 확인해 주세요!!" + count);
@@ -88,5 +91,55 @@
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
+	}
+
+	/* function onSignIn() {
+		var profile = googleUser.getBasicProfile();
+
+		var member = {
+			"id" : profile.getName(),
+			"photo" : profile.getImageUrl(),
+			"email" : profile.getEmail(),
+			"password" : "googleLogin",
+			"job" : "etc"
+		};
+
+		$.ajax({
+			type : "POST",
+			url : "google.do",
+			data : member,
+			dataType : "text",
+			success : function(rData, textStatus, xhr) {
+				var chkRst = rData;
+				if (chkRst == "true") {
+					window.location.reload();
+				} else {
+					$('input[name=id]').val('');
+					$('input[name=password]').val('');
+				}
+			},
+			error : function() {
+				alert("로그인 실패!!");
+			}
+		});
+
+	}
+
+	
+	//구글 로그아웃 함수
+	function signOut() {
+		var auth2 = gapi.auth2.getAuthInstance();
+		auth2.signOut().then(function() {
+			console.log('User signed out.');
+		});
+	}
+	 */
+	function popupSearch()
+	{
+		var popUrl = "resources/search/Search.jsp";
+
+		var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+			window.open(popUrl,"",popOption);
 	}
 </script>
