@@ -19,11 +19,21 @@
 		FROM MEMBER WHERE EMAIL = #{email}
 	</select>
 	
-
+	<select id="ChkEmailId" parameterType="Member" resultType="Member">
+		SELECT *
+		FROM MEMBER WHERE ID = #{id} AND EMAIL = #{email}
+	</select>
+	
 	<insert id="enroll">
 		insert into member
 		values
 		(MEM_SEQ.NEXTVAL,#{id},#{password},#{email},null,0,0,0,0,#{job},SYSDATE,null)
+	</insert>
+	
+	<insert id="google">
+		insert into member
+		values
+		(MEM_SEQ.NEXTVAL,#{id},#{password},#{email},#{photo},0,0,0,0,#{job},SYSDATE,null)
 	</insert>
 
 	<update id="update">
@@ -37,11 +47,5 @@
 	<update id="updatePhoto">
 	update member set
 		PHOTO=#{photo} where ID=#{id}
-	</update>
-	
-	<update id="updateDDARU" parameterType="Member">
-		UPDATE MEMEBER 
-		SET DDARU=#{ddaru}
-		WHERE MEMBERCODE=#{membercode}	
 	</update>
 </mapper>

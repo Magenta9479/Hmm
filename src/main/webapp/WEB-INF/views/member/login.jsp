@@ -8,34 +8,39 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id"
+	content="419809006981-bkqqk1p2e3bhevtice98fcc9efo5fhkp.apps.googleusercontent.com">
+
 <!-- 로그인 모달 -->
 <div class="container">
 
 	<div id="loginModal" class="modal">
 
 		<div class="container">
-			<div class="modal-content animate" id="login-modal-content">
-				<div class="modal-header" id="login-modal-header">
+			<div class="modal-content animate">
+				<div class="modal-header">
 					<h4 class="modal-title">로그인</h4>
 				</div>
-				<div class="modal-body" id="login-modal-body">
+				<div class="modal-body">
 					<input type="text" name="id" placeholder="아이디를 입력해 주세요" required>
 					<input type="password" name="password" placeholder="비밀번호를 입력해 주세요"
 						required onkeydown='javascript:onEnterSubmit()'>
 					<button type="button"
 						style="color: white; background-color: #002F2F;"
 						onclick="onSubmit()">로그인</button>
-					<br> <br> <p><input type="checkbox" checked="checked">&nbsp;아이디
-					기억하기</p>
-				</div>
-				<div class="modal-footer" id="login-modal-footer">
-					<span class="psw" style="float: left;">혹시 <a href="#" style="text-decoration: none;">비밀번호</a>를
+					<br> <span class="psw" style="float: left;">혹시 <a
+						href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를
 						잊으셨나요?
 					</span>
+					<hr />
+					<div class="g-signin2" data-width="540" data-onsuccess="onSignIn"></div>
+				</div>
+				<div class="modal-footer">
+
 					<button type="button" class="cancelbtn" data-dismiss="modal">창
 						닫기</button>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -53,6 +58,15 @@
 	}
 
 	function onSubmit() {
+
+		var id = $('input[name=id]').val();
+		var pwd = $('input[name=password]').val();
+
+		if (id == '' || pwd == '') {
+			alert("아이디/패스워드를 입력해 주세요!!");
+			return;
+		}
+
 		var member = {
 			"id" : $('input[name=id]').val(),
 			"password" : $('input[name=password]').val()
@@ -66,13 +80,18 @@
 			success : function(rData, textStatus, xhr) {
 				var chkRst = rData;
 				if (chkRst == "true") {
-					/* location.replace("/hmm"); */
 					window.location.reload();
 				} else {
 					count = count + 1;
-					alert("아이디/패스워드를 확인해 주세요!!" + count);
+					if (count == 4) {
+						popupSearch();
+						count = 0;
+						return;
+					}
+					alert("아이디/패스워드를 확인해 주세요!!");
 					$('input[name=id]').val('');
 					$('input[name=password]').val('');
+
 				}
 			},
 			error : function() {
@@ -89,5 +108,53 @@
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
+	}
+
+	function onSignIn(googleUser) {
+		var profile = googleUser.getBasicProfile();
+		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		console.log('Name: ' + profile.getName());
+		console.log('Image URL: ' + profile.getImageUrl());
+		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+		var member = {
+			"id" : profile.getName(),
+			"photo" : profile.getImageUrl(),
+			"email" : profile.getEmail(),
+			"password" : "googleLogin",
+			"job" : "etc"
+		};
+
+		$.ajax({
+			type : "POST",
+			url : "google.do",
+			data : member,
+			dataType : "text",
+			success : function(rData, textStatus, xhr) {
+				var chkRst = rData;
+				if (chkRst == "true") {
+					var auth2 = gapi.auth2.getAuthInstance();
+					auth2.signOut().then(function() {
+						console.log('User signed out.');
+					});
+					location.href = "/hmm"
+				} else {
+					$('input[name=id]').val('');
+					$('input[name=password]').val('');
+				}
+			},
+			error : function() {
+				alert("로그인 실패!!");
+			}
+		});
+
+	}
+
+	function popupSearch() {
+		var popUrl = "resources/search/Search.jsp";
+
+		var popOption = "width=500, height=500, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+
+		window.open(popUrl, "", popOption);
 	}
 </script>

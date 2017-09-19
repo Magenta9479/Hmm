@@ -11,12 +11,14 @@ public interface WeeksubjectService
 	int proInsert(String string);
 
 	int conInsert(String string);
+
+	ArrayList<Prolist> proList();
 	
 	int proCount();
+	
+	ArrayList<Conlist> conList();
 
 	int conCount();
-	
-	int pcSearch(String id);
 	
 	Weeksubject selectWeek();
 }

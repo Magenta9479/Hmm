@@ -50,62 +50,79 @@ public class WeeksubjectController
 	public void proInsert(HttpServletResponse response,HttpSession session) throws IOException 
 	{
 		logger.info("proInsert() call...");		
-		
+		System.out.println((Member)session.getAttribute("member"));
 		PrintWriter pw = response.getWriter();
-		String id=((Member)session.getAttribute("member")).getId();
-		
-		if(weekService.pcSearch(id)%2==0) 
-		{
-			pw.print("p");		
-		}
-		else if(weekService.pcSearch(id)%3==0)
-		{
-			pw.print("c");
-		}
-		else 
-		{
-			weekService.proInsert(id);
-			pw.print(weekService.proCount());		
-		}
-		
+		pw.write(weekService.proInsert(((Member)session.getAttribute("member")).getId()));
 		pw.close();		
 	}
-		
 	
 	@RequestMapping(value = "conInsert.do", method = RequestMethod.POST)
 	public void conInsert(HttpServletResponse response,HttpSession session) throws IOException 
 	{
-		logger.info("conInsert() call...");		
+		logger.info("conInsert() call...");
+		
 		PrintWriter pw = response.getWriter();
-		String id=((Member)session.getAttribute("member")).getId();
-		
-		if(weekService.pcSearch(id)%2==0) 
-		{
-			pw.print("p");		
-		}
-		else if(weekService.pcSearch(id)%3==0)
-		{
-			pw.print("c");
-		}
-		else 
-		{
-			weekService.conInsert(id);
-			pw.print(weekService.proCount());		
-		}		
-		
+		pw.write(weekService.conInsert(((Member)session.getAttribute("member")).getId()));
 		pw.close();		
 	}
-		
-	@RequestMapping(value = "multiCount.do", method = RequestMethod.GET)
-	public void multiCount(HttpServletResponse response) throws IOException 
+	
+	@RequestMapping(value = "conList.do", method = RequestMethod.GET)
+	public void conList(HttpServletResponse response) throws IOException 
 	{
-		logger.info("multiCount() call...");
+		logger.info("conList() call...");
 		
-		int pro=weekService.proCount();
-		int con=weekService.conCount();
-
+		ArrayList<Conlist> list=weekService.conList();
+						
+		JSONObject json = new JSONObject();
+		JSONArray jarr = new JSONArray();
+		
+		for(Conlist con : list)
+		{			
+			jarr.add(con.getId());
+		}
+		
+		json.put("list", jarr);
+		System.out.println(json.toJSONString());
+		response.setContentType("application/json"); 
 		PrintWriter out = response.getWriter();
-		out.write("[\""+pro+"\",\""+con+"\"]");
+		out.print(json.toJSONString());
+		out.flush();
+		out.close();
+	}
+	
+	@RequestMapping(value = "proList.do", method = RequestMethod.GET)
+	public void proList(HttpServletResponse response) throws IOException 
+	{
+		logger.info("proList() call...");
+		
+		ArrayList<Prolist> list=weekService.proList();
+						
+		JSONObject json = new JSONObject();
+		JSONArray jarr = new JSONArray();
+		
+		for(Prolist pro : list)
+		{			
+			jarr.add(pro.getId());
+		}
+		
+		json.put("list", jarr);
+		System.out.println(json.toJSONString());
+		response.setContentType("application/json"); 
+		PrintWriter out = response.getWriter();
+		out.print(json.toJSONString());
+		out.flush();
+		out.close();
+	}
+	
+	@RequestMapping(value = "proCount.do", method = RequestMethod.GET)
+	public void proCount(HttpServletResponse response) throws IOException 
+	{
+		logger.info("proCount() call...");
+		
+		int count=weekService.proCount();
+						
+		PrintWriter out = response.getWriter();
+		out.print(count);
 		out.flush();
 		out.close();
 	}

@@ -85,10 +85,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int updateDDARU(Member m)
-	{
-		return mDao.updateDDARU(m);
+	public Member googleMember(Member m) {
+		return mDao.googleMember(m);
 	}
-	
-	
+
+	@Override
+	public Member checkEmailId(Member m) {
+		return mDao.CheckEmailId(m);
+	}
 }
