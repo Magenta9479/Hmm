@@ -87,7 +87,7 @@
   height: 25px;
 }
 
-<!--  이미지 상세보기 -->
+<!--  �씠誘몄� �긽�꽭蹂닿린 -->
 #myImg {
     border-radius: 5px;
     cursor: pointer;
@@ -180,9 +180,9 @@
         width: 100%;
     }
 }
-<!-- 이미지 상세 보기 끝 -->
+<!-- �씠誘몄� �긽�꽭 蹂닿린 �걹 -->
 
-<!-- 모달 -->
+<!-- 紐⑤떖 -->
 /* .modal-dialog { Width
     max-width: 100;
     width: auto;
@@ -198,7 +198,7 @@
 #lvl_img {
 	position: absolute;
 }
-<!-- 경험치바 -->
+<!-- 寃쏀뿕移섎컮 -->
 
 .progressbar {
   display: block;
@@ -217,3 +217,4 @@
 	border-radius: 0 20px 20px 0;
 	text-align: center;
 }
+

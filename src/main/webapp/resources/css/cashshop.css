@@ -23,8 +23,34 @@ button {
 .panel-heading{
 font-size: 20px;
 }
+/* 
+#salesitem {
+	margin-top: 100px;
+}
 
- /* #buy {
+#container-fluid {
+	margin-top: 100px;
+	margin-left: 9%;
+	width: 100%;
+}
+
+#box {
+	margin-right: 30px;
+	width: 300px;
+	height: 200px;
+	left: 8%;
+}
+
+#button {
+	position: absolute;
+	top: 210px;
+	width: 300px;
+	height: 200px;
+	right: 20px;
+	left: 2px;
+}
+
+#buy {
 	width: 45%;
 	margin-right: 20px;
 }
@@ -32,9 +58,21 @@ font-size: 20px;
 #charge {
 	background-color: #ff8040;
 	width: 45%;
-} */
+}
+#menu {
+	position: fixed;
+	top: 200px;
+	width: 100%;
+	left: 83%;
+	height: 30%;
+}
+
+#submenu {
+	width: 8%;
+}
+ */
 #myitem {
-	width: 13%;
+	width: 8%;
 }
 
 #itemtitle {
@@ -42,15 +80,9 @@ font-size: 20px;
 }
 
 #thisbuy {
-	 width: auto;
-    padding: 10px 18px;
-    border: none;
-	
-}
-#thiscash{
-	 width: auto;
-    padding: 10px 18px;
-    border: none;
+	width: 14%;
+	height: 4.5%;
+	padding: 0px;
 }
 
 #close {
@@ -66,26 +98,23 @@ font-size: 20px;
 }
 
 #itemheight {
-	width: auto;
+	width: 70%;
 	overflow: auto;
 	margin: 0px;
 	-ms-overflow-style: none;
 }
-#itemdetail img{
-	width:200px;
-	 height:130px; 
-	 margin-left: 30px;
-}
-
 /* 스크롤 숨기기 */
 ::-webkit-scrollbar {
 	display: none;
 }
 
+#itemtable {
+	margin-left: 35px;
+}
 /* 아이템 상세보기 */
 #selectimage {
-	
-	width: auto;
+	/* background : green; */
+	width: 50%;
 	height: 20%;
 	padding: 20px;
 }

@@ -5,7 +5,7 @@
 <mapper namespace="boardMapper">
 	
  	<resultMap id="boardMap" type="Board">
- 		<id column="BCODE" property="bcode" />
+ 		 <id column="BCODE" property="bcode" />
  		<result column="TITLE" property="title"/>
  		<result column="CONTENT" property="content"/>
  		<result column="DISTINGUISH" property="distinguish"/>
@@ -25,7 +25,7 @@
 	 		<result column="BAD" property="bad"/>
 	 		<result column="WORST" property="worst"/>
 	 		<result column="CAL" property="cal"/>
- 		</association>
+ 		</association> 
  	</resultMap>
  	
  	<sql id="boardTemplate">
