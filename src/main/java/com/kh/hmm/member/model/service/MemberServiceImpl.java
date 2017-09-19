@@ -88,4 +88,9 @@ public class MemberServiceImpl implements MemberService {
 	public Member googleMember(Member m) {
 		return mDao.googleMember(m);
 	}
+
+	@Override
+	public Member checkEmailId(Member m) {
+		return mDao.CheckEmailId(m);
+	}
 }

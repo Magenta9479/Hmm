@@ -6,8 +6,6 @@
 <head>
 <title>Hmm | 전 세계의 개발자들을 널리 이롭게 하리라.</title>
 <meta charset="utf-8">
-<meta name="google-signin-client_id"
-	content="419809006981-bkqqk1p2e3bhevtice98fcc9efo5fhkp.apps.googleusercontent.com">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="resources/css/header.css" rel="stylesheet" type="text/css">
@@ -19,11 +17,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <script type="text/javascript">
-	$(function() {
-		auth2.signOut().then(function() {
-			console.log('User signed out.');
-		});
-	});
 	function profileUpdate() {
 		location.href = "updateProfile.do";
 	}
@@ -34,6 +27,7 @@
 
 <body>
 	<c:set var="member" value="${sessionScope.member}" />
+	<c:set var="password" value="${member.password}" />
 	<%
 		System.out.println("헤더 페이지 세션 값 : " + session.getAttribute("member"));
 	%>
