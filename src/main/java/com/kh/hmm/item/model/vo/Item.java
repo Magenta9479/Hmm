@@ -7,19 +7,17 @@ public class Item
 	private int itemcode;
 	private String name;
 	private int usagedate;
-	private String mood;
 	private String filelink;
 	private int price;
 		
 	public Item() {}
 
-	public Item(int itemcode, String name, int usagedate, String mood, String filelink, int price)
+	public Item(int itemcode, String name, int usagedate, String filelink, int price)
 	{
 		super();
 		this.itemcode = itemcode;
 		this.name = name;
 		this.usagedate = usagedate;
-		this.mood = mood;
 		this.filelink = filelink;
 		this.price = price;
 	}
@@ -54,16 +52,6 @@ public class Item
 		this.usagedate = usagedate;
 	}
 
-	public String getMood()
-	{
-		return mood;
-	}
-
-	public void setMood(String mood)
-	{
-		this.mood = mood;
-	}
-
 	public String getFilelink()
 	{
 		return filelink;
@@ -84,14 +72,6 @@ public class Item
 		this.price = price;
 	}
 
-	@Override
-	public String toString()
-	{
-		return "Item [itemcode=" + itemcode + ", name=" + name + ", usagedate=" + usagedate + ", mood=" + mood
-				+ ", filelink=" + filelink + ", price=" + price + "]";
-	}
-
-	
 	
 
 	

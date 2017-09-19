@@ -25,7 +25,19 @@ public class WeeksubjectDao
 	public int conInsert(String id)
 	{
 		return sqlSession.insert("conInsert",id);
-	}	
+	}
+
+	public ArrayList<Prolist> proList()
+	{
+		List<Prolist> list=sqlSession.selectList("proList");
+		return (ArrayList<Prolist>)list;
+	}
+
+	public ArrayList<Conlist> conList()
+	{
+		List<Conlist> list=sqlSession.selectList("conList");
+		return (ArrayList<Conlist>)list;
+	}
 
 	public Weeksubject selectWeek()
 	{
@@ -40,10 +52,5 @@ public class WeeksubjectDao
 	public int conCount()
 	{
 		return sqlSession.selectOne("conCount");
-	}
-
-	public int pcSearch(String id)
-	{
-		return sqlSession.selectOne("pcSearch",id);
 	}
 }
