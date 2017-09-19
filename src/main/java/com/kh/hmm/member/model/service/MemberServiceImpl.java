@@ -1,6 +1,7 @@
 package com.kh.hmm.member.model.service;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -92,5 +93,17 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member checkEmailId(Member m) {
 		return mDao.CheckEmailId(m);
+	}
+
+	@Override
+	public Member selectMember(String writerid)
+	{
+		return mDao.selectMember(writerid);
+	}
+
+	@Override
+	public ArrayList<Integer> leveling(long exp)
+	{
+		return mDao.leveling(exp);
 	}
 }
