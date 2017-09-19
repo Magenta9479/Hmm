@@ -9,6 +9,10 @@
 		FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
 	
+	<select id="selectAllMember" resultType="arraylist" resultMap="Member">
+		SELECT * FROM MEMBER
+	</select>
+	
 	<select id="chkDup" parameterType="Member" resultType="Member">
 		SELECT *
 		FROM MEMBER WHERE ID = #{id}

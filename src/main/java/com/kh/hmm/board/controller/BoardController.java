@@ -29,6 +29,8 @@ import com.kh.hmm.board.model.vo.Attachfile;
 import com.kh.hmm.board.model.vo.Board;
 import com.kh.hmm.board.model.vo.BoardPoint;
 import com.kh.hmm.board.model.vo.Comments;
+import com.kh.hmm.member.model.service.MemberService;
+import com.kh.hmm.member.model.vo.Member;
 
 @Controller
 public class BoardController
@@ -37,6 +39,9 @@ public class BoardController
 	
 	@Autowired
 	private BoardService boardService;
+	
+	/*@Autowired
+	private MemberService memberService;*/
 	@Autowired
 	private CommentsService commentsService;
 	@Autowired
@@ -50,9 +55,9 @@ public class BoardController
 		logger.info("selectBoardList("+dis+") call...");
 		String rturn=null;
 		ArrayList<Board> list=boardService.selectBoardList(dis);		
-		
+		/*ArrayList<Member> mlist = memberService.selectAll();*/
 		if(list != null)
-		{
+		{	/*model.addAttribute("mlist", mlist);*/
 			model.addAttribute("list", list);
 		}		
 		

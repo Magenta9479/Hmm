@@ -132,11 +132,16 @@
 
 							<div class="modal-title">
 
-							
+							<%-- <c:forEach var="m" items="${mlist}">
+							<c:if test="${l.writerid eq m.id}"> --%>
 								<img id="testImg"
 									src="${pageContext.request.contextPath}/resources/img/Koala.jpg"
 									class="img-responsive" width="10%" height="50"
-									style="float: left;">&nbsp;아이디 : ${l.writerid}  &nbsp;&nbsp; 
+									style="float: left;">
+								<%-- <img id="testImg"
+									src="${pageContext.request.contextPath}/resources/img/${m.photo}"
+									class="img-responsive" width="10%" height="50"
+									style="float: left;"> --%>&nbsp;아이디 : <%-- ${m.id} --%>  &nbsp;&nbsp; 
 								
 								<small class="modalTitle"
 									style="font-size: 200%; width: 30%; height: 30%; text-align: center; padding-left: 15%">
@@ -145,11 +150,16 @@
 									<img
 										src="${pageContext.request.contextPath}/resources/img/bw/50.gif"
 										id="lvl_img"/>
+									<%-- <img
+										src="${pageContext.request.contextPath}/resources/img/bw/${m.medal}"
+										id="lvl_img"/> --%>
 									<div class="progressbar">
+										<%-- <p class="bar" style="width: 30%;">${m.exp}%</p> --%>
 										<p class="bar" style="width: 30%;">30%</p>
 									</div>
 								</div>
-						
+						<%-- 		</c:if>
+							</c:forEach> --%>
 							</div>
 						</div>
 
@@ -166,7 +176,7 @@
 								style="margin: auto; float: left; padding-left: 1%; font-size: 120%;">
 								<img
 									src="${pageContext.request.contextPath}/resources/img/bw/40.gif">
-								<span style="height: 50px;">${sessionScope.member.id } : 흠...........</span>
+								<span style="height: 50px;"><%-- ${sessionScope.member.id }  --%>: 흠...........</span>
 							<div>
 								<img
 									src="${pageContext.request.contextPath}/resources/img/bw/goldgood.png"

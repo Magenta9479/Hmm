@@ -1,5 +1,7 @@
 package com.kh.hmm.member.model.dao;
 
+import java.util.ArrayList;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -65,4 +67,8 @@ public class MemberDao
 	{
 		return sqlSession.update("updateDDARU",m);
 	}
+
+/*	public ArrayList<Member> selectAll() {
+		return new ArrayList<Member>(sqlSession.selectList("selectAllMember"));
+	}*/
 }

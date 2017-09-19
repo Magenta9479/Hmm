@@ -1,6 +1,7 @@
 package com.kh.hmm.member.model.service;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -88,6 +89,11 @@ public class MemberServiceImpl implements MemberService {
 	public int updateDDARU(Member m)
 	{
 		return mDao.updateDDARU(m);
+	}
+
+	@Override
+	public ArrayList<Member> selectAll() {
+		return mDao.selectAll();
 	}
 	
 	

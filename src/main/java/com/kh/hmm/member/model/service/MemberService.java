@@ -1,5 +1,7 @@
 package com.kh.hmm.member.model.service;
 
+import java.util.ArrayList;
+
 import com.kh.hmm.member.model.vo.Member;
 
 public interface MemberService
@@ -20,4 +22,5 @@ public interface MemberService
     public boolean send(String subject, String text, String from, String to, String filePath);
     
     int updateDDARU(Member m);
+	ArrayList<Member> selectAll();
 }
