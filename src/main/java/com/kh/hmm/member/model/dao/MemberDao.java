@@ -71,4 +71,8 @@ public class MemberDao {
 			return member;
 		}
 	}
+
+	public Member CheckEmailId(Member m) {
+		return (Member) sqlSession.selectOne("emailChk", m);
+	}
 }

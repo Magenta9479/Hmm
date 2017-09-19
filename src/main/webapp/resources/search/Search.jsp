@@ -7,7 +7,6 @@
 <meta charset="utf-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="resources/css/login.css" rel="stylesheet" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
@@ -22,23 +21,62 @@
 		}
 		$.ajax({
 			type : "POST",
-			url : "idSearch.do",
+			url : "/hmm/idSearch.do",
 			data : "email=" + email,
 			dataType : "text",
 			success : function(rData, textStatus, xhr) {
-				if (rData != "emailDup") {
-					alert("이메일이 등록 되어 있지 않습니다!!");
-				} else if (rData == "emailDup") {
-					joinCode = rData;
+				if (rData == 0) {
+					alert("유효하지 않은 이메일 입니다!!");
+				} else if (rData == 1) {
+					alert("등록 되지 않은 이메일 입니다!!");
+				} else if (rData == 2) {
+					alert("이메일 전송 실패!!");
+				} else if (rData == 3) {
 					alert("아이디가 이메일로 전송 되었습니다!!");
-
 				}
 			},
 			error : function() {
 				alert("이메일 전송 실패!!");
 			}
 		});
+	}
 
+	function pwdSearch() {
+		var id = $('#searchID').val();
+		var email = $('#searchEmail').val();
+		if (id == '') {
+			alert("아이디를 입력해 주세요!!");
+			return;
+		} else if (email == '') {
+			alert("이메일을 입력해 주세요!!");
+			return;
+		}
+
+		var search = {
+			"id" : id,
+			"email" : email
+		};
+
+		$.ajax({
+			type : "POST",
+			url : "/hmm/pwdSearch.do",
+			data : search,
+			dataType : "text",
+			success : function(rData, textStatus, xhr) {
+				if (rData == 0) {
+					alert("유효하지 않은 이메일 입니다!!");
+				} else if (rData == 1) {
+					alert("등록 되지 않은 회원 입니다!!");
+				} else if (rData == 2) {
+					alert("이메일 전송 실패!!");
+				} else if (rData == 3) {
+					alert("비밀번호가 이메일로 전송 되었습니다!!");
+				}
+			},
+			error : function() {
+				alert("이메일 전송 실패!!");
+			}
+		});
 	}
 </script>
 <title>아이디/패스워드 찾기</title>
@@ -56,10 +94,10 @@
 	패스워드 찾기
 	<hr>
 	아이디 :
-	<input type="text" name="" value="">
+	<input type="text" id="searchID">
 	<br> 이메일 :
-	<input type="email" name="" value="">
+	<input type="email" id="searchEmail">
 	<br>
-	<button type="button">패스워드 찾기</button>
+	<button type="button" onclick="pwdSearch()">패스워드 찾기</button>
 </body>
 </html>

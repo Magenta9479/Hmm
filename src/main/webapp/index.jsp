@@ -35,6 +35,8 @@
 			setTimeout(typeWriter, speed);
 		}
 	}
+
+
 </script>
 </head>
 

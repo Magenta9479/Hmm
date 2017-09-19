@@ -11,6 +11,7 @@ public interface MemberService
 	Member updateMember(Member m);
 	Member updatePhoto(Member m);
 	Member emailCheck(Member m);
+	Member checkEmailId(Member m);
 	Member googleMember(Member m);
 	  /** 메일 전송
      *  @param subject 제목

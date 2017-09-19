@@ -19,7 +19,11 @@
 		FROM MEMBER WHERE EMAIL = #{email}
 	</select>
 	
-
+	<select id="ChkEmailId" parameterType="Member" resultType="Member">
+		SELECT *
+		FROM MEMBER WHERE ID = #{id} AND EMAIL = #{email}
+	</select>
+	
 	<insert id="enroll">
 		insert into member
 		values

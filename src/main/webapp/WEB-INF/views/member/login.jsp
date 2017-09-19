@@ -9,6 +9,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id"
+	content="419809006981-bkqqk1p2e3bhevtice98fcc9efo5fhkp.apps.googleusercontent.com">
 
 <!-- 로그인 모달 -->
 <div class="container">
@@ -28,10 +30,11 @@
 						style="color: white; background-color: #002F2F;"
 						onclick="onSubmit()">로그인</button>
 					<br> <span class="psw" style="float: left;">혹시 <a
-						href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를 잊으셨나요?
+						href="#" style="text-decoration: none;" onclick="popupSearch()">아이디/비밀번호</a>를
+						잊으셨나요?
 					</span>
 					<hr />
-					<!-- <div class="g-signin2" onclick="onSignin()"></div> -->
+					<div class="g-signin2" data-width="540" data-onsuccess="onSignIn"></div>
 				</div>
 				<div class="modal-footer">
 
@@ -55,6 +58,15 @@
 	}
 
 	function onSubmit() {
+
+		var id = $('input[name=id]').val();
+		var pwd = $('input[name=password]').val();
+
+		if (id == '' || pwd == '') {
+			alert("아이디/패스워드를 입력해 주세요!!");
+			return;
+		}
+
 		var member = {
 			"id" : $('input[name=id]').val(),
 			"password" : $('input[name=password]').val()
@@ -68,13 +80,18 @@
 			success : function(rData, textStatus, xhr) {
 				var chkRst = rData;
 				if (chkRst == "true") {
-					/* location.replace("/hmm"); */
 					window.location.reload();
 				} else {
 					count = count + 1;
-					alert("아이디/패스워드를 확인해 주세요!!" + count);
+					if (count == 4) {
+						popupSearch();
+						count = 0;
+						return;
+					}
+					alert("아이디/패스워드를 확인해 주세요!!");
 					$('input[name=id]').val('');
 					$('input[name=password]').val('');
+
 				}
 			},
 			error : function() {
@@ -93,8 +110,12 @@
 		}
 	}
 
-	/* function onSignIn() {
+	function onSignIn(googleUser) {
 		var profile = googleUser.getBasicProfile();
+		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		console.log('Name: ' + profile.getName());
+		console.log('Image URL: ' + profile.getImageUrl());
+		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
 		var member = {
 			"id" : profile.getName(),
@@ -112,7 +133,11 @@
 			success : function(rData, textStatus, xhr) {
 				var chkRst = rData;
 				if (chkRst == "true") {
-					window.location.reload();
+					var auth2 = gapi.auth2.getAuthInstance();
+					auth2.signOut().then(function() {
+						console.log('User signed out.');
+					});
+					location.href = "/hmm"
 				} else {
 					$('input[name=id]').val('');
 					$('input[name=password]').val('');
@@ -125,21 +150,11 @@
 
 	}
 
-	
-	//구글 로그아웃 함수
-	function signOut() {
-		var auth2 = gapi.auth2.getAuthInstance();
-		auth2.signOut().then(function() {
-			console.log('User signed out.');
-		});
-	}
-	 */
-	function popupSearch()
-	{
+	function popupSearch() {
 		var popUrl = "resources/search/Search.jsp";
 
-		var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		var popOption = "width=500, height=500, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 
-			window.open(popUrl,"",popOption);
+		window.open(popUrl, "", popOption);
 	}
 </script>

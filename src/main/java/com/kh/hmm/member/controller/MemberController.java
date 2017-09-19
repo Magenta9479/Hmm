@@ -60,7 +60,6 @@ public class MemberController {
 			session.invalidate();
 		}
 		return "redirect:/";
-
 	}
 
 	@RequestMapping(value = "enroll.do", method = RequestMethod.POST)
@@ -259,12 +258,55 @@ public class MemberController {
 		}
 		System.out.println("아이디 찾기를 위한 이메일 : " + member.getEmail());
 
-		String subject = "hmm 아이디 발급 안내 입니다.";
+		String subject = "hmm 아이디 안내 입니다.";
 		StringBuilder sb = new StringBuilder();
 		sb.append("귀하의 아이디는 " + member.getId() + " 입니다.");
 		boolean flag = memberService.send(subject, sb.toString(), "wkdgma91@gmail.com", email, null);
 		if (!flag) {
 			out.print(2); // 이메일 발송 실패
+			out.flush();
+			out.close();
+		} else {
+			out.print(3);
+			out.flush();
+			out.close();
+		}
+		return;
+	}
+
+	@RequestMapping(value = "pwdSearch.do", method = RequestMethod.POST)
+	public void sendMailPwd(Member m, HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws Exception {
+		PrintWriter out = response.getWriter();
+		System.out.println("이메일 인증(패스워드) 컨트롤러.....");
+		m.setId(request.getParameter("id"));
+		m.setEmail(request.getParameter("email"));
+		if (!m.getEmail().contains("@")) {
+			out.print(0); // 유효하지 않은 이메일
+			out.flush();
+			out.close();
+			return;
+		}
+
+		Member member = memberService.checkEmailId(m);
+		if (member == null) {
+			out.print(1); // 등록되지 않은 멤버
+			out.flush();
+			out.close();
+			return;
+		}
+		System.out.println("패스워드 찾기를 위한 이메일 : " + member.getEmail());
+
+		String subject = "hmm 패스워드 안내 입니다.";
+		StringBuilder sb = new StringBuilder();
+		sb.append("귀하의 패스워드는 " + member.getPassword() + " 입니다.");
+		boolean flag = memberService.send(subject, sb.toString(), "wkdgma91@gmail.com", member.getEmail(), null);
+		if (!flag) {
+			out.print(2); // 이메일 발송 실패
+			out.flush();
+			out.close();
+		} else {
+			out.print(3);
 			out.flush();
 			out.close();
 		}
