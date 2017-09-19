@@ -77,8 +77,7 @@
 								</div>
 							</div>
 						</div>
-						<button onclick="location.href='boardCode.do'">SSIPPAL</button>
-						<button onclick="location.href='itemLists.do'">GASSAKKI</button>
+						
 						<!-- 게시판 테이블 -->
 						<div class="table-responsive">
 							<table id="myTable" class="table table-hover table-striped">
