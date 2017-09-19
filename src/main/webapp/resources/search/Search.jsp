@@ -96,6 +96,8 @@
 													<h4>이메일 :
 													<input type="email" id="searchEmail" placeholder="이메일 주소를 입력해 주세요" ></h4>
 															<button type="button" onclick="pwdSearch()">패스워드 찾기</button>
-															</div></div>
+															<button class="cancelbtn" onclick="self.close()">창 닫기</button>
+															</div>															
+														</div>
 														</body>
 													</html>
