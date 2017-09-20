@@ -1,18 +1,18 @@
 
 /* Full-width input fields */
-input[type=text], input[type=password], input[type=email] {
+.insert_body input[type=text], .insert_body input[type=password], .insert_body input[type=email] {
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
     border: 1px solid #ccc;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+.insert_body input[type=text]:focus, .insert_body input[type=password]:focus, .insert_body input[type=email]:focus {
   border: 1px green solid;
 }
 
 /* Set a style for all buttons */
-form button {
+.insert_body form button {
     background-color: #002F2F;
     color: white;
     padding: 14px 20px;
@@ -22,7 +22,7 @@ form button {
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn {
+.modal-footer .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
