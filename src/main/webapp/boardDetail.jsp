@@ -64,7 +64,7 @@
 </head>
 <body>
 	<%@ include file="/header.jsp"%>
-
+	
 	<!-- 게시글 상세보기 -->
 	<div class="boardDetail_area">
 
@@ -72,71 +72,97 @@
 		<div class="boardDetail">
 			<div class="boardDetail-header">
 				<div class="boardDetail_title">
-					<h2>${board.title}&nbsp;&nbsp;&nbsp;<span id="posted_from">(!@#$ 게시판)</span></h2>
-        </div>
-				<div class="boardDetail_author">
-					작성자 : ${writer.id}<br> 레벨 : <input id="lev" /> <br> 경험치
-					: ${writer.exp}<br> 경험치 진행도 : <input id="per" /> <br> 메달
-					갯수 : ${writer.medal}
+					<h2>${board.title}&nbsp;&nbsp;&nbsp;<span id="posted_from">(!@#$
+							게시판)</span>
+					</h2>
 				</div>
-        <br><br>
-        <div class="boardDetail_date">
-  					<button type="button" id="bMedal">메달 주기!</button>
-          <span id="board_postdate">작성일 : ${board.postdate}</span>
-
+				<br>
+				<div class="boardDetail_author">
+					작성자 : ${writer.id} &nbsp;&nbsp;&nbsp; 레벨 : <input id="lev" />
+					&nbsp;&nbsp;&nbsp; 경험치 : ${writer.exp} &nbsp;&nbsp;&nbsp; 경험치 진행도 :
+					<input id="per" />
+				</div>
+				<br>
+				<div class="boardDetail_date">
+					<button type="button" id="bMedal">메달 주기!</button>
+					<%-- 메달 갯수가 1 이상일때만 노출, 아니면 display : none --%>
+					&nbsp;&nbsp;&nbsp; 메달 갯수 : ${writer.medal} <span
+						id="board_postdate">작성일 : ${board.postdate}</span>
 				</div>
 				<br>
 
 			</div>
 
-			<div class="boardDetail-contents">
+			<div class="boardDetail-contents">${board.content}</div>
+			<hr>
+			<div class="boardDetail-footer">
+				<button type="button" id="bBest">최고다!</button>
+				${board.point.best} 개&nbsp;&nbsp;&nbsp;&nbsp
 
-				${board.content}
-      </div>
-
-      	<div class="boardDetail-footer">
-					<button type="button" id="bBest">최고다!</button>
-          ${board.point.best} 개&nbsp;&nbsp;&nbsp;&nbsp
-
-					<button type="button" id="bGood">좋아요 :)</button>
-          ${board.point.good} 개&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" id="bGood">좋아요 :)</button>
+				${board.point.good} 개&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-					<button type="button" id="bBad">안 좋아요 :(</button>
-           ${board.point.bad} 개&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" id="bBad">안 좋아요 :(</button>
+				${board.point.bad} 개&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-					<button type="button" id="bWorst">뭐야 시발!</button>
-          ${board.point.worst} 개&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" id="bWorst">뭐야 시발!</button>
+				${board.point.worst} 개&nbsp;&nbsp;&nbsp;&nbsp; <br> <br>게시글
+				점수 합계 : ${board.point.cal}<br> <br>
+				<hr>
 
-					<br> <br>게시글 점수 합계 : ${board.point.cal}<br> <br>
-
-					<c:if test="${files ne null}">
-						<c:set var="num" value="1" />
-						<c:forEach var="f" items="${files}">
+				<%-- 파일? --%>
+				<c:if test="${files ne null}">
+					<c:set var="num" value="1" />
+					<c:forEach var="f" items="${files}">
             	file${num } : name = ${f.originname }, filelink=${f.filelink }<br>
-							<c:set var="num" value="${num+1 }" />
-						</c:forEach>
-					</c:if>
+						<c:set var="num" value="${num+1 }" />
+					</c:forEach>
+				</c:if>
 
+				<hr>
+				<%-- 댓글 공간 --%>
+				<div class="comment_section">
 					<c:if test="${comments ne null}">
 						<c:set var="num" value="1" />
+
 						<c:forEach var="c" items="${comments}">
-            	comment${num } : content = ${c.content }, writerid=${c.writerid }, postdate=${c.postdate}
-            	<br>good : ${c.point.good }&nbsp;<button type="button"
-								onclick="crecommendation(${c.ccode},'g')">good</button>&nbsp; bad : ${c.point.bad }&nbsp;<button
-								type="button" onclick="crecommendation(${c.ccode},'b')">bad</button>
-            	${c.point.cal }<br>
-							<c:set var="num" value="${num+1 }" />
+							<div class="one_comment">
+								<div class="panel-group">
+								<div class="panel panel-success">
+									<div class="panel-heading">${num }번째 댓글
+										<div class="comment_authordate">
+										작성자 : ${c.writerid } &nbsp;&nbsp;&nbsp;&nbsp; 작성일 :
+										${c.postdate}</div>
+										</div>
+									<div class="panel-body">${c.content }</div>
+									<div class="panel-footer">
+										댓글 점수 : ${c.point.cal }
+										<div class="comment_goodbad">
+										공감 : ${c.point.good }&nbsp;
+										<button type="button"
+											onclick="crecommendation(${c.ccode},'g')">공감하기</button>
+										&nbsp; 비공감 : ${c.point.bad }&nbsp;
+										<button type="button"
+											onclick="crecommendation(${c.ccode},'b')">비공감하기</button>
+											</div>
+									</div>
+								</div>
+								</div>
+								<c:set var="num" value="${num+1 }" />
+							</div>
 						</c:forEach>
+
 					</c:if>
 				</div>
+
+
+			</div>
 
 		</div>
 	</div>
 
-
-	<%@ include file="/footer.jsp"%>
 </body>
 
 </html>

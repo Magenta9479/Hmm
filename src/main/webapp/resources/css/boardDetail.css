@@ -11,28 +11,29 @@
   //border: 1px pink dotted;
 }
 
+body {
+  background-color: black;
+}
+
 .boardDetail_area{
   //border: 1px gold solid;
-  min-width: 1000px;
-  max-width: 1000px;
-  margin: auto;
+  margin: 250px;
   margin-top: 50px;
   margin-bottom: 50px;
+  background-color: #002F2F;
+  border-radius: 10px;
 }
 
 .boardDetail {
   padding: 20px;
-  border: 1px silver solid;
   border-radius: 10px;
-
 }
 
 .boardDetail-header {
   display: block;
   color: white;
   font-family: 'Hanna', serif;
-  background-color: #002F2F;
-  height: 150px;
+  height: auto;
   padding: 10px;
   width: 100%;
 }
@@ -42,9 +43,6 @@
 }
 
 .boardDetail_title {
-  float: left;
-  width: 50%;
-  padding-bottom: 30px;
 }
 
 #posted_from {
@@ -53,9 +51,7 @@
 }
 
 .boardDetail_author{
-  float: right;
-  width: 50%;
-  border-left: 2px white solid;
+  border-top: 2px white solid;
   padding: 10px;
 }
 
@@ -81,17 +77,34 @@
 }
 
 .boardDetail-contents {
+  background-color: white;
   padding: 10px;
   padding-top: 40px;
   padding-bottom: 40px;
   width: 100%;
+  height: auto;
 }
 
 .boardDetail-footer {
-  border-top: 1px silver solid;
-  margin-top: 20px;
+  background-color: white;
   padding: 10px;
-  padding-top: 20px;
   width: 100%;
+  height: auto;
+}
 
+.comment_authordate {
+  float: right;
+}
+
+
+.comment_goodbad {
+  float: right;
+}
+
+
+.comment_section {
+
+}
+
+.one_comment:hover {
 }

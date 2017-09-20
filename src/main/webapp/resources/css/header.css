@@ -49,8 +49,8 @@ body {
   text-decoration: none;
   color: white;
   font-family: 'Pacifico', cursive;
-  margin-right: 500px;
   font-size: 40px;
+  width: 100%;
 }
 
 #wrapper .navbar .container-fluid .navbar-nav #home_logo:hover {
