@@ -18,44 +18,45 @@
 <link href="resources/css/boardDetail.css" rel="stylesheet"
 	type="text/css">
 <script type="text/javascript">
-	$(function(){
+	$(function() {
 		$.ajax({
-            type : "POST",
-            url : "leveling.do?exp=${writer.exp}",
-            success : function(data) {
-            	var as=eval(data);
+			type : "POST",
+			url : "leveling.do?exp=${writer.exp}",
+			success : function(data) {
+				var as = eval(data);
 
-            	$('#lev').val(as[0]);
-            	$('#per').val(as[1]);
-            },
-            error:function(request,status,error){
-                alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-               }
-    	});
-
-		$('#bBest').click(function(){
-			window.location.href="recommendation.do?recom=best&bcode=${board.bcode}";
+				$('#lev').val(as[0]);
+				$('#per').val(as[1]);
+			},
+			error : function(request, status, error) {
+				alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+			}
 		});
 
-		$('#bGood').click(function(){
-			window.location.href="recommendation.do?recom=good&bcode=${board.bcode}";
+		$('#bBest').click(function() {
+			window.location.href = "recommendation.do?recom=best&bcode=${board.bcode}";
 		});
 
-		$('#bBad').click(function(){
-			window.location.href="recommendation.do?recom=bad&bcode=${board.bcode}";
+		$('#bGood').click(function() {
+			window.location.href = "recommendation.do?recom=good&bcode=${board.bcode}";
 		});
 
-		$('#bWorst').click(function(){
-			window.location.href="recommendation.do?recom=worst&bcode=${board.bcode}";
+		$('#bBad').click(function() {
+			window.location.href = "recommendation.do?recom=bad&bcode=${board.bcode}";
+		});
+
+		$('#bWorst').click(function() {
+			window.location.href = "recommendation.do?recom=worst&bcode=${board.bcode}";
 		});
 
 
 	});
 
-	function crecommendation(ccode,flag)
-	{
-		if(flag=='g')window.location.href="crecommendation.do?bcode=${board.bcode}&recom=good&ccode="+ccode;
-		else window.location.href="crecommendation.do?bcode=${board.bcode}&recom=bad&ccode="+ccode;
+	function crecommendation(ccode, flag) {
+		if (flag == 'g')
+			window.location.href = "crecommendation.do?bcode=${board.bcode}&recom=good&ccode=" + ccode;
+		else
+			window.location.href = "crecommendation.do?bcode=${board.bcode}&recom=bad&ccode=" + ccode;
 
 	}
 </script>
@@ -64,49 +65,67 @@
 <body>
 	<%@ include file="/header.jsp"%>
 
-	<div class="board">
-		<!-- 검색창, 검색 정렬들의 패널 -->
+	<!-- 게시글 상세보기 -->
+	<div class="boardDetail_area">
 
-
+		<%-- 제목 및 상단 정보	--%>
 		<div class="boardDetail">
-			<%-- <button onclick="location.href='boardCode.do'" style="color:white;">SSIPPAL</button> --%>
-			<!-- 게시판 테이블 -->
+			<div class="boardDetail-header">
+				<div class="boardDetail_title">
+					<h2>${board.title}</h2>
+				</div>
+				<div class="boardDetail_date">
+					<button type="button" id="bMedal">메달 주기</button>
+					<br> 작성일 : ${board.postdate}
+				</div>
+				<div class="boardDetail_author">
+					작성자 : ${writer.id}<br> 레벨 : <input id="lev" /> <br> 경험치
+					: ${writer.exp}<br> 경험치 진행도 : <input id="per" /> <br> 메달
+					갯수 : ${writer.medal}
+				</div>
+				<br>
 
-			title : ${board.title}<br> <br> writer : ${writer.id}<br>
-			level : <input id="lev" /> <br> exp : ${writer.exp}<br>
-			percent : <input id="per" /> <br> medal : ${writer.medal}&nbsp;
-			<button type="button" id="bMedal">medal</button>
-			<br> <br> postdate : ${board.postdate}<br> content :
-			${board.content}<br> <br> best : ${board.point.best}&nbsp;
-			<button type="button" id="bBest">best</button>
-			<br> good : ${board.point.good}&nbsp;
-			<button type="button" id="bGood">good</button>
-			<br> bad : ${board.point.bad}&nbsp;
-			<button type="button" id="bBad">bad</button>
-			<br> worst : ${board.point.worst}&nbsp;
-			<button type="button" id="bWorst">worst</button>
-			<br> cal : ${board.point.cal}<br> <br>
 
-			<c:if test="${files ne null}">
-				<c:set var="num" value="1" />
-				<c:forEach var="f" items="${files}">
+
+			</div>
+
+			<div class="boardDetail-contents">
+
+
+				${board.content}
+
+				<div class="boardDetail-footer">
+					best : ${board.point.best}&nbsp;
+					<button type="button" id="bBest">best</button>
+					<br> good : ${board.point.good}&nbsp;
+					<button type="button" id="bGood">good</button>
+					<br> bad : ${board.point.bad}&nbsp;
+					<button type="button" id="bBad">bad</button>
+					<br> worst : ${board.point.worst}&nbsp;
+					<button type="button" id="bWorst">worst</button>
+					<br> cal : ${board.point.cal}<br> <br>
+
+					<c:if test="${files ne null}">
+						<c:set var="num" value="1" />
+						<c:forEach var="f" items="${files}">
             	file${num } : name = ${f.originname }, filelink=${f.filelink }<br>
-					<c:set var="num" value="${num+1 }" />
-				</c:forEach>
-			</c:if>
+							<c:set var="num" value="${num+1 }" />
+						</c:forEach>
+					</c:if>
 
-			<c:if test="${comments ne null}">
-				<c:set var="num" value="1" />
-				<c:forEach var="c" items="${comments}">
+					<c:if test="${comments ne null}">
+						<c:set var="num" value="1" />
+						<c:forEach var="c" items="${comments}">
             	comment${num } : content = ${c.content }, writerid=${c.writerid }, postdate=${c.postdate}
             	<br>good : ${c.point.good }&nbsp;<button type="button"
-						onclick="crecommendation(${c.ccode},'g')">good</button>&nbsp; bad : ${c.point.bad }&nbsp;<button
-						type="button" onclick="crecommendation(${c.ccode},'b')">bad</button>
+								onclick="crecommendation(${c.ccode},'g')">good</button>&nbsp; bad : ${c.point.bad }&nbsp;<button
+								type="button" onclick="crecommendation(${c.ccode},'b')">bad</button>
             	${c.point.cal }<br>
-					<c:set var="num" value="${num+1 }" />
-				</c:forEach>
-			</c:if>
-
+							<c:set var="num" value="${num+1 }" />
+						</c:forEach>
+					</c:if>
+				</div>
+			</div>
 		</div>
 	</div>
 
