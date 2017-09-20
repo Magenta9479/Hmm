@@ -74,36 +74,34 @@
 				<div class="boardDetail_title">
 					<h2>${board.title}</h2>
 				</div>
-				<div class="boardDetail_date">
-					<button type="button" id="bMedal">메달 주기</button>
-					<br> 작성일 : ${board.postdate}
-				</div>
 				<div class="boardDetail_author">
 					작성자 : ${writer.id}<br> 레벨 : <input id="lev" /> <br> 경험치
 					: ${writer.exp}<br> 경험치 진행도 : <input id="per" /> <br> 메달
 					갯수 : ${writer.medal}
 				</div>
+        <div class="boardDetail_date">
+					<button type="button" id="bMedal">메달 주기!</button>
+
+					<span id="board_postdate">작성일 : ${board.postdate}</span>
+				</div>
 				<br>
-
-
 
 			</div>
 
 			<div class="boardDetail-contents">
 
-
 				${board.content}
 
 				<div class="boardDetail-footer">
-					best : ${board.point.best}&nbsp;
+					최고다! : ${board.point.best}&nbsp;
 					<button type="button" id="bBest">best</button>
-					<br> good : ${board.point.good}&nbsp;
+					<br> 좋아요 :) : ${board.point.good}&nbsp;
 					<button type="button" id="bGood">good</button>
-					<br> bad : ${board.point.bad}&nbsp;
+					<br> 안 좋아요 :( : ${board.point.bad}&nbsp;
 					<button type="button" id="bBad">bad</button>
-					<br> worst : ${board.point.worst}&nbsp;
+					<br> 뭐야 시발! : ${board.point.worst}&nbsp;
 					<button type="button" id="bWorst">worst</button>
-					<br> cal : ${board.point.cal}<br> <br>
+					<br> <br>게시글 점수 합계 : ${board.point.cal}<br> <br>
 
 					<c:if test="${files ne null}">
 						<c:set var="num" value="1" />

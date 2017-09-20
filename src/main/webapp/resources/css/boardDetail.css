@@ -25,19 +25,49 @@
 }
 .boardDetail-header {
   display: block;
+  color: white;
+  font-family: 'Hanna', serif;
+  background-color: #002F2F;
   width: 100%;
+  height: 130px;
+}
+
+.boardDetail-header input {
+  background-color: #002F2F;
 }
 
 .boardDetail_title {
-  width: 50%;
   float: left;
+  width: 50%;
 }
 
 .boardDetail_author{
   float: right;
+  width: 50%;
+  border-left: 3px green solid;
+  padding: 10px;
 }
 
 .boardDetail_date {
+
+}
+
+#bMedal {
+  background-color: gold;
+  color: white;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+#bMedal:hover {
+  opacity: 0.8;
+}
+
+#board_postdate {
+  float: right;
+  margin-right: 20px;
 }
 
 .boardDetail-contents {
