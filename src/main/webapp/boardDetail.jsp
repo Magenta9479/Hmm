@@ -72,17 +72,18 @@
 		<div class="boardDetail">
 			<div class="boardDetail-header">
 				<div class="boardDetail_title">
-					<h2>${board.title}</h2>
-				</div>
+					<h2>${board.title}&nbsp;&nbsp;&nbsp;<span id="posted_from">(!@#$ 게시판)</span></h2>
+        </div>
 				<div class="boardDetail_author">
 					작성자 : ${writer.id}<br> 레벨 : <input id="lev" /> <br> 경험치
 					: ${writer.exp}<br> 경험치 진행도 : <input id="per" /> <br> 메달
 					갯수 : ${writer.medal}
 				</div>
+        <br><br>
         <div class="boardDetail_date">
-					<button type="button" id="bMedal">메달 주기!</button>
+  					<button type="button" id="bMedal">메달 주기!</button>
+          <span id="board_postdate">작성일 : ${board.postdate}</span>
 
-					<span id="board_postdate">작성일 : ${board.postdate}</span>
 				</div>
 				<br>
 
@@ -91,16 +92,23 @@
 			<div class="boardDetail-contents">
 
 				${board.content}
+      </div>
 
-				<div class="boardDetail-footer">
-					최고다! : ${board.point.best}&nbsp;
-					<button type="button" id="bBest">best</button>
-					<br> 좋아요 :) : ${board.point.good}&nbsp;
-					<button type="button" id="bGood">good</button>
-					<br> 안 좋아요 :( : ${board.point.bad}&nbsp;
-					<button type="button" id="bBad">bad</button>
-					<br> 뭐야 시발! : ${board.point.worst}&nbsp;
-					<button type="button" id="bWorst">worst</button>
+      	<div class="boardDetail-footer">
+					<button type="button" id="bBest">최고다!</button>
+          ${board.point.best} 개&nbsp;&nbsp;&nbsp;&nbsp
+
+					<button type="button" id="bGood">좋아요 :)</button>
+          ${board.point.good} 개&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+					<button type="button" id="bBad">안 좋아요 :(</button>
+           ${board.point.bad} 개&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+					<button type="button" id="bWorst">뭐야 시발!</button>
+          ${board.point.worst} 개&nbsp;&nbsp;&nbsp;&nbsp;
+
 					<br> <br>게시글 점수 합계 : ${board.point.cal}<br> <br>
 
 					<c:if test="${files ne null}">
@@ -123,7 +131,7 @@
 						</c:forEach>
 					</c:if>
 				</div>
-			</div>
+
 		</div>
 	</div>
 
