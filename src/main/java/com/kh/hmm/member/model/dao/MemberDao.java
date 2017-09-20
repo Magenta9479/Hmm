@@ -81,6 +81,7 @@ public class MemberDao {
 	
 	public ArrayList<Integer> leveling(long exp)
 	{
+		System.out.println(exp+"ssival");
 		List<Integer> list= sqlSession.selectList("leveling", exp);
 		return (ArrayList<Integer>) list;
 	} 
