@@ -26,5 +26,15 @@ public interface BoardService
 
 	int boardCode();
 
-	
+	void recommendation(String recom, int bcode);
+
+	void crecommendation(String recom, int ccode);
+
+	void bmedal(int bcode);
+
+	void cmedal(int ccode);
+
+	void breport(int bcode, String reporter);
+
+	int isbreport(int bcode, String reporter);
 }

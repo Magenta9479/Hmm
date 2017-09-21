@@ -1,4 +1,4 @@
-package com.kh.hmm.board.controller;
+﻿package com.kh.hmm.board.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -71,6 +71,8 @@ public class BoardController
 		logger.info("selectBoardOne("+bcode+") call...");
 
 		Board board=boardService.selectBoardOne(bcode);	
+		Member writer=memberService.selectMember(board.getWriterid());
+		
 		ArrayList<Comments> comments=null;
 		ArrayList<Attachfile> files=null;
 		
@@ -87,12 +89,13 @@ public class BoardController
 		if(board != null)
 		{
 			model.addAttribute("board", board);
+			model.addAttribute("writer", writer);
 			if(comments!=null) model.addAttribute("comments", comments);
 			if(files!=null) model.addAttribute("files", files);
 		}		
-		
-		return "../../index";//보드 상세보기로 넘어가야한다.
-	}	
+				
+		return "../../boardDetail";//보드 상세보기로 넘어가야한다.
+	}		
 	
 	@RequestMapping(value = "boardCheck.do", method = RequestMethod.POST)
 	public int checkBoard(BoardPoint point) 
@@ -201,5 +204,68 @@ public class BoardController
 		
 		return "redirect:/boardLists.do?dis="+b.getDistinguish();
     }
+
+	@ResponseBody
+    @RequestMapping(value = "recommendation.do", method = RequestMethod.GET)
+	public Integer recommendation(String recom,int bcode,HttpSession session) 
+	{
+		logger.info("recommendation("+recom+","+bcode+") call...");
+
+		boardService.recommendation(recom,bcode);
+		int point=memberService.selectMember(((Member)session.getAttribute("member")).getId()).getRecompoint();
+		
+		return point;
+	}
+    
+    @RequestMapping(value = "crecommendation.do", method = RequestMethod.GET)
+	public String crecommendation(String recom,int ccode,int bcode) 
+	{
+		logger.info("crecommendation("+recom+","+ccode+","+bcode+") call...");
+
+		boardService.crecommendation(recom,ccode);
+		
+		return "forward:boardOne.do?bcode="+bcode;
+	}
+    
+    @RequestMapping(value = "bmedal.do", method = RequestMethod.GET)
+	public String bmedal(int bcode) 
+	{
+		logger.info("bmedal("+bcode+") call...");
+
+		boardService.bmedal(bcode);
+		
+		return "forward:boardOne.do?bcode="+bcode;
+	}
+    
+    @RequestMapping(value = "cmedal.do", method = RequestMethod.GET)
+	public String cmedal(int ccode,int bcode) 
+	{
+		logger.info("cmedal("+bcode+","+ccode+") call...");
+
+		boardService.cmedal(ccode);
+		
+		return "forward:boardOne.do?bcode="+bcode;
+	}
+    
+    @ResponseBody
+    @RequestMapping(value = "isbreport.do", method = RequestMethod.POST)
+	public Integer isbreport(int bcode,HttpSession session,HttpServletResponse response) 
+	{
+		logger.info("isbreport("+bcode+") call...");
+		String reporter=((Member)session.getAttribute("member")).getId();
+			
+		return boardService.isbreport(bcode,reporter);
+	}    
+    
+    @RequestMapping(value = "breport.do", method = RequestMethod.GET)
+	public String breport(int bcode,HttpSession session) 
+	{
+		logger.info("breport("+bcode+") call...");
+		String reporter=((Member)session.getAttribute("member")).getId();
+		
+		boardService.breport(bcode,reporter);
+		
+		return "forward:boardOne.do?bcode="+bcode;
+	}
     
 }
