@@ -16,7 +16,7 @@
 <body onload="move();move2();">
   <%@ include file="/header.jsp"%>
 
-<h1 class="title">자바는 한물갔다!</h1>
+<h1 class="title">자바는 한물갔다?!</h1>
 
 
 <div class="chart">
