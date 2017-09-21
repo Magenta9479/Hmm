@@ -79,7 +79,7 @@
 				<br>
 				<div class="boardDetail_author">
 					작성자 : ${writer.id} &nbsp;&nbsp;&nbsp; 레벨 : <input disabled id="lev" />
-					&nbsp;&nbsp;&nbsp; 경험치 : ${writer.exp} &nbsp;&nbsp;&nbsp; 경험치 진행도 :
+					&nbsp;&nbsp;&nbsp; 경험치 : ${writer.exp} &nbsp;&nbsp;&nbsp;&nbsp; 경험치 진행도 :
 					<input disabled id="per" />
 				</div>
 				<br>
@@ -105,18 +105,18 @@
 			<hr>
 			<div class="boardDetail-footer">
 				<button type="button" class="post_rate_btns" id="bBest">최고다!</button>
-				${board.point.best} 개&nbsp;&nbsp;&nbsp;&nbsp
+				&nbsp;&nbsp;${board.point.best} 개&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 
 				<button type="button" class="post_rate_btns" id="bGood">좋아요 :)</button>
-				${board.point.good} 개&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;${board.point.good} 개&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 				<button type="button" class="post_rate_btns" id="bBad">안 좋아요 :(</button>
-				${board.point.bad} 개&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;${board.point.bad} 개&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 				<button type="button" class="post_rate_btns" id="bWorst">뭐야 시발!</button>
-				${board.point.worst} 개&nbsp;&nbsp;&nbsp;&nbsp; <br> <br>게시글
+				&nbsp;&nbsp;${board.point.worst} 개&nbsp;&nbsp;&nbsp;&nbsp; <br> <br>게시글
 				점수 합계 : ${board.point.cal}<br> <br>
 				<hr>
 			</div>
