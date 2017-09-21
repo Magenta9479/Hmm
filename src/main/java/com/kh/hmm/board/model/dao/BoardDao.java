@@ -1,4 +1,4 @@
-package com.kh.hmm.board.model.dao;
+﻿package com.kh.hmm.board.model.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,4 +85,54 @@ public class BoardDao
 		
 		return sqlSession.insert("writeBoard",b);
 	}	
+	
+	public void recommendation(String recom, int bcode)
+	{
+		switch(recom) 
+		{
+			case "best":sqlSession.update("bestrecommendation",bcode);
+				break;
+			case "good":sqlSession.update("goodrecommendation",bcode);
+				break;
+			case "bad":sqlSession.update("badrecommendation",bcode);
+				break;
+			case "worst":sqlSession.update("worstrecommendation",bcode);
+				break;
+		}
+		
+	}
+
+	public void crecommendation(String recom, int ccode)
+	{
+		if(recom.compareTo("good")==0)	sqlSession.update("cgoodrecommendation",ccode);
+		else sqlSession.update("cbadrecommendation",ccode);
+	}
+
+	public void bmedal(int bcode)
+	{
+		sqlSession.update("bmedal",bcode);
+	}
+
+	public void cmedal(int ccode)
+	{
+		sqlSession.update("cmedal",ccode);
+	}
+
+	public void breport(int bcode, String reporter)
+	{
+		HashMap<String,Object> map=new HashMap<String,Object>();
+		map.put("bcode", bcode);
+		map.put("reporter", reporter);
+		
+		sqlSession.insert("breport",map);
+	}
+
+	public int isbreport(int bcode, String reporter)
+	{
+		HashMap<String,Object> map=new HashMap<String,Object>();
+		map.put("bcode", bcode);
+		map.put("reporter", reporter);
+		
+		return sqlSession.selectOne("isbreport",map);
+	}
 }

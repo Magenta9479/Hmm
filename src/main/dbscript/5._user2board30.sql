@@ -1,5 +1,5 @@
-INSERT INTO MEMBER VALUES(MEM_SEQ.NEXTVAL,'admin','admin','eamil',null,0,0,0,0,null,sysdate,null);
-INSERT INTO MEMBER VALUES(MEM_SEQ.NEXTVAL,'user','user','email',null,0,0,0,0,null,sysdate,null);
+INSERT INTO MEMBER VALUES(MEM_SEQ.NEXTVAL,'admin','admin','eamil',null,0,0,0,0,0,0,0,null,sysdate,null);
+INSERT INTO MEMBER VALUES(MEM_SEQ.NEXTVAL,'user','user','email',null,0,0,0,0,0,0,0,null,sysdate,null);
 
 INSERT INTO BOARD VALUES(BOARD_SEQ.NEXTVAL,'그린캣소프트(주)에서 함께 서비스를 개발하실 신입/초급 개발자를 모십니다','그린캣소프트(주)에서 함께 서비스를 개발하실 신입/초급 개발자를 모십니다',1,'admin',SYSDATE,NULL,NULL);
 INSERT INTO BOARD VALUES(BOARD_SEQ.NEXTVAL,'[프리랜서] 단기/ 웹사이트 구축 JAVA 고급 개발자 구인합니다.','구인해요 ㅎㅎ',1,'admin',SYSDATE,NULL,NULL);

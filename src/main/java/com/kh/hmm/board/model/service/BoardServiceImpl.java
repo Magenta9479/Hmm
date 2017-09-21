@@ -80,5 +80,39 @@ public class BoardServiceImpl implements BoardService
 		return bDao.write(b);
 	}
 */
-	
+	@Override
+	public void recommendation(String recom, int bcode)
+	{
+		bDao.recommendation(recom,bcode);
+	}
+
+	@Override
+	public void crecommendation(String recom, int ccode)
+	{
+		bDao.crecommendation(recom,ccode);
+	}
+
+	@Override
+	public void bmedal(int bcode)
+	{
+		bDao.bmedal(bcode);
+	}
+
+	@Override
+	public void cmedal(int ccode)
+	{
+		bDao.cmedal(ccode);
+	}
+
+	@Override
+	public void breport(int bcode, String reporter)
+	{
+		bDao.breport(bcode,reporter);
+	}
+
+	@Override
+	public int isbreport(int bcode,String reporter)
+	{
+		return bDao.isbreport(bcode,reporter);
+	}
 }

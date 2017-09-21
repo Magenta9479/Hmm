@@ -17,6 +17,8 @@
 		 		<result column="GOOD" property="good"/>
 		 		<result column="BAD" property="bad"/>
 		 		<result column="CAL" property="cal"/>
+		 		<result column="MEDAL" property="medal"/>
+		 		<result column="REPORT" property="report"/>
 	 		</association>
  	</resultMap>
  	
@@ -39,6 +41,12 @@
 	<update id="cbadrecommendation" parameterType="_int">
 		UPDATE COMMENTSPOINT 
 		SET	BAD=BAD+1,CAL=CAL-3
+		WHERE CCODE=#{ccode}		
+	</update>
+	
+	<update id="cmedal" parameterType="_int">
+		UPDATE COMMENTSPOINT 
+		SET	MEDAL=MEDAL+1
 		WHERE CCODE=#{ccode}		
 	</update>
 	

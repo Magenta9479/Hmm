@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -316,16 +318,45 @@ public class MemberController {
 		return;
 	}
 
-	@RequestMapping(value = "leveling.do", method = RequestMethod.POST)
+	/*@RequestMapping(value = "leveling.do", method = RequestMethod.POST)
 	public void leveling(HttpServletResponse response,long exp)	throws Exception 
 	{
 		logger.info("leveling() call...");	
 		PrintWriter out = response.getWriter();
 		
+		if(exp>0) 
+		{
+			ArrayList<Integer> lev=memberService.leveling(exp);
+			
+			out.write("[\""+lev.get(0).intValue()+"\",\""+lev.get(1).intValue()+"\"]");
+			
+		}
+		else out.write("[\""+1+"\",\""+0+"\"]");
+		out.flush();
+		out.close();
+				
+	}*/
+	@ResponseBody
+	@RequestMapping(value = "leveling.do", method = RequestMethod.GET)
+	public HashMap leveling(HttpServletResponse response,long exp)	throws Exception 
+	{
+		logger.info("leveling() call...");	
+		
 		ArrayList<Integer> lev=memberService.leveling(exp);
 		
-		out.write("[\""+lev.get(0).intValue()+"\",\""+lev.get(1).intValue()+"\"]");
-		out.flush();
-		out.close();		
+		HashMap map=new HashMap();
+		if(exp>0) 
+		{
+			map.put("level", lev.get(0));
+			map.put("percent", lev.get(1));
+		}
+		else
+		{
+			map.put("level", 1);
+			map.put("percent", 0);
+		}
+		
+		
+		return map;		
 	}
 }
