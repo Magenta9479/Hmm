@@ -20,13 +20,11 @@ public interface BoardService
 
 	int checkBoard(BoardPoint point);
 	
-	int boardCode();
-	
 	int updateAB(int bcode);
+	
+	int writeService(Board b);
 
-	void recommendation(String recom, int bcode);
-
-	void crecommendation(String recom, int ccode);
+	int boardCode();
 
 	
 }

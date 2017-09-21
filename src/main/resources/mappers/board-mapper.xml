@@ -98,30 +98,19 @@
 		WHERE BCODE=#{bcode}		
 	</update>
 	
-	<update id="bestrecommendation" parameterType="_int">
+	<update id="checkBoard" parameterType="BoardPoint">
 		UPDATE BOARDPOINT 
-		SET BEST=BEST+1,CAL=CAL+5
+		SET (
+				BEST=#{best},GOOD=#{good},BAD=#{bad},WORST=#{worst},
+				CAL=((5)*#{best}+(3)*#{good}+(-3)*#{bad}+(-5)*#{worst})
+			)
 		WHERE BCODE=#{bcode}		
 	</update>
 	
-	<update id="goodrecommendation" parameterType="_int">
-		UPDATE BOARDPOINT 
-		SET GOOD=GOOD+1,CAL=CAL+3
-		WHERE BCODE=#{bcode}		
-	</update>
-	
-	<update id="badrecommendation" parameterType="_int">
-		UPDATE BOARDPOINT 
-		SET	BAD=BAD+1,CAL=CAL-3
-		WHERE BCODE=#{bcode}		
-	</update>
-	
-	<update id="worstrecommendation" parameterType="_int">
-		UPDATE BOARDPOINT 
-		SET WORST=WORST+1,CAL=CAL-5
-		WHERE BCODE=#{bcode}		
-	</update>	
-	
-	
-	
+ 	<insert id="writeBoard">
+		INSERT INTO BOARD VALUES
+			(
+			 ${bcode}, #{title},#{content},#{distinguish},#{writerid},sysdate,null,null			
+		) 
+	</insert> 
 </mapper>
