@@ -178,7 +178,12 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>3.0.5.RELEASE</version>
 		</dependency>
-
+		<!-- JSON -->
+		<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib-ext-spring</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

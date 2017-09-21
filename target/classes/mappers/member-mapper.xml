@@ -48,4 +48,20 @@
 	update member set
 		PHOTO=#{photo} where ID=#{id}
 	</update>
+	
+	<select id="selectMember" parameterType="string" resultType="Member">
+		SELECT *
+		FROM MEMBER
+		WHERE ID=#{writerid}
+	</select>
+	
+	<select id="leveling" parameterType="_long" resultType="java.lang.Integer">
+		SELECT MAX(LEV)
+		FROM LEVELING
+		WHERE EXP&lt;#{exp}
+		union all
+		SELECT FLOOR(#{exp}/MIN(EXP)*100)
+		FROM LEVELING
+		WHERE EXP&gt;#{exp}
+	</select>
 </mapper>

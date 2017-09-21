@@ -9,50 +9,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="resources/css/board.css" rel="stylesheet" type="text/css">
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<link href="resources/css/board.css" rel="stylesheet" type="text/css">
 <title>Hmm 게시판</title>
 
 </head>
 <body>
 <%@ include file="/header.jsp"%>
-	<div id="empty"></div>
-	<div id="board" class="board">
-		<div id="writebutton">
-			<button id="write" type="button" class="btn btn-primary btn-md">내
-				글쓰기</button>
-		</div>
-		<!-- 검색창, 검색 정렬들의 패널 -->
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<!-- 패널의 왼쪽, 검색창 -->
-				<div class="input-group col-md-6 pull-left">
-					<input type="text" class="search-query form-control"
-						placeholder="검색하기..." /> <span class="input-group-btn">
-						<button id="search_icon" class="btn btn-success" type="button">
-							<span class=" glyphicon glyphicon-search"></span>
-						</button>
-					</span>
+<!-- 게시판 영역 -->
+<div class="board">
+	<!-- 검색창, 검색 정렬들의 패널 -->
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="panel pull-left">
+				<form>
+					<div class="input-group">
+						<input type="text" class="form-control" size="50" placeholder="검색어를 입력하세요...">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-success">검색</button>
+							</div>
+						</div>
+					</form>
 				</div>
-				<!-- 패널의 오른쪽, 정렬창 -->
-				<div class="pull-right">
-
+				<div class="panel pull-right">
 					<div class="sort_options">
 
-						<h3>
-							최신순 <span class="glyphicon glyphicon-chevron-down"></span>
-						</h3>
-						&nbsp; &nbsp; &nbsp;
+						<select class="selectpicker">
+							<option>최신순</option>
+							<option>인기높은순</option>
+							<option>김말순</option>
+							<option>떡튀순</option>
+						</select>
 
-						<h3>
-							모든 카테고리 <span class="glyphicon glyphicon-chevron-down"></span>
-						</h3>
-						&nbsp; &nbsp;
 					</div>
 				</div>
 			</div>
-
+			<%-- <button onclick="location.href='boardCode.do'" style="color:white;">SSIPPAL</button> --%>
 			<!-- 게시판 테이블 -->
 			<div class="table-responsive">
 				<table class="table table-hover table-striped">
@@ -77,7 +76,7 @@
 							<tr>
 								<td>${num }</td>
 								<c:set var="num" value="${num+1 }" />
-								<td>${l.title }</td>
+								<td><a href="boardOne.do?bcode=${l.bcode}">${l.title }</a></td>
 								<td>${l.code.name}</td>
 								<td>
 									<div class="profile">
@@ -96,18 +95,8 @@
 				</table>
 			</div>
 		</div>
-
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<%@ include file="/footer.jsp"%>
+
 </body>
 
 </html>

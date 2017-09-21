@@ -92,7 +92,7 @@
 			{
 			$('form').submit();
 			}
-			
+
 		}
 		else
 			alert("비밀번호를 한번 더 확인해주세요!!");
@@ -145,7 +145,7 @@
 				<div class="modal-header">
 					<h4 class="modal-title">회원가입</h4>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body insert_body">
 					<form action="enroll.do" method="POST" id="insetForm">
 						<input type="hidden" value="N" id="insertChk" /> <input
 							type="text" name="id"

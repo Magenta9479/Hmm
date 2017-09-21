@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 body {
-  background-color: silver;
+
 }
 
 .title {
@@ -15,11 +15,13 @@ body {
 }
 
 .chart {
-  height: 200px;
-  margin: 100px 0;
+  height: 500px;
+  margin: auto;
+  background-color: pink;
 }
 
 .option {
+  margin-top: 150px;
   width: 48%;
   height: 198px;
   border-radius: 5px;
@@ -87,7 +89,7 @@ body {
   text-align: center;
   position: absolute;
   margin-left: 43%;
-  margin-top: -1px;
+  margin-top: 150px;
   font-size: 100px;
   z-index: 1;
 }
@@ -134,13 +136,12 @@ body, .title, #participants, .between {
   color: #fff;
 }
 
-#option-1 .on {
+#on1 {
   background-color: #1abc9c;
 }
 
-#option-2 .on {
+#on2 {
   background-color: #eb7966;
-  width: 62%;
 }
 
 #participants {

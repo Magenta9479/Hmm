@@ -42,6 +42,7 @@
   width: 400px;
   height: 200px;
   margin: 10px;
+  transition: transform 0.5s;
 }
 
 #polls_result_btn{
@@ -54,15 +55,17 @@
   height: 100px;
   margin: 10px;
   background-color: skyblue;
+  transition: transform 0.5s;
 }
 
 #polls_result_btn:hover{
+  transform: scale(1.1);
   color: gold;
 }
 
 .polls_body button:hover {
+  transform: scale(1.1);
   color: gold;
-  opacity: 0.8;
 }
 
 .polls_between {
@@ -87,13 +90,18 @@
 }
 
 #polls_result {
+  text-decoration: none;
   font-size: 20px;
   color: white;
 }
 
+#polls_result:hover {
+  color: gold;
+}
+
 .board {
   border: none;
-  width: auto;
+  margin-top: 50px;
   margin-left: 250px;
   margin-right: 250px;
 }

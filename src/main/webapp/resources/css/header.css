@@ -30,6 +30,7 @@ body {
   color: #fff;
   height: 40px;
   margin: auto;
+  transition: transform 1s;
 }
 
 #menu-toggle:hover {
@@ -39,6 +40,8 @@ body {
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.5);
 }
 
 #wrapper .navbar .container-fluid .navbar-nav {
@@ -49,14 +52,19 @@ body {
   text-decoration: none;
   color: white;
   font-family: 'Pacifico', cursive;
-  margin-right: 500px;
-  font-size: 40px;
+  font-size: 36px;
+  border: 3px white solid;
+  margin-right: 80%;
+  transition: transform 1s;
 }
 
 #wrapper .navbar .container-fluid .navbar-nav #home_logo:hover {
-  color: gold;
-  background-color: inherit;
-  transition: 0.4s;
+  color: #002F2F;
+  background-color: white;
+  border: 3px #002F2F solid;
+  transition: 2s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(1080deg);
 }
 
 #wrapper .navbar .container-fluid .navbar-nav a {
@@ -64,12 +72,13 @@ body {
   font-family: 'Hanna', serif;
   font-size: 18px;
   color: white;
+  transition: transform 1s;
 }
 
 #wrapper .navbar .container-fluid .navbar-nav a:hover {
   color: gold;
   background-color: inherit;
-  transition: 0.4s;
+  transform: scale(1.2);
 }
 
 /*사이드바*/

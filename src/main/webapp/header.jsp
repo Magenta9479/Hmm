@@ -43,8 +43,7 @@
 						aria-controls="navbar"></button>
 					<div class="navbar-brand">
 						<a id="menu-toggle" href="#"
-							class="glyphicon glyphicon-align-justify btn-menu toggle"> <i
-							class="fa fa-bars"></i>
+							class="glyphicon glyphicon-align-justify btn-menu toggle">
 						</a>
 					</div>
 				</div>
