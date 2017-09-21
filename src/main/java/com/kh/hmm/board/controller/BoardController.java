@@ -10,6 +10,7 @@ import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,8 +30,6 @@ import com.kh.hmm.board.model.vo.Attachfile;
 import com.kh.hmm.board.model.vo.Board;
 import com.kh.hmm.board.model.vo.BoardPoint;
 import com.kh.hmm.board.model.vo.Comments;
-import com.kh.hmm.member.model.service.MemberService;
-import com.kh.hmm.member.model.vo.Member;
 
 @Controller
 public class BoardController
@@ -43,8 +42,7 @@ public class BoardController
 	private CommentsService commentsService;
 	@Autowired
 	private AttachfileService attachfileService;
-	@Autowired
-	private MemberService memberService;
+	
 	
 	
 	@RequestMapping(value = "boardLists.do", method = RequestMethod.GET)
@@ -73,8 +71,6 @@ public class BoardController
 		logger.info("selectBoardOne("+bcode+") call...");
 
 		Board board=boardService.selectBoardOne(bcode);	
-		Member writer=memberService.selectMember(board.getWriterid());
-		
 		ArrayList<Comments> comments=null;
 		ArrayList<Attachfile> files=null;
 		
@@ -91,12 +87,11 @@ public class BoardController
 		if(board != null)
 		{
 			model.addAttribute("board", board);
-			model.addAttribute("writer", writer);
 			if(comments!=null) model.addAttribute("comments", comments);
 			if(files!=null) model.addAttribute("files", files);
 		}		
 		
-		return "../../boardDetail";//보드 상세보기로 넘어가야한다.
+		return "../../index";//보드 상세보기로 넘어가야한다.
 	}	
 	
 	@RequestMapping(value = "boardCheck.do", method = RequestMethod.POST)
@@ -109,14 +104,14 @@ public class BoardController
 		return result;
 	}	
 	
-	@RequestMapping(value = "boardCode.do", method = RequestMethod.GET)
+	@RequestMapping(value = "boardcode.do", method = RequestMethod.GET)
 	public String boardCode(Model m) 
 	{//아작스 처리를 요한다.
 		logger.info("boarCode() call...");
-
+		System.out.println(boardService.boardCode());
 		m.addAttribute("bcode",boardService.boardCode());
 		
-		return "../../filetest";
+		return "../../write";
 	}
 	
 	@RequestMapping(value = "boardInsert.do", method = RequestMethod.POST)
@@ -199,24 +194,12 @@ public class BoardController
           
         return "success";
     }
-    
-    @RequestMapping(value = "recommendation.do", method = RequestMethod.GET)
-	public String recommendation(String recom,int bcode) 
-	{
-		logger.info("recommendation("+recom+","+bcode+") call...");
-
-		boardService.recommendation(recom,bcode);
-
-		return "forward:boardOne.do?bcode="+bcode;
-	}
-    
-    @RequestMapping(value = "crecommendation.do", method = RequestMethod.GET)
-	public String crecommendation(String recom,int ccode,int bcode) 
-	{
-		logger.info("crecommendation("+recom+","+ccode+","+bcode+") call...");
-
-		boardService.crecommendation(recom,ccode);
+    @RequestMapping(value="write.do", method = RequestMethod.POST)
+    public String write(Board b,Model m){
+    	int write = boardService.writeService(b);
 		
-		return "forward:boardOne.do?bcode="+bcode;
-	}
+		
+		return "redirect:/boardLists.do?dis="+b.getDistinguish();
+    }
+    
 }
