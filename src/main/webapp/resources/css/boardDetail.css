@@ -54,6 +54,12 @@ body {
   padding: 10px;
 }
 
+.boardDetail_author input{
+  //border: 1px gold solid;
+  width: 30px;
+  border: none;
+}
+
 .boardDetail_date {
 
 }
@@ -85,19 +91,53 @@ body {
 }
 
 .boardDetail-footer {
+  font-family: 'Hanna', serif;
   background-color: white;
   padding: 10px;
+  width: 100%;
+  height: auto;
+}
+.post_rate_btns{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.post_rate_btns:hover{
+  opacity: 0.8;
+}
+
+#bBest{
+  background-color: gold;
+}
+
+#bGood{
+  background-color: green;
+}
+
+#bBad{
+  background-color: grey;
+}
+
+#bWorst{
+  background-color: red;
+}
+
+.comment_section{
+  background-color: #002F2F;
   width: 100%;
   height: auto;
 }
 
 .comments {
   border: 1px silver solid;
-  margin: 10px;
+  margin-bottom: 10px;
+  background-color: white;
 }
 
 .comments-heading{
   height: 50px;
+  font-family: 'Hanna', serif;
   background-color: #002F2F;
   padding: 15px;
   color: white;
@@ -115,6 +155,7 @@ body {
 }
 
 .comments-footer{
+  font-family: 'Hanna', serif;
   height: 50px;
   border-top: 1px silver solid;
 }
