@@ -78,9 +78,9 @@
 				</div>
 				<br>
 				<div class="boardDetail_author">
-					작성자 : ${writer.id} &nbsp;&nbsp;&nbsp; 레벨 : <input id="lev" />
+					작성자 : ${writer.id} &nbsp;&nbsp;&nbsp; 레벨 : <input disabled id="lev" />
 					&nbsp;&nbsp;&nbsp; 경험치 : ${writer.exp} &nbsp;&nbsp;&nbsp; 경험치 진행도 :
-					<input id="per" />
+					<input disabled id="per" />
 				</div>
 				<br>
 				<div class="boardDetail_date">
@@ -90,76 +90,70 @@
 						id="board_postdate">작성일 : ${board.postdate}</span>
 				</div>
 				<br>
+					<%-- 파일? --%>
+					<c:if test="${files ne null}">
+						<c:set var="num" value="1" />
+						<c:forEach var="f" items="${files}">
+								file${num } : name = ${f.originname }, filelink=${f.filelink }<br>
+							<c:set var="num" value="${num+1 }" />
+						</c:forEach>
+					</c:if>
 
 			</div>
 
 			<div class="boardDetail-contents">${board.content}</div>
 			<hr>
 			<div class="boardDetail-footer">
-				<button type="button" id="bBest">최고다!</button>
+				<button type="button" class="post_rate_btns" id="bBest">최고다!</button>
 				${board.point.best} 개&nbsp;&nbsp;&nbsp;&nbsp
 
-				<button type="button" id="bGood">좋아요 :)</button>
+				<button type="button" class="post_rate_btns" id="bGood">좋아요 :)</button>
 				${board.point.good} 개&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-				<button type="button" id="bBad">안 좋아요 :(</button>
+				<button type="button" class="post_rate_btns" id="bBad">안 좋아요 :(</button>
 				${board.point.bad} 개&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-				<button type="button" id="bWorst">뭐야 시발!</button>
+				<button type="button" class="post_rate_btns" id="bWorst">뭐야 시발!</button>
 				${board.point.worst} 개&nbsp;&nbsp;&nbsp;&nbsp; <br> <br>게시글
 				점수 합계 : ${board.point.cal}<br> <br>
 				<hr>
-
-				<%-- 파일? --%>
-				<c:if test="${files ne null}">
+			</div>
+			<%-- 댓글 공간 --%>
+			<div class="comment_section">
+				<c:if test="${comments ne null}">
 					<c:set var="num" value="1" />
-					<c:forEach var="f" items="${files}">
-            	file${num } : name = ${f.originname }, filelink=${f.filelink }<br>
-						<c:set var="num" value="${num+1 }" />
-					</c:forEach>
-				</c:if>
 
-				<hr>
-				<%-- 댓글 공간 --%>
-				<div class="comment_section">
-					<c:if test="${comments ne null}">
-						<c:set var="num" value="1" />
+					<c:forEach var="c" items="${comments}">
 
-						<c:forEach var="c" items="${comments}">
-							<div class="one_comment">
-
-								<div class="comments">
-									<div class="comments-heading">${num }번째 댓글
-										<div class="comment_authordate">
-										작성자 : ${c.writerid } &nbsp;&nbsp;&nbsp;&nbsp; 작성일 :
-										${c.postdate}</div>
-										</div>
-									<div class="comments-body">${c.content }</div>
-									<div class="comments-footer">
-										<div class="comment_point">
-										댓글 점수 : ${c.point.cal }
-										</div>
-										<div class="comment_rate">
-										공감 : ${c.point.good }&nbsp;
-										<button type="button" class="comment_rate_btn" id="btn_good"
-											onclick="crecommendation(${c.ccode},'g')">Good!</button>
-										&nbsp; 비공감 : ${c.point.bad }&nbsp;
-										<button type="button" class="comment_rate_btn"  id="btn_bad"
-											onclick="crecommendation(${c.ccode},'b')">Fuck!</button>
-											</div>
+							<div class="comments">
+								<div class="comments-heading">${num }번째 댓글
+									<div class="comment_authordate">
+									작성자 : ${c.writerid } &nbsp;&nbsp;&nbsp;&nbsp; 작성일 :
+									${c.postdate}</div>
 									</div>
+								<div class="comments-body">${c.content }</div>
+								<div class="comments-footer">
+									<div class="comment_point">
+									댓글 점수 : ${c.point.cal }
+									</div>
+									<div class="comment_rate">
+									공감 : ${c.point.good }&nbsp;
+									<button type="button" class="comment_rate_btn" id="btn_good"
+										onclick="crecommendation(${c.ccode},'g')">Good!</button>
+									&nbsp; 비공감 : ${c.point.bad }&nbsp;
+									<button type="button" class="comment_rate_btn"  id="btn_bad"
+										onclick="crecommendation(${c.ccode},'b')">Fuck!</button>
+										</div>
 								</div>
-
-								<c:set var="num" value="${num+1 }" />
 							</div>
-						</c:forEach>
 
-					</c:if>
-				</div>
+							<c:set var="num" value="${num+1 }" />
 
+					</c:forEach>
 
+				</c:if>
 			</div>
 
 		</div>
