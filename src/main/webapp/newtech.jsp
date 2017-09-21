@@ -99,7 +99,7 @@
   <br>
 
   <button type="button" id="polls_result_btn">금주 신기술 동향 투표 결과 확인하기</button>
-  <br><br><br>
+  <br><br>
     <a id="polls_result" href ="newtech2.jsp">금주 신기술 동향 투표 결과 확인하기</a>
 </div>
 

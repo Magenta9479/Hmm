@@ -136,13 +136,12 @@ body, .title, #participants, .between {
   color: #fff;
 }
 
-#option-1 .on {
+#on1 {
   background-color: #1abc9c;
 }
 
-#option-2 .on {
+#on2 {
   background-color: #eb7966;
-  width: 62%;
 }
 
 #participants {
