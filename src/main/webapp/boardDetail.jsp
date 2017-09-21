@@ -64,7 +64,7 @@
 </head>
 <body>
 	<%@ include file="/header.jsp"%>
-	
+
 	<!-- 게시글 상세보기 -->
 	<div class="boardDetail_area">
 
@@ -129,27 +129,29 @@
 
 						<c:forEach var="c" items="${comments}">
 							<div class="one_comment">
-								<div class="panel-group">
-								<div class="panel panel-success">
-									<div class="panel-heading">${num }번째 댓글
+
+								<div class="comments">
+									<div class="comments-heading">${num }번째 댓글
 										<div class="comment_authordate">
 										작성자 : ${c.writerid } &nbsp;&nbsp;&nbsp;&nbsp; 작성일 :
 										${c.postdate}</div>
 										</div>
-									<div class="panel-body">${c.content }</div>
-									<div class="panel-footer">
+									<div class="comments-body">${c.content }</div>
+									<div class="comments-footer">
+										<div class="comment_point">
 										댓글 점수 : ${c.point.cal }
-										<div class="comment_goodbad">
+										</div>
+										<div class="comment_rate">
 										공감 : ${c.point.good }&nbsp;
-										<button type="button"
-											onclick="crecommendation(${c.ccode},'g')">공감하기</button>
+										<button type="button" class="comment_rate_btn" id="btn_good"
+											onclick="crecommendation(${c.ccode},'g')">Good!</button>
 										&nbsp; 비공감 : ${c.point.bad }&nbsp;
-										<button type="button"
-											onclick="crecommendation(${c.ccode},'b')">비공감하기</button>
+										<button type="button" class="comment_rate_btn"  id="btn_bad"
+											onclick="crecommendation(${c.ccode},'b')">Fuck!</button>
 											</div>
 									</div>
 								</div>
-								</div>
+
 								<c:set var="num" value="${num+1 }" />
 							</div>
 						</c:forEach>

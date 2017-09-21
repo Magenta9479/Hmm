@@ -91,15 +91,62 @@ body {
   height: auto;
 }
 
+.comments {
+  border: 1px silver solid;
+  margin: 10px;
+}
+
+.comments-heading{
+  height: 50px;
+  background-color: #002F2F;
+  padding: 15px;
+  color: white;
+}
+
 .comment_authordate {
   float: right;
 }
 
-
-.comment_goodbad {
-  float: right;
+.comments-body{
+  height: auto;
+  padding: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
+.comments-footer{
+  height: 50px;
+  border-top: 1px silver solid;
+}
+
+.comment_point {
+  float: left;
+  margin: 5px;
+  padding: 10px;
+}
+
+.comment_rate {
+  float: right;
+  margin: 5px;
+}
+
+.comment_rate_btn{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.comment_rate_btn:hover{
+  opacity: 0.8;
+}
+
+#btn_good  {
+  background-color: pink;
+}
+
+#btn_bad{
+  background-color: skyblue;
+}
 
 .comment_section {
 
