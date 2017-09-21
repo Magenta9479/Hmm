@@ -3,6 +3,9 @@
 .modal-header {
   background-color: #002F2F;
   color: white;
+  border: none;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 /* Full-width input fields */
@@ -46,11 +49,13 @@
 
 .container {
     padding: 16px;
+    border: none;
 }
 
 span.psw {
     float: right;
     padding-top: 16px;
+    margin: 10px;
 }
 
 /* The Modal (background) */
@@ -71,7 +76,6 @@ span.psw {
 .modal-content {
     background-color: #fefefe;
     margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 }
 
