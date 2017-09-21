@@ -79,8 +79,8 @@
 				<br>
 				<div class="boardDetail_author">
 					작성자 : ${writer.id} &nbsp;&nbsp;&nbsp; 레벨 : <input disabled id="lev" />
-					&nbsp;&nbsp;&nbsp; 경험치 : ${writer.exp} &nbsp;&nbsp;&nbsp;&nbsp; 경험치 진행도 :
-					<input disabled id="per" />
+					&nbsp;&nbsp;&nbsp; 경험치 : ${writer.exp}점 &nbsp;&nbsp;&nbsp;&nbsp; 경험치 진행도 :
+					<span><input disabled id="per"/>%</span>
 				</div>
 				<br>
 				<div class="boardDetail_date">
