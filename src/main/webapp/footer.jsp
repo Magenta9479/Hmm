@@ -29,23 +29,31 @@
 									<span class="glyphicon glyphicon-envelope"></span>
 									jhlee90909@gmail.com</p>
 							</div>
+							<form action="bwlist.do" method="POST">
 							<div class="col-sm-7 slideanim">
 								<div class="row">
 									<div class="col-sm-6 form-group">
-										<input class="form-control" id="name" name="name" placeholder="성함" type="text" required></div>
+									<c:if test="${member eq null}">
+										<input class="form-control" id="name" name="sername" placeholder="성함" type="text" required>
+									</c:if>
+									<c:if test="${member ne null}">
+										<input class="form-control" id="name" name="sername" value="${member.id }" type="text" readonly="readonly" required="required">
+									</c:if>
+									</div>
 										<div class="col-sm-6 form-group">
-											<input class="form-control" id="email" name="email" placeholder="이메일 주소" type="email" required></div>
+											<input class="form-control" id="email" name="seradd" placeholder="이메일 주소" type="email" required></div>
 										</div>
-										<textarea class="form-control" id="comments" name="comments" placeholder="남기실 말씀" rows="5"></textarea>
+										<textarea class="form-control" id="comments" name="sercontent" placeholder="남기실 말씀" rows="5"></textarea>
 										<br>
 											<div class="row">
 												<div class="col-sm-12 form-group">
 													<button class="btn btn-default pull-right" type="submit">전송하기</button>
 												</div>
 											</div>
-										</div>
+										</div>									
+										</form>
 									</div>
-								</div>
+									</div>
 
 								<!-- 구글 맵 추가 -->
 								<div id="googleMap" style="height:400px;width:100%;"></div>

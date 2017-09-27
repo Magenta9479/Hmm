@@ -41,4 +41,7 @@ public interface BoardService
 	void viewcount(int bcode);
 
 	String boardName(int dis);
+	
+	/*void updateHits(int bcode);*/
+
 }

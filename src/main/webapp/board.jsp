@@ -119,7 +119,6 @@
 							<tbody>
 								<c:set var="num" value="1"/>
 								<c:forEach var="l" items="${list }">
-
 									<tr>
 
 										<td>${num }</td>

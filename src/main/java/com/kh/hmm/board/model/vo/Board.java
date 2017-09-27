@@ -13,14 +13,15 @@ public class Board
 	private Date postdate;
 	private String isdelete;
 	private String hasfile;
-	
+	/*private int hit;*/
+
 	private BoardCode code;	
 	private BoardPoint point;	
 	
 	public Board() {}
 
 	public Board(int bcode, String title, String content, int distinguish, String writerid, Date postdate,
-			String isdelete, String hasfile, BoardCode code, BoardPoint point)
+			String isdelete, String hasfile, BoardCode code, BoardPoint point /*int hit*/)
 	{
 		super();
 		this.bcode = bcode;
@@ -33,6 +34,7 @@ public class Board
 		this.hasfile = hasfile;
 		this.code = code;
 		this.point = point;
+		/*this.hit = hit;*/
 	}
 
 	public int getBcode()
@@ -134,13 +136,19 @@ public class Board
 	{
 		this.point = point;
 	}
+	
+/*	public int getHit() {
+		return hit;
+	}
 
+	public void setHit(int hit) {
+		this.hit = hit;
+	}*/
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "Board [bcode=" + bcode + ", title=" + title + ", content=" + content + ", distinguish=" + distinguish
 				+ ", writerid=" + writerid + ", postdate=" + postdate + ", isdelete=" + isdelete + ", hasfile="
-				+ hasfile + ", code=" + code + ", point=" + point + "]";
+				+ hasfile + ", hit=" + /*hit +*/ ", code=" + code + ", point=" + point + "]";
 	}
 
 	

@@ -161,4 +161,10 @@
 		FROM BOARDCODE
 		WHERE DISCODE=#{dis}
 	</select>
+	
+<!-- 	<update id="updateHits" parameterType="Integer"> 
+	UPDATE BOARD 
+	SET HIT = HIT + 1 WHERE BCODE = #{bcode}; 
+	</update> -->
+	
 </mapper>

@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -51,6 +52,7 @@ public class BoardController
 	@Autowired
 	private MemberService memberService;
 	
+	private int countbcode;
 	
 	
 	@RequestMapping(value = "boardLists.do", method = RequestMethod.GET)
@@ -69,15 +71,16 @@ public class BoardController
 		else if(dis==3) rturn="newtech";
 		else rturn="board";
 		
-		
 		return "../../"+rturn;
+		
 	}
 	
 	@RequestMapping(value = "boardOne.do", method = RequestMethod.GET)
 	public String selectBoardOne(Model model,int bcode) 
 	{
 		logger.info("selectBoardOne("+bcode+") call...");
-
+		
+		countbcode = bcode;
 		Board board=boardService.selectBoardOne(bcode);	
 		Member writer=memberService.selectMember(board.getWriterid());
 		
@@ -409,4 +412,12 @@ public class BoardController
         response.getOutputStream().write(IOUtils.toByteArray(fileIn));
         response.flushBuffer();     
     }
+    
+   /* @RequestMapping(value="updateHits.do",method = RequestMethod.GET)
+    public String detailBoard(Model model){ 
+    	boardService.updateHits(countbcode); 
+    	
+    	return "../../boardDetail";//보드 상세보기로 넘어가야한다.
+    }*/
+  
 }

@@ -146,4 +146,9 @@ public class BoardDao
 	{
 		return sqlSession.selectOne("boardName",dis);
 	}
+/*	public void updateHits(int bcode){
+		sqlSession.update("updateHits",bcode);
+	}*/
+		
+	
 }
